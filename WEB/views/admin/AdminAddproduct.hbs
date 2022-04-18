@@ -1,0 +1,49 @@
+<div>
+  <div class='mainaddimage'>
+    <div class='prev'>
+      <a class='back' href='http://localhost:8282/Admin/products'><i
+          class='bx bx-chevrons-left'
+        ></i>Return</a>
+    </div>
+    <div class='addimageContainer'>
+      <h1 class='titlena'>Add Product</h1>
+      <form
+        class='addImageform'
+        name='addproduct'
+        id='addproduct'
+        action='/Admin/AddProduct'
+        method='POST'
+        enctype='multipart/form-data'
+      >
+        <label for=''>Select Image File</label>
+        <input
+          class='chooseFile'
+          type='file'
+          id='ImageFile'
+          name='image_product'
+        />
+        <input
+          class='servicetext'
+          type='text'
+          id='Servisename'
+          name='Productname'
+          placeholder='Product Name'
+        />
+        <input
+          class='servicetext'
+          type='text'
+          id='Price'
+          name='Price'
+          placeholder='Price'
+        />
+
+        <input
+          type='submit'
+          value='Confirm'
+          id='submitProduct'
+          name='SubmitProduct'
+        />
+      </form>
+    </div>
+  </div>
+</div>

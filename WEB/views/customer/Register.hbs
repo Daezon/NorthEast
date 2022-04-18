@@ -1,0 +1,260 @@
+  <div>
+    <div class="registerbox">
+      <div class="regcountainer">
+
+        <div class="heroreg1">
+          <img src="/assets/images/undraw_online_ad_re_ol62.svg" alt="" />
+        </div>
+
+        <div class="heroreg2">
+          <div class="registerhero1">
+            <h1>Sign Up <i class="fad fa-users"></i></h1>
+            <button class="signinBTN">
+              <a href="http://localhost:8282/Login">Sign In</a>
+              <i class="fad fa-sign-in-alt"></i>
+            </button>
+          </div>
+
+          <div class="registerhero2">
+            <h2 class="AlertsLOGIN">{{resData.message}}</h2>
+            <form action="/Register" id="registrationForm" method="POST">
+              <div class="regdiv1">
+                <label for="Fullname"><i class="fad fa-user"></i>
+                  Fullname:</label>
+                <input
+                  class="input"
+                  type="text"
+                  id="FullName"
+                  name="FullName"
+                  placeholder="Name ex.(Jeff Almarez)"
+                  required
+                />
+
+                {{!-- <label for="Gender"><i class="far fa-venus-mars"></i>
+                  Gender:</label>
+                <select name="Gender" id="Gender">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select> --}}
+
+                <label for="Address"><i class="fad fa-map-marker-alt"></i>
+                  Address:</label>
+                <input
+                  class="input"
+                  name="Address"
+                  type="text"
+                  id="Address"
+                  required
+                />
+
+                {{!-- <label for="Age"><i class="fab fa-gratipay"></i> Age:</label>
+                <input
+                  class="input"
+                  type="number"
+                  id="Age"
+                  name="Age"
+                  pattern="/d{2}"
+                  min="18"
+                  max="80"
+                  required
+                /> --}}
+
+                <label for="ContactNumber"><i class="fad fa-mobile-alt"></i>
+                  Contact Number:</label>
+                <input
+                  class="input"
+                  type="number"
+                  placeholder="09*********"
+                  id="ContactNumber"
+                  name="ContactNumber"
+                  required
+                />
+              </div>
+
+              <div class="regdiv2">
+                
+
+                <label for="Email"><i class="fad fa-envelope-open-text"></i>
+                  Email:</label>
+                <input
+                  class="input"
+                  name="Email"
+                  type="email"
+                  id="Email"
+                  required
+                />
+
+                <label for="Password"><i class="fad fa-lock-alt"></i>
+                  Password:</label>
+
+                <div class="input-text">
+                  <input
+                    class="input"
+                    type="password"
+                    id="Password"
+                    name="Password"
+                    required
+                  />
+                  <span class="eye2" onClick="myFunctionpassword()">
+                    <i id="hide1" class="fal fa-eye active"></i>
+                    <i id="hideme" class="fal fa-eye-slash active"></i>
+                  </span>
+                </div>
+
+                <div class="accept">
+                  {{!-- <input type="checkbox" required /> --}}
+                  {{! <p>I agree to the
+                    <a href="./Terms and Condition.html">Terms and Condition</a></p> }}
+                  <div class="policyCheck">
+                    <h6>Read and agree the </h6>
+                    <input
+                    value="Privacy Policy"
+                    type="button"
+                    id="ppBTN"
+                    class="ppBTN"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  />
+                  <h6>to register.</h6>
+                  </div>
+                 
+
+                  <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                          >&times;</button>
+                          <h4 class="modal-title">PRIVACY POLICY</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>I. REASON FOR IT POLICY: AUTHORIZATION AND
+                            AUNTHENTICATION
+                            <br />
+                            <br />IT Security Policies play a critical and
+                            strategic role in ensuring corporate information is
+                            kept safe. This whitepaper answers a number of
+                            questions covering the importance of developing and
+                            deploying IT Security Policies properly, the business
+                            benefits gained, process considerations in terms of
+                            stakeholder input, typical policy development
+                            shortcomings and on-going policy management
+                            considerations.
+                            <br />
+                            <br />THIS POLICY IS GUIDED BY THE FOLLOWING OBJECT:
+                            <br />
+                            <br />
+                            1. To ensure that the Northeast car care centre can,
+                            integrity and accuracy in financial and administrative
+                            recording and use of vehicle.
+                            <br />
+                            2. To ensure safety and security of all the vehicles.
+                            <br />
+                            3. Promote due care and attention to the security,
+                            control and maintenance of vehicles.
+                            <br />
+                            <br />
+                            II. STATEMENT OF POLICY: AUTHORIZATION AND
+                            AUNTHENTICATION
+                            <br /><br />
+                            STATEMENT OF POLICY :
+                            <br />
+                            <br />
+                            Northeast is dedicated to safeguarding your personal
+                            information and providing technology that allows you
+                            to have the most powerful and convenient online
+                            experience possible. This Privacy Statement regulates
+                            data collection and usage on the Northeast Car Care
+                            Web site. You consent to the data practices outlined
+                            in this statement by using the Northeast Car Care
+                            website.
+                            <br />
+                            <br />
+                            COLLECTION OF YOUR PERSONAL INFORMATION :
+                            <br />
+                            <br />
+                            Northeast Car Care Center gathers personally
+                            identifiable information from you, including such your
+                            e-mail address, name, home or work address, and phone
+                            number. Northeast Car Care Center also gathers
+                            anonymous demographic data about you, such as your ZIP
+                            code, age, gender, preferences, interests, and
+                            favorites, which is unique to you.
+                            <br />
+                            <br />
+                            Northeast Car Care Center also collects information
+                            about your computer hardware and software on an
+                            automatic basis. Your IP address, browser type, domain
+                            names, access times, and referring Web site addresses
+                            are all examples of this information. Northeast Car
+                            Care Center uses this information to run the business,
+                            maintain the quality of the service, and compile
+                            statistics about how people use the Northeast Car Care
+                            Center website.
+                            <BR /> <BR>
+                            USE OF YOUR PERSONAL INFORMATION :
+                            <BR /> <BR>
+                            Northeast gathers and uses your personal information
+                            in order to run the Northeast Web site and provide you
+                            with the services you've requested. Northeast may also
+                            use your personally identifiable information to notify
+                            you of other Northeast and its affiliates products or
+                            services. Northeast may also contact you via surveys
+                            to gather information about your thoughts on current
+                            services or potential new services. <BR> <BR>
+                            Northeast Web sites will only disclose your personal information if required to do so by law or in the good faith belief that such action is necessary to: (a) conform to the edicts of the law or comply with legal process served on Northeast or the site; or (b) protect the rights, property, or safety of Northeast or the site.
+                            <BR><BR>
+                            USE OF COOKIES
+                            <BR><BR>
+                            We employ the use of cookies. By using Northeast Car Care's website, you consent to the use of cookies in accordance with Northeast Car Care's privacy policy.
+                            <BR><BR>
+                            Most of the modern-day interactive web sites use cookies to enable us to retrieve user details for each visit. Cookies are used in some areas of our site to enable the functionality of this area and ease of use for those people visiting. Some of our affiliate / advertising partners may also use cookies.
+                            <BR><BR>
+                            SECURITY OF YOUR PERSONLA INFORMATION :
+                            <BR><BR>
+                            Your personal information is protected by Northeast Car Care Center from unauthorized access, use, or disclosure. Northeast Car Care Center stores personally identifiable information on computer servers in a controlled, secure environment that is protected from unauthorized access, use, or disclosure. Personal information (such as a credit card number) is encrypted and sent to other Web sites using the Secure Socket Layer (SSL) protocol.
+                            <BR><BR>
+                            III. COMPLAINCE
+                            <BR><BR>
+                            Hazard communication to ensure that the hazards of all chemicals produced, imported, or used in the workplace are classified, and that information concerning the classified hazard is transmitted to the employers and employees.
+                            <BR><BR>
+                            IV. WHO SHOULD KNOW THIS POLICY?
+                            <BR> <BR>
+                            This policy covers car owners and any kind of vehicles.
+                          </p>
+                          <input type="checkbox" name="" id="" required> I Agree to the Privacy Policy
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-default"
+                            data-dismiss="modal"
+                          >Close</button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+                <input
+                  class="Submitbtn"
+                  name="submit"
+                  class=""
+                  type="submit"
+                  value="Register"
+                  id="Submitbtn"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

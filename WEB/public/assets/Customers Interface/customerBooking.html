@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="/Font Awesome/Font Awesome Pro v5.12.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <i class="fal fa-tools"></i> NorthEast <i class="fad fa-tire"></i>
+      </div>
+      <label for="btn" class="icon">
+        <span class="fa fa-bars"></span>
+      </label>
+      <input type="checkbox" id="btn" />
+      <ul>
+        <li>
+          <a href="./customerhome.html">Home <i class="fad fa-home-alt"></i></a>
+        </li>
+        <li>
+          <a href="./customerservices.html"
+            >Service <i class="fad fa-tools"></i
+          ></a>
+        </li>
+        <li>
+          <a href="./customerProduct.html"
+            >Product <i class="fad fa-shopping-cart"></i
+          ></a>
+        </li>
+        <li>
+          <a href="./customerBooking.html"
+            >Booking <i class="fad fa-book"></i
+          ></a>
+        </li>
+        <li>
+          <a href="./customerNotification.html"
+            >Notification <i class="fad fa-bell-on"></i
+          ></a>
+        </li>
+        <li>
+          <a href="./index.html">Log Out <i class="fad fa-sign-out-alt"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="bookingMain">
+      <div class="BookingTitle">
+        <h1>Booking</h1>
+      </div>
+
+      <div class="Bookcountainer">
+        <div class="Bookhero1">
+          <h1>Scheduling Form <i class="far fa-mail-bulk"></i></h1>
+        </div>
+
+        <div class="Bookhero2">
+          <div class="book1">
+            <form action="">
+              <div class="bookingHERO1">
+                <label for=""><i class="fad fa-user"></i> Fullname:</label>
+                <input type="text" />
+                <label for=""><i class="far fa-venus-mars"></i> Gender:</label>
+                <select name="" id="">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+                <label for=""><i class="fab fa-gratipay"></i> Age:</label>
+                <input type="number" />
+                <label for=""
+                  ><i class="fad fa-map-marker-alt"></i> Car Mileage:</label
+                >
+                <input type="text" placeholder="20,000km" />
+
+                <label for=""
+                  ><i class="fad fa-mobile-alt"></i> Contact Number:</label
+                >
+                <input type="number" placeholder="(Optinal)" />
+              </div>
+
+              <div class="bookingHERO2">
+                <label for=""><i class="fas fa-tools"></i> Services:</label>
+                <select name="" id="">
+                  <option value="">Compiterized 4 Wheel Alignment</option>
+                  <option value="">
+                    Transmission and Differential Change oil
+                  </option>
+                  <option value="">Alarm Installation and Repair</option>
+                  <option value="">
+                    Interior Disinfection and Rejuvinating
+                  </option>
+                  <option value="">Engine Overhauling</option>
+                  <option value="">Top Overhaul</option>
+                  <option value="">
+                    Electrical wiring and trouble shooting
+                  </option>
+                  <option value="">Timing Belt Replacement</option>
+                  <option value="">Computered Wheel Balancing</option>
+                  <option value="">Headlight Aiming</option>
+                  <option value="">Dash Cam and Stereo Installation</option>
+                  <option value="">EFI Diagnostic Scanning</option>
+                  <option value="">Automotive Battery Re-charging</option>
+                  <option value="">Starting System Repair</option>
+                  <option value="">Charging System Repair</option>
+                  <option value="">Clutch System Repair</option>
+                  <option value="">Transfer Case gear oil replace</option>
+                  <option value="">ATF Exchange / Dialysis Service</option>
+                  <option value="">Quick lube Change Oil</option>
+                  <option value="">Radiator Flushing</option>
+                  <option value="">Power Steering Flushing and Cleaning</option>
+                  <option value="">Central locking System Repair</option>
+                  <option value="">Windshield Washer and Wiper Repair</option>
+                  <option value="">Brake Fluid Flashing</option>
+                  <option value="">Suspension and Steering Repair</option>
+                  <option value="">Brake Disk/ Drum Re-Facing</option>
+                  <option value="">Brake Caliper/ Cylinder Overhauling</option>
+                  <option value="">Brake Cleaning Service</option>
+                  <option value="">Cold Patch Tubeless Vulcanizing</option>
+                  <option value="">String Type Tubeless Vulcanizing</option>
+                  <option value="">Nitrogen Air Filling</option>
+                  <option value="">Precision Tire Mounting</option>
+                  <option value="">Other Service</option>
+                </select>
+
+                <label for=""><i class="fad fa-cars"></i> Car and Model:</label>
+                <input type="text" placeholder="Honda Civic A/T CVT 2021" />
+
+                <label for=""><i class="fas fa-calendar-week"></i> Date:</label>
+                <input type="date" name="" id="">
+
+                <label for=""><i class="far fa-alarm-clock"></i> Time:</label>
+                <select name="" id="">
+                  <option value="">8:00am</option>
+                  <option value="">9:00am</option>
+                  <option value="">10:00am</option>
+                  <option value="">11:00am</option>
+                  <option value="">1:00pm</option>
+                  <option value="">2:00pm</option>
+                  <option value="">3:00pm</option>
+                  <option value="">4:00pm</option>
+                </select>
+
+                <input
+                  type="submit"
+                  value="Send Request"
+                  id="bookingBtn"
+                  class="bookingBtn"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </body>
+</html>

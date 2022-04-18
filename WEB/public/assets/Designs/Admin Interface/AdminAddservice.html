@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Service</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles/admin.css" />
+  </head>
+  <body>
+    <div class="addservicemain">
+      <div class="prev">
+        <a class="back" href="./AdminServices.html"
+          ><i class="bx bx-chevrons-left"></i>Return</a
+        >
+      </div>
+      <div class="addimagecontainer">
+        <h1>Create Service</h1>
+        <div class="imgwrapper">
+          <div class="image">
+            <img src="" alt="" />
+          </div>
+          <div class="content">
+            <div class="icon">
+              <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <div class="text">No image Yet</div>
+          </div>
+          <div id="cancel-btn">
+            <i class="fas fa-times"></i>
+          </div>
+          <div class="file-name">File name here</div>
+        </div>
+        <button onclick="defaultBtnActive()" id="custom-btn">
+          Choose a file
+        </button>
+        <input id="default-btn" type="file" hidden />
+
+        <input type="text" placeholder="Service Name" class="servicetext" />
+        <input type="text" placeholder="Service Time" class="servicetext" />
+        <input type="submit" value="Confirm" id="submitService" />
+      </div>
+    </div>
+    <script>
+      const wrapper = document.querySelector('.imgwrapper');
+      const fileName = document.querySelector('.file-name');
+      const defaultBtn = document.querySelector('#default-btn');
+      const customBtn = document.querySelector('#custom-btn');
+      const cancelBtn = document.querySelector('#cancel-btn i');
+      const img = document.querySelector('img');
+      let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+      function defaultBtnActive() {
+        defaultBtn.click();
+      }
+      defaultBtn.addEventListener('change', function () {
+        const file = this.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function () {
+            const result = reader.result;
+            img.src = result;
+            wrapper.classList.add('active');
+          };
+          cancelBtn.addEventListener('click', function () {
+            img.src = '';
+            wrapper.classList.remove('active');
+          });
+          reader.readAsDataURL(file);
+        }
+        if (this.value) {
+          let valueStore = this.value.match(regExp);
+          fileName.textContent = valueStore;
+        }
+      });
+    </script>
+  </body>
+</html>

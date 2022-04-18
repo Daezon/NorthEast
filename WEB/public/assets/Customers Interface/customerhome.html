@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="/Font Awesome/Font Awesome Pro v5.12.0/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <i class="fal fa-tools"></i> NorthEast <i class="fad fa-tire"></i>
+      </div>
+      <label for="btn" class="icon">
+        <span class="fa fa-bars"></span>
+      </label>
+      <input type="checkbox" id="btn" />
+      <ul>
+        <li>
+          <a href="./customerhome.html">Home <i class="fad fa-home-alt"></i></a>
+        </li>
+        <li>
+          <a href="./customerservices.html"
+            >Service <i class="fad fa-tools"></i
+          ></a>
+        </li>
+        <li>
+          <a href="./customerProduct.html"
+            >Product <i class="fad fa-shopping-cart"></i
+          ></a>
+        </li>
+        <li>
+          <a href="./customerBooking.html"
+            >Booking <i class="fad fa-book"></i
+          ></a>
+        </li>
+        <li>
+          <a href="./customerNotification.html"
+            >Notification <i class="fad fa-bell-on"></i
+          ></a>
+        </li>
+        <li>  
+          <a href="./index.html">Log Out <i class="fad fa-sign-out-alt"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="homemain">
+      <div class="homehero2">
+        <img src="/assets/images/undraw_city_driver_re_0x5e.svg" alt="" />
+      </div>
+
+      <div class="homehero1">
+        <div class="welcome">
+          <div class="welcome2">
+            <h4>We Bring You The<br />Best Work Ever</h4>
+            <h2>
+              Welcome to NorthEast <br />
+              Scheduling Website
+            </h2>
+            <p>
+              Save time and add efficiency by allowing our<br />Customer to book
+              their Cars Online
+            </p>
+            <button class="getstartedBTN">
+              <a href="#">Get Started <i class="fad fa-check"></i></a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+<div>
+  <div class='main'>
+    <div class='navigator'>
+      <ul>
+        <div class='webName'>
+          <span class='webnameIcon'><i
+              class='fab fa-neos icon icons'
+            ></i></span>
+          <span class='webnameWord'>orthEast</span>
+        </div>
+
+        <li class='list'>
+          <a href='http://localhost:8282/Admin/Home'><span
+              class='iconNav'
+            ><ion-icon name='home'></ion-icon></span>
+            <span class='titleNav'>Dashboard</span></a>
+        </li>
+
+        <li class='list active'>
+          <a href='http://localhost:8282/Admin/services'><span
+              class='iconNav'
+            ><ion-icon name='build-outline'></ion-icon></span>
+            <span class='titleNav'>Services</span></a>
+        </li>
+
+        <li class='list'>
+          <a href='http://localhost:8282/Admin/products'><span
+              class='iconNav'
+            ><ion-icon name='cart-outline'></ion-icon></span>
+            <span class='titleNav'>Products</span></a>
+        </li>
+
+        <li class='list'>
+          <a href='http://localhost:8282/Admin/request'>
+            <span class='iconNav'><ion-icon
+                name='mail-outline'
+              ></ion-icon></span>
+            <span class='titleNav'>Request</span>
+          </a>
+        </li>
+
+        <li class='list'>
+          <a href='http://localhost:8282/Admin/Schedules'><span
+              class='iconNav'
+            ><ion-icon name='calendar-outline'></ion-icon></span>
+            <span class='titleNav'>Schedules</span>
+          </a>
+        </li>
+
+        <li class='list'>
+          <a href='http://localhost:8282/Admin/useraccounts'>
+            <span class='iconNav'><ion-icon
+                name='people-outline'
+              ></ion-icon></span>
+            <span class='titleNav'>User Accounts</span>
+          </a>
+        </li>
+
+        <li class='list'>
+          <a href='http://localhost:8282/Admin/archive'><span
+              class='iconNav'
+            ><ion-icon name='archive-outline'></ion-icon></span>
+            <span class='titleNav'>Archive</span></a>
+        </li>
+
+        <li class='list'>
+          <a href='http://localhost:8282/Login'><span class='iconNav'><ion-icon
+                name='log-out-outline'
+              ></ion-icon></span>
+            <span class='titleNav'>Log Out</span></a>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class='servicescontainer'>
+
+      <div class='searchProducts'>
+        {{! <input type='text' name='' class='searchText' placeholder='Search...' />
+        <button
+          inputmode='button'
+          value='Search'
+          class='searchBTN'
+          id='searchbtn'
+        >
+          <i class='bx bx-search-alt-2'></i>
+        </button> }}
+        <div class='ServiceWebTitle'>
+          <h1>Services</h1>
+        </div>
+
+        <a href='http://localhost:8282/admin/addService' class='add'>+Add
+          Service</a>
+      </div>
+
+      <div class='wrapperGrid'>
+
+        {{#each resData.data}}
+          <div class='containerServ'>
+            <h1 class='name' name>{{{Servicename}}}</h1>
+            <div class='imghero'>
+              <img
+                src='{{{Image}}}'
+                alt=''
+                class='serviceImage'
+                style='height: 250px; width:250px'
+              />
+            </div>
+            <p class='serviceTime'>{{{Time}}}</p>
+            <div class='functionBtns'>
+              <form
+                class='addImageform'
+                id='UpdateServices'
+                {{! action='/Admin/ServiceUpdates' }}
+                method='GET'
+                {{! enctype='multipart/form-data' }}
+                onsubmit='return GetService(event)'
+              >
+
+                <input
+                  class='editBtn'
+                  id='myButton_{{{_id}}}'
+                  type='button'
+                  value='Edit'
+                  onClick='return GetModal(event)'
+                  data-arg1='{{{_id}}}'
+                />
+                <input type='hidden' value='{{{_id}}}' name='idOne' />
+              </form>
+              <!-- The Modal -->
+              <form
+                action='/admin/Updateservice'
+                method='POST'
+                enctype='multipart/form-data'
+                {{! onsubmit='return updateServiceConfirm(event)' }}
+              >
+                <div id='modal_{{{_id}}}' class='modal'>
+                  <!-- Modal content -->
+                  <div class='modal-content'>
+                    <span class='close'>&times;</span>
+                    <div class='updateinputs'>
+                      <div class='addimageContainerUpdate'>
+                        <h1 class='titlena'>Update Service</h1>
+
+                        <label for=''>Select Image File</label>
+                        <input
+                          class='chooseFile'
+                          type='file'
+                          id='ImageFile'
+                          name='image_service'
+                        />
+                        <input
+                          class='servicetext'
+                          type='text'
+                          id='Servicename'
+                          name='Servicename'
+                          placeholder='{{{Servicename}}}'
+                          required
+                        />
+                        <input
+                          class='servicetext'
+                          type='text'
+                          id='Time'
+                          name='Time'
+                          placeholder='{{{Time}}}'
+                          required
+                        />
+
+                        <input
+                          type='submit'
+                          value='Confirm'
+                          id='submitService'
+                        />
+                        <input
+                          type='hidden'
+                          value='{{{_id}}}'
+                          name='Service_id'
+                          id='ServiceID'
+                        />
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class='functionBtns1'>
+              <form
+                action=''
+                class='Form5'
+                onsubmit='return Deletedetails(event)'
+              >
+                <input class='deleteBtn' type='submit' value='Delete' />
+                <input type='hidden' value='{{{_id}}}' name='id' />
+              </form>
+            </div>
+          </div>
+        {{/each}}
+
+      </div>
+    </div>
+
+    <div class='toggleNav'>
+      <ion-icon class='open' name='menu-outline'></ion-icon>
+      <ion-icon class='closeNav' name='close-circle-outline'></ion-icon>
+    </div>
+  </div>
+</div>

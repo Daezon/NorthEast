@@ -1,0 +1,49 @@
+<div>
+  <div class='mainupdateimage'>
+    <div class='prev'>
+      <a class='back' href='http://localhost:8282/Admin/services'><i
+          class='bx bx-chevrons-left'
+        ></i>Return</a>
+    </div>
+    <div class='updateimageContainer'>
+      <h1 class='titlena'>Update Service</h1>
+      <form
+        class='updateImageform'
+        name='updateService'
+        id='updateService'
+        action='/Admin/UpdateService'
+        method='POST'
+        enctype='multipart/form-data'
+      >
+        <label for=''>Select Image File</label>
+        <input
+          class='chooseFile'
+          type='file'
+          id='ImageFile'
+          name='image_service'
+        />
+        <input
+          class='ServiceUpdatetext'
+          type='text'
+          id='ServiceUpdatename'
+          name='Servicename'
+          placeholder='Service Name'
+        />
+        <input
+          class='ServiceUpdatetext'
+          type='text'
+          id='Time'
+          name='Time'
+          placeholder='Time'
+        />
+
+        <input
+          type='submit'
+          value='Confirm'
+          id='submitUpdateService'
+          name='SubmitUpdateService'
+        />
+      </form>
+    </div>
+  </div>
+</div>

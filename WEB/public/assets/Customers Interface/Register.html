@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="/Font Awesome/Font Awesome Pro v5.12.0/css/all.css">
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body onload="loader()">
+
+    <div class="registerbox">
+      <div class="regcountainer">
+
+        <div class="heroreg1">
+          <img src="/assets/images/undraw_online_ad_re_ol62.svg" alt="">
+        </div>
+
+        <div class="heroreg2">
+          <div class="registerhero1">
+            <h1>Sign Up <i class="fad fa-users"></i></h1>
+            <button class="signinBTN">
+              <a href="./index.html">Sign In</a>
+              <i class="fad fa-sign-in-alt"></i>
+            </button>
+          </div>
+  
+          <div class="registerhero2">
+            <form action="" id="registrationForm" method="POST">
+              <div class="regdiv1">
+                <label for="Fullname"><i class="fad fa-user"></i> Fullname:</label>
+                  <input class="input" type="text" id="FullName" placeholder="Name ex.(Jeff Almarez)" required />
+                  
+                  <label for="Gender"><i class="far fa-venus-mars"></i> Gender:</label>
+                  <select name="Gender" id="Gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+  
+                  <label for="Address"
+                    ><i class="fad fa-map-marker-alt"></i> Address:</label
+                  >
+                  <input class="input" type="text" id="Address" required/>
+  
+                  <label for="Age"><i class="fab fa-gratipay"></i> Age:</label>
+                  <input class="input" type="number" id="Age" pattern="\d{2}" min="18" max="80" required/>
+              </div>
+              
+              <div class="regdiv2">
+                <label for="ContactNumber"
+                    ><i class="fad fa-mobile-alt"></i> Contact Number:</label
+                  >
+                  <input class="input" type="number" placeholder="09*********" id="ContactNumber" required/>
+  
+                  <label for="Email"
+                    ><i class="fad fa-envelope-open-text"></i> Email:</label
+                  >
+                  <input class="input" type="email" id="Email" required/>
+  
+                  <label for="Password"><i class="fad fa-lock-alt"></i> Password:</label>
+                  
+                  <div class="input-text">
+                    <input class="input" type="password" id="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></input>
+                    <span class="eye2" onClick="myFunctionpassword()">
+                      <i id="hide1" class="fal fa-eye active"></i>
+                      <i id="hideme" class="fal fa-eye-slash active"></i>
+                    </span>
+                  </div>
+
+                  <div class="accept">
+                    <input type="checkbox" required>
+                    <p>I agree to the <a href="./Terms and Condition.html">Terms and Condition</a></p>
+                  </div>
+  
+                  <input class="Submitbtn" name="submit" class="" type="submit" value="Register" id="Submitbtn">
+              </div>
+                  
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/Scripts/Register.js"></script>
+    <script>
+      function myFunctionpassword() {
+        const a = document.getElementById("Password");
+        const b = document.getElementById("hide1");
+        const c = document.getElementById("hideme");
+
+        if (a.type === "password") {
+          a.type = "text";
+          b.style.display = none;
+          c.style.display = block;
+        } else {
+          a.type = "password";
+          b.style.display = block;
+          c.style.display = none;
+        }
+      }
+    </script>
+    <script>
+      // let Spinner = document.querySelector('.mainLoad');
+
+      // window.addEventListener('load', function (){
+        // Spinner.parentElement.removeChild(Spinner);
+      // });
+
+      var myloader;
+
+      function myloader() {
+        myloader = setTimeout(showPage, 3000);
+      }
+    </script>
+  </body>
+</html>

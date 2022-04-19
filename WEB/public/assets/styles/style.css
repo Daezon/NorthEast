@@ -2271,3 +2271,20 @@ h1.loader {
   padding: 10px;
   margin: 10px;
 }
+
+/* multi-select START*/
+/* #Services {
+  background-color: #232323;
+} */
+
+.mul-select {
+  background-color: #232323;
+  width: 100%;
+}
+
+.select2-selection_redered {
+  height: 100%;
+  width: 100%;
+}
+
+/* multi-select END*/

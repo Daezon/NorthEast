@@ -1,183 +1,136 @@
 <div>
   <nav>
-    <div class='logo'>
+    <div class="logo">
       {{! <i class='fab fa-neos icon icons'></i> }}
       NorthEast
     </div>
-    <label for='btn' class='icon'>
-      <span class='fa fa-bars'></span>
+    <label for="btn" class="icon">
+      <span class="fa fa-bars"></span>
     </label>
-    <input type='checkbox' id='btn' />
+    <input type="checkbox" id="btn" />
     <ul>
       <li>
-        <a href='http://localhost:8282/home'>Home
-          <i class='bx bx-home'></i></a>
+        <a href="http://localhost:8282/home">Home
+          <i class="bx bx-home"></i></a>
       </li>
       <li>
-        <a href='http://localhost:8282/Services'>Service
-          <i class='bx bx-wrench'></i></a>
+        <a href="http://localhost:8282/Services">Service
+          <i class="bx bx-wrench"></i></a>
       </li>
       <li>
-        <a href='http://localhost:8282/Products'>Product
-          <i class='bx bx-cart'></i></a>
+        <a href="http://localhost:8282/Products">Product
+          <i class="bx bx-cart"></i></a>
       </li>
       <li>
-        <a href='http://localhost:8282/Booking'>Booking
-          <i class='bx bx-book-bookmark'></i></a>
+        <a href="http://localhost:8282/Booking">Booking
+          <i class="bx bx-book-bookmark"></i></a>
       </li>
       <li>
-        <a href='http://localhost:8282/Notification'>Notification
-          <i class='bx bx-bell'></i></a>
+        <a href="http://localhost:8282/Notification">Notification
+          <i class="bx bx-bell"></i></a>
       </li>
       <li>
-        <a href='http://localhost:8282/Login'>Log Out
-          <i class='fad fa-sign-out-alt'></i></a>
+        <a href="http://localhost:8282/Login">Log Out
+          <i class="fad fa-sign-out-alt"></i></a>
       </li>
     </ul>
   </nav>
 
-  <div class='bookingMain'>
-    <div class='BookingTitle'>
+  <div class="bookingMain">
+    <div class="BookingTitle">
       <h1>Booking</h1>
     </div>
 
-    <div class='Bookcountainer'>
-      <div class='Bookhero1'>
-        <h1>Scheduling Form <i class='bx bx-book-bookmark'></i></h1>
+    <div class="Bookcountainer">
+      <div class="Bookhero1">
+        <h1>Scheduling Form <i class="bx bx-book-bookmark"></i></h1>
       </div>
 
-      <div class='Bookhero2'>
-        <h2 class='AlertsLOGIN'>{{resData.message}}</h2>
-        <div class='book1'>
-          <form action='/Booking' method='POST'>
-            <div class='bookingHERO1'>
+      <div class="Bookhero2">
+        <h2 class="AlertsLOGIN">{{resData.message}}</h2>
+        <div class="book1">
+          <form action="/Booking" method="POST">
+            <div class="bookingHERO1">
 
-              <label for='CarandModel'><i class='fad fa-cars'></i>
+              <label for="CarandModel"><i class="fad fa-cars"></i>
                 Car and Model:</label>
               <input
-                type='text'
-                name='CarandModel'
-                id='CarandModel'
-                placeholder='Honda Civic A/T CVT 2021'
+                type="text"
+                name="CarandModel"
+                id="CarandModel"
+                placeholder="Honda Civic A/T CVT 2021"
                 required
               />
 
-              <label for='Fullname'><i class='fad fa-user'></i>
+              <label for="Fullname"><i class="fad fa-user"></i>
                 Fullname:</label>
-              <input type='text' name='FullName' id='Fullname' required />
+              <input type="text" name="FullName" id="Fullname" required />
 
-              <label for='CarMileage'><i class='fad fa-map-marker-alt'></i>
+              <label for="CarMileage"><i class="fad fa-map-marker-alt"></i>
                 Car Mileage:</label>
               <input
-                type='text'
-                name='CarMileage'
-                id='CarMileage'
-                placeholder='20,000km'
+                type="text"
+                name="CarMileage"
+                id="CarMileage"
+                placeholder="20,000km"
                 required
               />
 
-              <label for='ContactNumber'><i class='fad fa-mobile-alt'></i>
+              <label for="ContactNumber"><i class="fad fa-mobile-alt"></i>
                 Contact Number:</label>
               <input
-                type='number'
-                name='ContactNumber'
-                id='ContactNumber'
-                placeholder='09*********'
+                type="number"
+                name="ContactNumber"
+                id="ContactNumber"
+                placeholder="09*********"
                 required
               />
             </div>
 
-            <div class='bookingHERO2'>
-              <label for='Services'><i class='fas fa-tools'></i>
+            <div class="bookingHERO2">
+              <label for="Services"><i class="fas fa-tools"></i>
                 Services:</label>
-              <select name='Services' id='Services' required>
+              <select
+                name="Services"
+                class="mul-select"
+                id="Services"
+                multiple="true"
+                required
+              >
                 {{#each resData.data}}
                   <option
-                    value='{{{_id}}}'
+                    value="{{{_id}}}"
                   >{{{Servicename}}}/{{{Time}}}</option>
                 {{/each}}
-                {{! <option value='Compiterized 4 Wheel Alignment'>Compiterized
-                  Wheel Alignment</option>
-                <option value='Transmission and Differential Change oil'>
-                  Transmission and Differential Change oil
-                </option>
-                <option value='Alarm Installation and Repair'>Alarm Installation
-                  and Repair</option>
-                <option value='Interior Disinfection and Rejuvinating'>
-                  Interior Disinfection and Rejuvinating
-                </option>
-                <option value='Engine Overhauling'>Engine Overhauling</option>
-                <option value='Top Overhaul'>Top Overhaul</option>
-                <option value='Electrical wiring and trouble shooting'>
-                  Electrical wiring and trouble shooting
-                </option>
-                <option value='Timing Belt Replacement'>Timing Belt Replacement</option>
-                <option value='Computered Wheel Balancing'>Computered Wheel
-                  Balancing</option>
-                <option value='Headlight Aiming'>Headlight Aiming</option>
-                <option value='Dash Cam and Stereo Installation'>Dash Cam and
-                  Stereo Installation</option>
-                <option value='EFI Diagnostic Scanning'>EFI Diagnostic Scanning</option>
-                <option value='Automotive Battery Re-charging'>Automotive
-                  Battery Re-charging</option>
-                <option value='Starting System Repair'>Starting System Repair</option>
-                <option value='Charging System Repair'>Charging System Repair</option>
-                <option value='Clutch System Repair'>Clutch System Repair</option>
-                <option value='Transfer Case gear oil replace'>Transfer Case
-                  gear oil replace</option>
-                <option value='ATF Exchange / Dialysis Service'>ATF Exchange /
-                  Dialysis Service</option>
-                <option value='Quick lube Change Oil'>Quick lube Change Oil</option>
-                <option value='Radiator Flushing'>Radiator Flushing</option>
-                <option value='Power Steering Flushing and Cleaning'>Power
-                  Steering Flushing and Cleaning</option>
-                <option value='Central locking System Repair'>Central locking
-                  System Repair</option>
-                <option value='Windshield Washer and Wiper Repair'>Windshield
-                  Washer and Wiper Repair</option>
-                <option value='Brake Fluid Flashing'>Brake Fluid Flashing</option>
-                <option value='Suspension and Steering Repair'>Suspension and
-                  Steering Repair</option>
-                <option value='Brake Disk/ Drum Re-Facing'>Brake Disk/ Drum
-                  Re-Facing</option>
-                <option value='Brake Caliper/ Cylinder Overhauling'>Brake
-                  Caliper/ Cylinder Overhauling</option>
-                <option value='Brake Cleaning Service'>Brake Cleaning Service</option>
-                <option value='Cold Patch Tubeless Vulcanizing'>Cold Patch
-                  Tubeless Vulcanizing</option>
-                <option value='String Type Tubeless Vulcanizing'>String Type
-                  Tubeless Vulcanizing</option>
-                <option value='Nitrogen Air Filling'>Nitrogen Air Filling</option>
-                <option value='Precision Tire Mounting'>Precision Tire Mounting</option>
-                <option value='Other Service'>Other Service</option> }}
+
               </select>
 
-              <label for='Day'><i class='fas fa-calendar-week'></i>
+              <label for="Day"><i class="fas fa-calendar-week"></i>
                 Date:</label>
-              <input type='date' name='Day' id='Day' />
+              <input type="date" name="Day" id="Day" />
 
-              <label for='Time'><i class='far fa-alarm-clock'></i> Time:</label>
-              <select id='Time' name='Time' required>
-                <option value='8:00am' name='Time'>8:00am</option>
-                <option value='9:00am' name='Time'>9:00am</option>
-                <option value='10:00am' name='Time'>10:00am</option>
-                <option value='11:00am' name='Time'>11:00am</option>
-                <option value='1:00pm' name='Time'>1:00pm</option>
-                <option value='2:00pm' name='Time'>2:00pm</option>
-                <option value='3:00pm' name='Time'>3:00pm</option>
-                <option value='4:00pm' name='Time'>4:00pm</option>
+              <label for="Time"><i class="far fa-alarm-clock"></i> Time:</label>
+              <select id="Time" name="Time" required>
+                <option value="8:00am" name="Time">8:00am</option>
+                <option value="9:00am" name="Time">9:00am</option>
+                <option value="10:00am" name="Time">10:00am</option>
+                <option value="11:00am" name="Time">11:00am</option>
+                <option value="1:00pm" name="Time">1:00pm</option>
+                <option value="2:00pm" name="Time">2:00pm</option>
+                <option value="3:00pm" name="Time">3:00pm</option>
+                <option value="4:00pm" name="Time">4:00pm</option>
               </select>
 
-              <label for='RequestType' id='RequestType1'></label>
-              <select name='RequestType' id='RequestType2'>
-                <option value='Default'>Default</option>
+              <label for="RequestType" id="RequestType1"></label>
+              <select name="RequestType" id="RequestType2">
+                <option value="Default">Default</option>
               </select>
 
               <input
-                type='submit'
-                value='Send Request'
-                id='bookingBtn'
-                class='bookingBtn'
+                type="submit"
+                value="Send Request"
+                id="bookingBtn"
+                class="bookingBtn"
               />
               {{!-- <h1>{{resData.message}}</h1> --}}
             </div>

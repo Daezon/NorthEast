@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
 body {
   margin: 0;
@@ -38,7 +38,7 @@ body {
 
 .name {
   background-color: #1f4e5f;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: white;
   padding: 10px;
   border-radius: 10px;
@@ -59,7 +59,7 @@ body {
 } */
 
 .serviceTime {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: #1f4e5f;
   font-size: 15pt;
 }
@@ -83,7 +83,7 @@ body {
 
 .Tablemanage h3 {
   color: #132c33;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-size: 25pt;
   margin-top: 20px;
 }
@@ -96,7 +96,7 @@ body {
   text-decoration: none;
   border-radius: 10px;
   cursor: pointer;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-size: 12pt;
   font-weight: 600;
 }
@@ -108,7 +108,7 @@ body {
 }
 
 .Tablemanage label {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-size: 13pt;
   font-weight: bolder;
 }
@@ -125,7 +125,7 @@ body {
 }
 
 .Tablemanage select {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   border-radius: 10px;
   cursor: pointer;
   outline: none;
@@ -225,7 +225,7 @@ body {
   text-align: center;
   align-items: center;
   color: #e5e5e5;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-size: 20pt;
 }
 
@@ -287,7 +287,7 @@ body {
   text-align: center;
   align-items: center;
   color: #e5e5e5;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
 }
 
 .toggleNav {
@@ -359,7 +359,7 @@ body {
 
 .name {
   background-color: #1f4e5f;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: white;
   padding: 10px;
   border-radius: 10px;
@@ -368,7 +368,7 @@ body {
 }
 
 .serviceTime {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: #1f4e5f;
   font-size: 15pt;
 }
@@ -403,7 +403,7 @@ body {
 .searchBTN {
   justify-content: center;
   align-items: center;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   border: none;
   height: 54px;
   width: 54px;
@@ -434,7 +434,7 @@ body {
   width: 35%;
   border-radius: 25px;
   padding: 15px;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: #1f4e5f;
   font-size: 13pt;
   outline: none;
@@ -451,8 +451,8 @@ body {
 }
 
 .ServiceWebTitle {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   color: #058d8f;
   font-size: 15pt;
   border-bottom: 2px solid #13213c;
@@ -461,7 +461,7 @@ body {
 /*add btns*/
 
 .add {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: #1f4e5f;
   font-size: 13pt;
   height: 57px;
@@ -498,7 +498,7 @@ body {
 }
 
 .titlena {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: #f4f7f7;
 }
 
@@ -523,14 +523,14 @@ body {
 }
 
 .addimageContainer label {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: #f4f7f7;
   font-size: 15pt;
   margin: 5px;
 }
 
 .servicetext {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   padding: 10px;
   margin: 10px;
   height: 8%;
@@ -540,7 +540,7 @@ body {
 }
 
 .chooseFile {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   padding: 10px;
   margin: 10px;
   height: 7%;
@@ -561,7 +561,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   background: #3d6b78;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   transition: all 0.5s ease 0s;
 }
 
@@ -580,7 +580,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   margin: 10px;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   transition: all 0.5s ease 0s;
   font-weight: bold;
 }
@@ -601,7 +601,7 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   background: #3d6b78;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   transition: all 0.5s ease 0s;
 }
 
@@ -624,7 +624,7 @@ body {
 }
 
 .titlena {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: #f4f7f7;
 }
 
@@ -649,14 +649,14 @@ body {
 }
 
 .addimageContainer label {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: #f4f7f7;
   font-size: 15pt;
   margin: 5px;
 }
 
 .servicetext {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   padding: 10px;
   margin: 10px;
   height: 8%;
@@ -666,7 +666,7 @@ body {
 }
 
 .chooseFile {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   padding: 10px;
   margin: 10px;
   height: 7%;
@@ -687,7 +687,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   background: #3d6b78;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   transition: all 0.5s ease 0s;
 }
 
@@ -706,7 +706,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   margin: 10px;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   transition: all 0.5s ease 0s;
   font-weight: bold;
 }
@@ -727,7 +727,7 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   background: #3d6b78;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   transition: all 0.5s ease 0s;
 }
 
@@ -768,7 +768,7 @@ body {
 
 .productName {
   background-color: #1f4e5f;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: white;
   padding: 10px;
   border-radius: 10px;
@@ -776,7 +776,7 @@ body {
 }
 
 .ProductPrice {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: #1f4e5f;
   font-size: 15pt;
 }
@@ -946,7 +946,7 @@ body {
 .editBtn {
   height: 100%;
   width: 45%;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   background-color: rgb(218, 12, 12);
   color: #f4f7f7;
   font-weight: 600;
@@ -965,7 +965,7 @@ body {
 .deleteBtn {
   height: 100%;
   width: 45%;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   background-color: #058d8f;
   color: #f4f7f7;
   font-weight: 600;
@@ -1003,7 +1003,7 @@ body {
 }
 
 .titlena {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: #f4f7f7;
 }
 
@@ -1028,14 +1028,14 @@ body {
 }
 
 .updateimageContainer label {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: #f4f7f7;
   font-size: 15pt;
   margin: 5px;
 }
 
 .ProductUpdatetext {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   padding: 10px;
   margin: 10px;
   height: 8%;
@@ -1045,7 +1045,7 @@ body {
 }
 
 .chooseFile {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   padding: 10px;
   margin: 10px;
   height: 7%;
@@ -1066,7 +1066,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   background: #3d6b78;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   transition: all 0.5s ease 0s;
 }
 
@@ -1085,7 +1085,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   margin: 10px;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   transition: all 0.5s ease 0s;
   font-weight: bold;
 }
@@ -1106,7 +1106,7 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   background: #3d6b78;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   transition: all 0.5s ease 0s;
 }
 
@@ -1131,7 +1131,7 @@ body {
 }
 
 .titlena {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: #f4f7f7;
 }
 
@@ -1156,14 +1156,14 @@ body {
 }
 
 .updateimageContainer label {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: #f4f7f7;
   font-size: 15pt;
   margin: 5px;
 }
 
 .ServiceUpdatetext {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   padding: 10px;
   margin: 10px;
   height: 8%;
@@ -1173,7 +1173,7 @@ body {
 }
 
 .chooseFile {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   padding: 10px;
   margin: 10px;
   height: 7%;
@@ -1194,7 +1194,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   background: #3d6b78;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   transition: all 0.5s ease 0s;
 }
 
@@ -1213,7 +1213,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   margin: 10px;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   transition: all 0.5s ease 0s;
   font-weight: bold;
 }
@@ -1234,7 +1234,7 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   background: #3d6b78;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   transition: all 0.5s ease 0s;
 }
 

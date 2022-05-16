@@ -49,6 +49,12 @@ exports.condition = async (req, res) => {
     layout: "customer/condition",
   });
 };
+
+exports.customerCart = async (req, res) => {
+  res.render("customer/customerCart", {
+    layout: "customer/customerCart",
+  });
+};
 //register
 exports.userregister = async (req, res) => {
   const options = {

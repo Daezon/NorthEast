@@ -1,42 +1,44 @@
 <div>
   <nav>
-    <div class='logo'>
-      {{!-- <i class='fab fa-neos icon icons'></i> --}}
+    <div class="logo">
+      {{! <i class='fab fa-neos icon icons'></i> }}
       NorthEast
     </div>
-    <label for='btn' class='icon'>
-      <span class='fa fa-bars'></span>
+    <label for="btn" class="icon">
+      <span class="fa fa-bars"></span>
     </label>
-    <input type='checkbox' id='btn' />
+    <input type="checkbox" id="btn" />
     <ul>
       <li>
-        <a href='http://localhost:8282/home'>Home
-          <i class='bx bx-home'></i>
+        <a href="http://localhost:8282/home">Home
+          <i class="bx bx-home"></i></a>
       </li>
       <li>
-        <a href='http://localhost:8282/Services'>Service
-          <i class='bx bx-wrench' ></i>
+        <a href="http://localhost:8282/Services">Service
+          <i class="bx bx-wrench"></i></a>
       </li>
       <li>
-        <a href='http://localhost:8282/Products'>Product
-          <i class='bx bx-cart' ></i>
+        <a href="http://localhost:8282/Products">Product
+          <i class="bx bx-store-alt"></i>
+        </a>
       </li>
       <li>
-        <a href='http://localhost:8282/Booking'>Booking
-          <i class='bx bx-book-bookmark' ></i>
+        <a href="http://localhost:8282/CART">Cart
+          <i class="bx bx-cart"></i>
+        </a>
       </li>
       <li>
-        <a href='http://localhost:8282/Notification'>Notification
-          <i class='bx bx-bell' ></i>
+        <a href="http://localhost:8282/Notification">Notification
+          <i class="bx bx-bell"></i></a>
       </li>
       <li>
-        <a href='http://localhost:8282/Login'>Log Out
-          <i class='fad fa-sign-out-alt'></i></a>
+        <a href="http://localhost:8282/Login">Log Out
+          <i class="fad fa-sign-out-alt"></i></a>
       </li>
     </ul>
   </nav>
 
-  <div class='titleProduct'>
+  <div class="titleProduct">
     <h1>Product</h1>
   </div>
 
@@ -50,15 +52,24 @@
     <input type='button' value='Search' class='searchBTN' />
   </div> }}
 
-  <div class='wrapperGrid'>
+  <div class="wrapperGrid">
 
     {{#each resData.data}}
-      <div class='containerServ'>
-        <h1 class='name' name>{{{Productname}}}</h1>
-        <div class='imghero'>
-          <img src='{{{Image}}}' alt='' class='serviceImage' style='height: 250px; width:250px'/>
+      <div class="containerServ">
+        <h1 class="name" name>{{{Productname}}}</h1>
+        <div class="imghero">
+          <img
+            src="{{{Image}}}"
+            alt=""
+            class="serviceImage"
+            style="height: 250px; width:250px"
+          />
         </div>
-        <p class='serviceTime'>{{{Price}}}</p>
+        <p class="serviceTime">{{{Price}}}</p>
+
+        <form action="">
+          <input type="button" value="Add to Cart" />
+        </form>
       </div>
     {{/each}}
 

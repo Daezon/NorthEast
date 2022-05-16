@@ -41,6 +41,7 @@ body {
 nav {
   background-color: #132c33;
   color: #f4f7f7;
+  width: auto;
 }
 
 nav:after {
@@ -131,6 +132,151 @@ nav ul ul ul li {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-decoration: none;
   color: #199de4;
+}
+
+.cartMain {
+  height: 90%;
+  width: 100%;
+  background-color: #d8e3e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cartBox {
+  height: 90%;
+  width: 100%;
+  background-color: #d8e3e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* table */
+.Tablemanage {
+  position: relative;
+  height: 100%;
+  width: 68%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.Tablemanage h3 {
+  color: #132c33;
+  font-family: "Roboto Slab", serif;
+  font-size: 25pt;
+  margin-top: 20px;
+}
+
+.Tablemanage a {
+  background-color: #126e82;
+  padding: 10px;
+  margin: 5px;
+  color: #f4f7f7;
+  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Roboto Slab", serif;
+  font-size: 12pt;
+  font-weight: 600;
+}
+
+.Tablemanage a:hover {
+  background-color: #51c4d3;
+  text-decoration: none;
+  color: #232323;
+}
+
+.Tablemanage label {
+  font-family: "Roboto Slab", serif;
+  font-size: 13pt;
+  font-weight: bolder;
+}
+
+#data_length {
+  display: none;
+}
+
+.Tablemanage input {
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 10px;
+}
+
+.Tablemanage select {
+  font-family: "Roboto Slab", serif;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  height: 40px;
+}
+
+.Tablemanage option {
+  border-radius: 10px;
+  outline: none;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+}
+
+/*table styles*/
+#data {
+  height: 50%;
+  border-collapse: collapse;
+  border-radius: 10px 10px 10px 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.178);
+}
+
+#data thead tr {
+  background-color: #058d8f;
+  color: #f4f7f7;
+  font-weight: bold;
+}
+
+#removeCart {
+  background-color: #058d8f;
+  transition: all 0.3s ease 0s;
+}
+
+#removeCart:hover {
+  background-color: #132c33;
+  color: #f4f7f7;
+}
+
+table img {
+  border-radius: 10px;
+}
+
+.subTotal {
+  margin-top: 10px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+/* #data th,
+  #data td {
+
+  } */
+/* 
+  #data tbody,
+  tr {
+    border-bottom: 2px solid #232332;
+  } */
+
+#data tbody tr:nth-child(even) {
+  background-color: #92d7d8;
 }
 
 .show,
@@ -1518,7 +1664,79 @@ input:checked[type="checkbox"]:before {
 .clearfix {
   clear: both;
 }
-/* for tablet */
+
+/* multiselect */
+span.multiselect-native-select {
+  position: relative;
+}
+span.multiselect-native-select select {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px -1px -1px -3px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  left: 50%;
+  top: 30px;
+}
+.multiselect-container {
+  position: absolute;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.multiselect-container .input-group {
+  margin: 5px;
+}
+.multiselect-container > li {
+  padding: 0;
+}
+.multiselect-container > li > a.multiselect-all label {
+  font-weight: 700;
+}
+.multiselect-container > li.multiselect-group label {
+  margin: 0;
+  padding: 3px 20px 3px 20px;
+  height: 100%;
+  font-weight: 700;
+}
+.multiselect-container > li.multiselect-group-clickable label {
+  cursor: pointer;
+}
+.multiselect-container > li > a {
+  padding: 0;
+}
+.multiselect-container > li > a > label {
+  margin: 0;
+  height: 100%;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 3px 0 3px 30px;
+}
+.multiselect-container > li > a > label.radio,
+.multiselect-container > li > a > label.checkbox {
+  margin: 0;
+}
+.multiselect-container > li > a > label > input[type="checkbox"] {
+  margin-bottom: 5px;
+}
+.btn-group > .btn-group:nth-child(2) > .multiselect.btn {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.form-inline .multiselect-container label.checkbox,
+.form-inline .multiselect-container label.radio {
+  padding: 3px 20px 3px 40px;
+}
+.form-inline .multiselect-container li a label.checkbox input[type="checkbox"],
+.form-inline .multiselect-container li a label.radio input[type="radio"] {
+  margin-left: -20px;
+  margin-right: 0;
+}
+/* multi-end */
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .body {
     padding: 0;

@@ -1,0 +1,225 @@
+<div>
+  <nav>
+    <div class="logo">
+      NorthEast
+    </div>
+    <label for="btn" class="icon">
+      <span class="fa fa-bars"></span>
+    </label>
+    <input type="checkbox" id="btn" />
+    <ul>
+      <li>
+        <a href="http://localhost:8282/home">Home
+          <i class="bx bx-home"> </i></a>
+      </li>
+      <li>
+        <a href="http://localhost:8282/Services">Service
+          <i class="bx bx-wrench"></i>
+        </a>
+      </li>
+      <li>
+        <a href="http://localhost:8282/Products">Product
+          <i class="bx bx-store-alt"></i>
+        </a>
+      </li>
+      <li>
+        <a href="http://localhost:8282/CART">Cart
+          <i class="bx bx-cart"></i>
+        </a>
+      </li>
+      <li>
+        <a href="http://localhost:8282/Notification">Notification
+          <i class="bx bx-bell"></i>
+        </a>
+      </li>
+      <li>
+        <a href="http://localhost:8282/Login">Log Out
+          <i class="fad fa-sign-out-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="cartMain">
+    <div class="titleProduct">
+      <h1>Your Service Cart</h1>
+    </div>
+
+    <div class="cartBox">
+      {{! <table>
+        <thead>
+          <th>Service</th>
+          <th></th>
+          <th>Remove</th>
+          <th>Time</th>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>
+              <img
+                src="/assets/image_service/1644776268710--Engine Overhauling 23h 45m.jpg"
+                alt=""
+                height="150px"
+                width="150px"
+              />
+            </td>
+            <td>Engine Overhauling</td>
+
+            <td>
+              <form action="">
+                <input type="submit" value="remove" />
+              </form>
+            </td>
+            <td>1.50</td>
+          </tr>
+
+          <tr>
+            <td>
+              <img
+                src="/assets/image_service/1644776268710--Engine Overhauling 23h 45m.jpg"
+                alt=""
+                height="150px"
+                width="150px"
+              />
+            </td>
+            <td>Engine Overhauling</td>
+
+            <td>
+              <form action="">
+                <input type="submit" value="remove" />
+              </form>
+            </td>
+            <td>1.50</td>
+          </tr>
+
+          <tr>
+            <td>
+              <img
+                src="/assets/image_service/1644776268710--Engine Overhauling 23h 45m.jpg"
+                alt=""
+                height="150px"
+                width="150px"
+              />
+            </td>
+            <td>Engine Overhauling</td>
+
+            <td>
+              <form action="">
+                <input type="submit" value="remove" />
+              </form>
+            </td>
+            <td>1.50</td>
+          </tr>
+
+        </tbody>
+
+      </table> }}
+
+      <div class="Tablemanage">
+
+        <div class="col">
+          <div class="table-container">
+            <h1 class="tableHeading"></h1>
+            <table
+              id="data"
+              class="table table-striped table-bordered"
+              style="width:100%"
+            >
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Service Name</th>
+                  <th>Time</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {{!-- {{#each resData.data}} --}}
+                <tr>
+                  <td data-lable="Image" name="Image"><img
+                      src="/assets/images/overhauling.png"
+                      alt=""
+                      height="80px"
+                      width="80px"
+                    /></td>
+                  <td
+                    data-lable="ServiceName"
+                    name="ServiceName"
+                  >Overhauling</td>
+                  <td data-lable="Time" name="Time">24</td>
+                  <td data-lable="remove" name="remove"><form action="">
+                      <input
+                        type="submit"
+                        value="Remove"
+                        class="removeCart"
+                        id="removeCart"
+                      />
+                    </form></td>
+
+                </tr>
+
+                <tr>
+                  <td data-lable="Image" name="Image"><img
+                      src="/assets/images/overhauling.png"
+                      alt=""
+                      height="80px"
+                      width="80px"
+                    /></td>
+                  <td
+                    data-lable="ServiceName"
+                    name="ServiceName"
+                  >Overhauling</td>
+                  <td data-lable="Time" name="Time">24</td>
+                  <td data-lable="remove" name="remove"><form action="">
+                      <input
+                        type="submit"
+                        value="Remove"
+                        class="removeCart"
+                        id="removeCart"
+                      />
+
+                    </form></td>
+
+                </tr>
+
+                <tr>
+                  <td data-lable="Image" name="Image"><img
+                      src="/assets/images/overhauling.png"
+                      alt=""
+                      height="80px"
+                      width="80px"
+                    /></td>
+                  <td
+                    data-lable="ServiceName"
+                    name="ServiceName"
+                  >Overhauling</td>
+                  <td data-lable="Time" name="Time">24</td>
+                  <td data-lable="remove" name="remove">
+                    <form action="">
+                      <input
+                        type="submit"
+                        value="Remove"
+                        class="removeCart"
+                        id="removeCart"
+                      />
+                    </form>
+                  </td>
+
+                </tr>
+                {{!-- {{/each}} --}}
+              </tbody>
+            </table>
+          </div>
+          <div class="subTotal">
+            <label for="">Total Time: 24 hr</label>
+            <a href="http://localhost:8282/Booking">Send Schedule</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,5 +1,10 @@
 <html lang="en">
   <head>
+    <link
+      rel="shortcut icon"
+      href="/assets/images/finalLogo.png"
+      type="image/x-icon"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,6 +30,21 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
+    {{! multiSelect }}
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script
+      src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"
+    ></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="/assets/styles/multiSelect.css" />
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
+    ></script>
   </head>
   <body>
 
@@ -35,5 +55,12 @@
       if(x.className === "topnav"){ x.className += " responsive"; }else {
       x.className = "topnav"; } }
     </script>
+    <script src="/assets/Scripts/multiSelect.js"></script>
+    <script type="text/javascript">
+      $(function() { $('.multiselect-ui').multiselect({ includeSelectAllOption:
+      true }); });
+    </script>
+
+    <script src="/assets/Scripts/date.js"></script>
   </body>
 </html>

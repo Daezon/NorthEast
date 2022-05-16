@@ -19,11 +19,13 @@
       </li>
       <li>
         <a href="http://localhost:8282/Products">Product
-          <i class="bx bx-cart"></i></a>
+          <i class="bx bx-store-alt"></i>
+        </a>
       </li>
       <li>
-        <a href="http://localhost:8282/Booking">Booking
-          <i class="bx bx-book-bookmark"></i></a>
+        <a href="http://localhost:8282/CART">Cart
+          <i class="bx bx-cart"></i>
+        </a>
       </li>
       <li>
         <a href="http://localhost:8282/Notification">Notification
@@ -88,22 +90,44 @@
             </div>
 
             <div class="bookingHERO2">
-              <label for="Services"><i class="fas fa-tools"></i>
+              {{!-- <label for="Services"><i class="fas fa-tools"></i>
                 Services:</label>
-              <select
+              {{! <select
                 name="Services"
                 class="mul-select"
                 id="Services"
                 multiple="true"
                 required
-              >
-                {{#each resData.data}}
+              > }}
+              {{!-- {{#each resData.data}}
                   <option
                     value="{{{_id}}}"
                   >{{{Servicename}}}/{{{Time}}}</option>
-                {{/each}}
+                {{/each}} --}}
 
-              </select>
+              {{!-- <div class="row">
+                <div class="col">
+
+                  <div class="form-group">
+                    <select
+                      class="mul-select"
+                      name="Services"
+                      {{! id="Services" }}
+                      id="multiple-checkboxes"
+                      multiple="true"
+                      required
+                    >
+                      {{#each resData.data}}
+                        <option
+                          value="_id"
+                        >{{{Servicename}}}/{{{Time}}}</option>
+                      {{/each}}
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              {{! </select> }} --}}
 
               <label for="Day"><i class="fas fa-calendar-week"></i>
                 Date:</label>
@@ -132,6 +156,7 @@
                 id="bookingBtn"
                 class="bookingBtn"
               />
+
               {{!-- <h1>{{resData.message}}</h1> --}}
             </div>
           </form>

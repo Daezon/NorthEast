@@ -1,14 +1,13 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 body {
-  box-sizing: border-box;
-  width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 0;
+  width: auto;
   padding: 0;
   background-color: #d8e3e7;
 }
@@ -279,6 +278,379 @@ table img {
   background-color: #92d7d8;
 }
 
+/* calendar list start */
+.list-timeline {
+  margin: 0;
+  padding: 5px 0;
+  position: relative;
+}
+
+.list-timeline:before {
+  width: 1px;
+  background: #ccc;
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  content: "";
+}
+
+.list-timeline .list-timeline-item {
+  margin: 0;
+  padding: 0;
+  padding-left: 24px !important;
+  position: relative;
+}
+
+.list-timeline .list-timeline-item:before {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border: 2px solid #ccc;
+  position: absolute;
+  left: 0;
+  top: 4px;
+  content: "";
+  border-radius: 100%;
+  -webkit-transition: all 0.3 ease-in-out;
+  transition: all 0.3 ease-in-out;
+}
+
+.list-timeline .list-timeline-item[data-toggle="collapse"] {
+  cursor: pointer;
+}
+
+.list-timeline .list-timeline-item.active:before,
+.list-timeline .list-timeline-item.show:before {
+  background: #ccc;
+}
+
+.list-timeline.list-timeline-light .list-timeline-item.active:before,
+.list-timeline.list-timeline-light .list-timeline-item.show:before,
+.list-timeline.list-timeline-light:before {
+  background: #f8f9fa;
+}
+
+.list-timeline .list-timeline-item.list-timeline-item-marker-middle:before {
+  top: 50%;
+  margin-top: -6px;
+}
+
+.list-timeline.list-timeline-light .list-timeline-item:before {
+  border-color: #f8f9fa;
+}
+
+.list-timeline.list-timeline-grey .list-timeline-item.active:before,
+.list-timeline.list-timeline-grey .list-timeline-item.show:before,
+.list-timeline.list-timeline-grey:before {
+  background: #e9ecef;
+}
+
+.list-timeline.list-timeline-grey .list-timeline-item:before {
+  border-color: #e9ecef;
+}
+
+.list-timeline.list-timeline-grey-dark .list-timeline-item.active:before,
+.list-timeline.list-timeline-grey-dark .list-timeline-item.show:before,
+.list-timeline.list-timeline-grey-dark:before {
+  background: #495057;
+}
+
+.list-timeline.list-timeline-grey-dark .list-timeline-item:before {
+  border-color: #495057;
+}
+
+.list-timeline.list-timeline-primary .list-timeline-item.active:before,
+.list-timeline.list-timeline-primary .list-timeline-item.show:before,
+.list-timeline.list-timeline-primary:before {
+  background: #55a79a;
+}
+
+.list-timeline.list-timeline-primary .list-timeline-item:before {
+  border-color: #55a79a;
+}
+
+.list-timeline.list-timeline-primary-dark .list-timeline-item.active:before,
+.list-timeline.list-timeline-primary-dark .list-timeline-item.show:before,
+.list-timeline.list-timeline-primary-dark:before {
+  background: #33635c;
+}
+
+.list-timeline.list-timeline-primary-dark .list-timeline-item:before {
+  border-color: #33635c;
+}
+
+.list-timeline.list-timeline-primary-faded .list-timeline-item.active:before,
+.list-timeline.list-timeline-primary-faded .list-timeline-item.show:before,
+.list-timeline.list-timeline-primary-faded:before {
+  background: rgba(85, 167, 154, 0.3);
+}
+
+.list-timeline.list-timeline-primary-faded .list-timeline-item:before {
+  border-color: rgba(85, 167, 154, 0.3);
+}
+
+.list-timeline.list-timeline-info .list-timeline-item.active:before,
+.list-timeline.list-timeline-info .list-timeline-item.show:before,
+.list-timeline.list-timeline-info:before {
+  background: #17a2b8;
+}
+
+.list-timeline.list-timeline-info .list-timeline-item:before {
+  border-color: #17a2b8;
+}
+
+.list-timeline.list-timeline-success .list-timeline-item.active:before,
+.list-timeline.list-timeline-success .list-timeline-item.show:before,
+.list-timeline.list-timeline-success:before {
+  background: #28a745;
+}
+
+.list-timeline.list-timeline-success .list-timeline-item:before {
+  border-color: #28a745;
+}
+
+.list-timeline.list-timeline-warning .list-timeline-item.active:before,
+.list-timeline.list-timeline-warning .list-timeline-item.show:before,
+.list-timeline.list-timeline-warning:before {
+  background: #ffc107;
+}
+
+.list-timeline.list-timeline-warning .list-timeline-item:before {
+  border-color: #ffc107;
+}
+
+.list-timeline.list-timeline-danger .list-timeline-item.active:before,
+.list-timeline.list-timeline-danger .list-timeline-item.show:before,
+.list-timeline.list-timeline-danger:before {
+  background: #dc3545;
+}
+
+.list-timeline.list-timeline-danger .list-timeline-item:before {
+  border-color: #dc3545;
+}
+
+.list-timeline.list-timeline-dark .list-timeline-item.active:before,
+.list-timeline.list-timeline-dark .list-timeline-item.show:before,
+.list-timeline.list-timeline-dark:before {
+  background: #343a40;
+}
+
+.list-timeline.list-timeline-dark .list-timeline-item:before {
+  border-color: #343a40;
+}
+
+.list-timeline.list-timeline-secondary .list-timeline-item.active:before,
+.list-timeline.list-timeline-secondary .list-timeline-item.show:before,
+.list-timeline.list-timeline-secondary:before {
+  background: #6c757d;
+}
+
+.list-timeline.list-timeline-secondary .list-timeline-item:before {
+  border-color: #6c757d;
+}
+
+.list-timeline.list-timeline-black .list-timeline-item.active:before,
+.list-timeline.list-timeline-black .list-timeline-item.show:before,
+.list-timeline.list-timeline-black:before {
+  background: #000;
+}
+
+.list-timeline.list-timeline-black .list-timeline-item:before {
+  border-color: #000;
+}
+
+.list-timeline.list-timeline-white .list-timeline-item.active:before,
+.list-timeline.list-timeline-white .list-timeline-item.show:before,
+.list-timeline.list-timeline-white:before {
+  background: #fff;
+}
+
+.list-timeline.list-timeline-white .list-timeline-item:before {
+  border-color: #fff;
+}
+
+.list-timeline.list-timeline-green .list-timeline-item.active:before,
+.list-timeline.list-timeline-green .list-timeline-item.show:before,
+.list-timeline.list-timeline-green:before {
+  background: #55a79a;
+}
+
+.list-timeline.list-timeline-green .list-timeline-item:before {
+  border-color: #55a79a;
+}
+
+.list-timeline.list-timeline-red .list-timeline-item.active:before,
+.list-timeline.list-timeline-red .list-timeline-item.show:before,
+.list-timeline.list-timeline-red:before {
+  background: #be3e1d;
+}
+
+.list-timeline.list-timeline-red .list-timeline-item:before {
+  border-color: #be3e1d;
+}
+
+.list-timeline.list-timeline-blue .list-timeline-item.active:before,
+.list-timeline.list-timeline-blue .list-timeline-item.show:before,
+.list-timeline.list-timeline-blue:before {
+  background: #00adbb;
+}
+
+.list-timeline.list-timeline-blue .list-timeline-item:before {
+  border-color: #00adbb;
+}
+
+.list-timeline.list-timeline-purple .list-timeline-item.active:before,
+.list-timeline.list-timeline-purple .list-timeline-item.show:before,
+.list-timeline.list-timeline-purple:before {
+  background: #b771b0;
+}
+
+.list-timeline.list-timeline-purple .list-timeline-item:before {
+  border-color: #b771b0;
+}
+
+.list-timeline.list-timeline-pink .list-timeline-item.active:before,
+.list-timeline.list-timeline-pink .list-timeline-item.show:before,
+.list-timeline.list-timeline-pink:before {
+  background: #cc164d;
+}
+
+.list-timeline.list-timeline-pink .list-timeline-item:before {
+  border-color: #cc164d;
+}
+
+.list-timeline.list-timeline-orange .list-timeline-item.active:before,
+.list-timeline.list-timeline-orange .list-timeline-item.show:before,
+.list-timeline.list-timeline-orange:before {
+  background: #e67e22;
+}
+
+.list-timeline.list-timeline-orange .list-timeline-item:before {
+  border-color: #e67e22;
+}
+
+.list-timeline.list-timeline-lime .list-timeline-item.active:before,
+.list-timeline.list-timeline-lime .list-timeline-item.show:before,
+.list-timeline.list-timeline-lime:before {
+  background: #b1dc44;
+}
+
+.list-timeline.list-timeline-lime .list-timeline-item:before {
+  border-color: #b1dc44;
+}
+
+.list-timeline.list-timeline-blue-dark .list-timeline-item.active:before,
+.list-timeline.list-timeline-blue-dark .list-timeline-item.show:before,
+.list-timeline.list-timeline-blue-dark:before {
+  background: #34495e;
+}
+
+.list-timeline.list-timeline-blue-dark .list-timeline-item:before {
+  border-color: #34495e;
+}
+
+.list-timeline.list-timeline-red-dark .list-timeline-item.active:before,
+.list-timeline.list-timeline-red-dark .list-timeline-item.show:before,
+.list-timeline.list-timeline-red-dark:before {
+  background: #a10f2b;
+}
+
+.list-timeline.list-timeline-red-dark .list-timeline-item:before {
+  border-color: #a10f2b;
+}
+
+.list-timeline.list-timeline-brown .list-timeline-item.active:before,
+.list-timeline.list-timeline-brown .list-timeline-item.show:before,
+.list-timeline.list-timeline-brown:before {
+  background: #91633c;
+}
+
+.list-timeline.list-timeline-brown .list-timeline-item:before {
+  border-color: #91633c;
+}
+
+.list-timeline.list-timeline-cyan-dark .list-timeline-item.active:before,
+.list-timeline.list-timeline-cyan-dark .list-timeline-item.show:before,
+.list-timeline.list-timeline-cyan-dark:before {
+  background: #008b8b;
+}
+
+.list-timeline.list-timeline-cyan-dark .list-timeline-item:before {
+  border-color: #008b8b;
+}
+
+.list-timeline.list-timeline-yellow .list-timeline-item.active:before,
+.list-timeline.list-timeline-yellow .list-timeline-item.show:before,
+.list-timeline.list-timeline-yellow:before {
+  background: #d4ac0d;
+}
+
+.list-timeline.list-timeline-yellow .list-timeline-item:before {
+  border-color: #d4ac0d;
+}
+
+.list-timeline.list-timeline-slate .list-timeline-item.active:before,
+.list-timeline.list-timeline-slate .list-timeline-item.show:before,
+.list-timeline.list-timeline-slate:before {
+  background: #5d6d7e;
+}
+
+.list-timeline.list-timeline-slate .list-timeline-item:before {
+  border-color: #5d6d7e;
+}
+
+.list-timeline.list-timeline-olive .list-timeline-item.active:before,
+.list-timeline.list-timeline-olive .list-timeline-item.show:before,
+.list-timeline.list-timeline-olive:before {
+  background: olive;
+}
+
+.list-timeline.list-timeline-olive .list-timeline-item:before {
+  border-color: olive;
+}
+
+.list-timeline.list-timeline-teal .list-timeline-item.active:before,
+.list-timeline.list-timeline-teal .list-timeline-item.show:before,
+.list-timeline.list-timeline-teal:before {
+  background: teal;
+}
+
+.list-timeline.list-timeline-teal .list-timeline-item:before {
+  border-color: teal;
+}
+
+.list-timeline.list-timeline-green-bright .list-timeline-item.active:before,
+.list-timeline.list-timeline-green-bright .list-timeline-item.show:before,
+.list-timeline.list-timeline-green-bright:before {
+  background: #2ecc71;
+}
+
+.list-timeline.list-timeline-green-bright .list-timeline-item:before {
+  border-color: #2ecc71;
+}
+/* calendar list end */
+
+.textArea {
+  /* display: flex;
+  height: 8%;
+  width: 100%;
+  outline: none; */
+  height: 10%;
+  width: 100%;
+  background-color: #575757;
+  border: #575757;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 15pt;
+  margin: 10px;
+  padding-left: 10px;
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+  outline: none;
+}
+
 .show,
 .icon,
 #btn,
@@ -286,7 +658,7 @@ table img {
   display: none;
 }
 
-@media all and (max-width: 1024px) {
+/* @media all and (max-width: 1024px) {
   nav ul {
     background-color: none;
     margin-right: 0px;
@@ -366,11 +738,11 @@ table img {
   [id^="btn"]:checked + ul {
     display: block;
   }
-}
+} */
 
 .mainpage {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -431,8 +803,7 @@ table img {
   border: none;
   border-radius: 10px 10px 0px 0px;
   display: flex;
-  padding: 10px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   border-bottom: 2px #42424260 solid;
@@ -464,8 +835,8 @@ table img {
 }
 
 .loginform form {
-  height: 100%;
-  width: 100%;
+  height: 90%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -527,9 +898,9 @@ table img {
   font-family: "Roboto Slab", serif;
 }
 
-.eye {
+/* .eye {
   position: absolute;
-}
+} */
 
 .eye i {
   margin-left: 20%;
@@ -565,7 +936,7 @@ table img {
 
 .mainpage2 {
   height: 100vh;
-  width: 100vw;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -656,7 +1027,10 @@ table img {
 .registerbox {
   height: 100vh;
   width: 100vw;
-  background-color: #79a8a9;
+  background-image: url(../images/regback.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -665,20 +1039,20 @@ table img {
 
 .heroreg1 {
   height: 90%;
-  width: 50%;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.heroreg1 img {
+/* .heroreg1 img {
   height: 90%;
   width: 90%;
-}
+} */
 
 .heroreg2 {
   height: 90%;
-  width: 40%;
+  width: 55%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -688,14 +1062,13 @@ table img {
 .regcountainer {
   height: 100%;
   width: 100%;
-  background-color: #79a8a9;
+  background-color: rgba(0, 0, 0, 0.212);
   border: none;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  box-shadow: 3px 3px 10px 3px #00000070;
+  flex-direction: column;
 }
 
 .registerhero1 {
@@ -734,7 +1107,7 @@ table img {
 
 .signinBTN {
   background-color: #79a8a9;
-  height: 70%;
+  height: 100%;
   width: 20%;
   border: none;
   margin: 10px;
@@ -808,7 +1181,7 @@ table img {
   outline: none;
 }
 
-.input-text {
+.input {
   height: 8%;
   width: 90%;
   background-color: #575757;
@@ -837,15 +1210,14 @@ table img {
 }
 
 #Password {
-  height: 100%;
-  width: 100%;
+  height: 8%;
+  width: 90%;
   background-color: #575757;
   border: #575757;
   border-radius: 10px;
   color: #ffffff;
   font-size: 15pt;
   margin: 10px;
-  padding-left: 30px;
   font-family: "Roboto Slab", serif;
   font-weight: bold;
   outline: none;
@@ -882,8 +1254,8 @@ input::-webkit-inner-spin-button {
 
 #Submitbtn {
   background-color: #79a8a9;
-  height: 6%;
-  width: 37%;
+  height: 10%;
+  width: 30%;
   border: none;
   margin: 10px;
   border-radius: 50px;
@@ -925,7 +1297,7 @@ input::-webkit-inner-spin-button {
 
 .ppBTN {
   border: none;
-  background-color: #f4f7f7;
+  background: none;
   font-family: "Roboto Slab", serif;
   color: #4745df;
   font-weight: 600;
@@ -1019,7 +1391,7 @@ input:checked[type="checkbox"]:before {
   cursor: pointer;
 }
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   .topnav a:not(:only-child) {
     display: none;
   }
@@ -1043,7 +1415,7 @@ input:checked[type="checkbox"]:before {
     display: block;
     text-align: left;
   }
-}
+} */
 
 .homemain {
   height: 90%;
@@ -1328,13 +1700,13 @@ input:checked[type="checkbox"]:before {
 }
 
 .bookingMain {
-  height: 90%;
-  width: 100%;
+  height: 100%;
+  width: auto;
   background-color: #d8e3e7;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .BookingTitle {
@@ -1350,8 +1722,8 @@ input:checked[type="checkbox"]:before {
 }
 
 .Bookcountainer {
-  height: 80%;
-  width: 60%;
+  height: 70%;
+  width: 50%;
   background-color: #f4f7f7;
   border: none;
   border-radius: 10px;
@@ -1360,6 +1732,19 @@ input:checked[type="checkbox"]:before {
   justify-content: center;
   flex-direction: column;
   box-shadow: 3px 3px 10px 3px #00000070;
+  margin: 10px;
+}
+
+.Bookcountainer2 {
+  height: 80%;
+  width: 50%;
+  background-color: #d8e3e7;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   margin: 10px;
 }
 
@@ -1500,8 +1885,9 @@ input:checked[type="checkbox"]:before {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #058d8f;
+  background-color: #126e82;
   color: #d8e3e7;
+  font-weight: 500;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -1737,13 +2123,7 @@ span.multiselect-native-select select {
 }
 /* multi-end */
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  .body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-
+/* @media screen and (max-width: 1024px) {
   .mainpage {
     overflow: hidden;
     display: flex;
@@ -1757,12 +2137,12 @@ span.multiselect-native-select select {
   }
 
   .loginHero1 img {
-    height: 70%;
-    width: 80%;
+    height: 10%;
+    width: 60%;
   }
 
   .loginHero1 h3 {
-    font-size: 25pt;
+    font-size: 12pt;
   }
 
   .loginHero2 {
@@ -2072,9 +2452,767 @@ span.multiselect-native-select select {
     align-items: center;
     border-radius: 10px 10px 0px 0px;
   }
+} */
+
+/* Loader*/
+
+.mainLoad {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #79a8a9;
 }
 
-@media (max-width: 481px) {
+h1.loader {
+  text-align: center;
+  text-transform: capitalize;
+  font-family: "Roboto Slab", serif;
+  font-size: 4.8rem;
+  color: transparent;
+  letter-spacing: 0.1em;
+}
+
+.loader span {
+  text-shadow: 0 0 2px rgba(22, 55, 63, 0.9), 0 15px 25px rgba(0, 0, 0, 0.3),
+    0 -2px 3px rgba(0, 0, 0, 0.1), 0 -5px 10px rgba(255, 255, 255, 0.5),
+    0 5px 10px rgba(0, 0, 0, 0.3), 0 3px 4px rgba(255, 255, 255, 0.2),
+    0 0 20px rgba(255, 255, 255, 0.45);
+  animation: loading 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes loading {
+  to {
+    text-shadow: 0 0 2px rgba(204, 208, 212, 0.2), 0 0 3px rgba(0, 0, 0, 0.02),
+      0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(255, 255, 255, 0),
+      0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(255, 255, 255, 0),
+      0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.Alerts {
+  font-family: "Roboto Slab", serif;
+  color: #f4f7f7;
+  border: none;
+  border-radius: 10px;
+  background-color: #1f4e5f;
+  align-self: center;
+  padding: 10px;
+}
+
+.AlertsLOGIN {
+  font-family: "Roboto Slab", serif;
+  color: #f4f7f7;
+  border: none;
+  border-radius: 10px;
+  background-color: #1f4e5f;
+  align-self: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* pc */
+@media screen and (max-width: 1500px) {
+  .loginHero1 img {
+    height: 350px;
+  }
+
+  .loginBox {
+    height: 50%;
+  }
+
+  .loginform h3 {
+    font-size: 12pt;
+  }
+
+  .loginform a {
+    font-size: 12pt;
+  }
+  .headerhero1 h2 {
+    font-size: 15pt;
+  }
+
+  .loginform label {
+    font-size: 12pt;
+  }
+
+  .loginform h3 {
+    font-size: 12pt;
+  }
+
+  .loginform a {
+    font-size: 12pt;
+  }
+
+  .input-box input {
+    font-size: 12pt;
+  }
+  .loginButton {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    font-size: 12pt;
+  }
+
+  .mainpage2hero1 {
+    height: 80%;
+  }
+
+  .mainpage2hero1 img {
+    height: 25%;
+  }
+
+  .loginHero1 h3 {
+    font-size: 16pt;
+  }
+
+  .info a {
+    font-size: 12pt;
+  }
+
+  .info p {
+    font-size: 12pt;
+  }
+
+  .mainpage2hero2 p {
+    font-size: 12pt;
+  }
+
+  .mainpage2hero2 h4 {
+    font-size: 14pt;
+  }
+  .AlertsLOGIN {
+    font-size: 11pt;
+  }
+
+  .heroreg2 {
+    width: 60%;
+  }
+
+  .registerhero1 h1 {
+    font-size: 15pt;
+  }
+}
+
+/* SMALL LAPTOP DESTOP */
+@media screen and (max-width: 1366px) {
+  .loginHero1 img {
+    height: 350px;
+  }
+
+  .loginBox {
+    height: 50%;
+  }
+
+  .headerhero1 h2 {
+    font-size: 15pt;
+  }
+
+  .loginform label {
+    font-size: 12pt;
+  }
+
+  .loginform h3 {
+    font-size: 12pt;
+  }
+
+  .loginform a {
+    font-size: 12pt;
+  }
+
+  .input-box input {
+    font-size: 12pt;
+  }
+  .loginButton {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    font-size: 12pt;
+  }
+
+  .mainpage2hero1 {
+    height: 80%;
+  }
+
+  .mainpage2hero1 img {
+    height: 25%;
+  }
+
+  .info a {
+    font-size: 12pt;
+  }
+
+  .info p {
+    font-size: 12pt;
+  }
+
+  .mainpage2hero2 p {
+    font-size: 12pt;
+  }
+
+  .mainpage2hero2 h4 {
+    font-size: 14pt;
+  }
+
+  .AlertsLOGIN {
+    font-size: 11pt;
+  }
+
+  .Submitbtn {
+    height: 20%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mainpage {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    background-color: #d8e3e7;
+  }
+
+  .loginHero1 {
+    height: 50%;
+    width: 100%;
+  }
+
+  .loginHero1 img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .loginHero1 h3 {
+    font-size: 12pt;
+  }
+
+  .loginHero2 {
+    height: 50%;
+    width: 100%;
+  }
+
+  .loginBox {
+    height: 100%;
+    width: 80%;
+    background-color: #4d727e;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 3px 3px 10px 3px #00000070;
+  }
+
+  .loginButton {
+    background-color: #79a8a9;
+    height: 10%;
+    width: 25%;
+    border: none;
+    margin: 10px;
+    border-radius: 50px;
+    color: #1f4e5f;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+  }
+
+  .loginButton:hover {
+    background-color: #232323;
+    color: rgb(185, 185, 185);
+  }
+
+  .headerhero1 h2 {
+    font-size: 13pt;
+  }
+
+  .mainpage2 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #d8e3e7;
+  }
+
+  .AlertsLOGIN {
+    font-size: 10pt;
+  }
+
+  .loginform h3 {
+    font-size: 10pt;
+  }
+
+  .loginform a {
+    font-size: 10pt;
+  }
+
+  .mainpage2hero1 {
+    height: 80%;
+    width: 90%;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #242526;
+    border: none;
+    border-radius: 10px;
+    flex-direction: column;
+  }
+
+  .mainpage2hero1 img {
+    height: 26%;
+    width: 95%;
+  }
+
+  .info a {
+    margin: 10px;
+    text-decoration: none;
+    color: #1ad9ef;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 11pt;
+  }
+
+  .info i {
+    color: #1ad9ef;
+  }
+
+  .info p {
+    margin: 10px;
+    text-decoration: none;
+    color: #e5f1ef;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 11pt;
+  }
+
+  .mainpage2hero2 {
+    height: 50%;
+    width: 90%;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .mainpage2hero2 h4 {
+    margin: 12px;
+    text-decoration: none;
+    color: #232323;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15pt;
+  }
+
+  .mainpage2hero2 p {
+    margin: 12px;
+    text-decoration: none;
+    color: #1f4e5f;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 11pt;
+  }
+
+  .mainpage2hero2 video {
+    height: 70%;
+    width: 100%;
+    margin: 10px;
+  }
+
+  .regcountainer {
+    height: 80%;
+    width: 90%;
+  }
+
+  .heroreg2 {
+    height: 90%;
+    width: 80%;
+  }
+
+  .registerhero1 h1 {
+    font-size: 15pt;
+  }
+
+  .registerhero1 {
+    height: 10%;
+  }
+
+  .registerhero2 {
+    height: 90%;
+  }
+
+  .signinBTN {
+    height: 100%;
+    width: 20%;
+  }
+
+  .reg1 label {
+    font-size: 15pt;
+    margin: 5px;
+  }
+
+  .reg1 form {
+    height: 80%;
+    width: 85%;
+  }
+
+  .reg1 input {
+    height: 10%;
+  }
+
+  .reg1 select {
+    height: 10%;
+  }
+  .regdiv1 label {
+    font-size: 15pt;
+  }
+  .regdiv2 label {
+    font-size: 15pt;
+  }
+
+  .reg2 form {
+    height: 80%;
+    width: 85%;
+  }
+
+  #Submitbtn {
+    width: 40%;
+    height: 10%;
+  }
+
+  .policyCheck {
+    font-size: 8pt;
+  }
+
+  .input-text input {
+    font-size: 12pt;
+  }
+
+  .homemain {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .homehero1 {
+    height: 50%;
+    width: 100%;
+  }
+
+  .welcome {
+    height: 80%;
+    width: 95%;
+  }
+
+  .welcome1 {
+    height: 15%;
+    display: flex;
+    align-items: center;
+  }
+
+  .welcome1 h3 {
+    font-size: 15pt;
+  }
+
+  .welcome2 {
+    height: 85%;
+  }
+
+  .welcome2 h3 {
+    font-size: 20pt;
+  }
+
+  .homehero2 {
+    height: 50%;
+    width: 70%;
+  }
+
+  .homehero2 img {
+    height: 80%;
+    width: 80%;
+  }
+
+  .getstartedBTN {
+    height: 15%;
+    width: 30%;
+  }
+
+  .wrapperGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .Bookcountainer {
+    height: 95%;
+    width: 70%;
+  }
+
+  .Bookhero1 {
+    padding: 10px 0px;
+  }
+
+  .Bookhero1 h1 {
+    font-size: 15pt;
+  }
+
+  .book1 input {
+    height: 7%;
+  }
+
+  .book1 select {
+    height: 7%;
+  }
+
+  #bookingBtn {
+    height: 7%;
+    width: 30%;
+  }
+
+  .notif1 {
+    height: 7%;
+  }
+
+  .notif1 h2 {
+    font-size: 15pt;
+  }
+
+  .notif2 {
+    height: 93%;
+  }
+
+  .notifdiv p {
+    font-size: 10pt;
+  }
+
+  .adminHomeMain {
+    background-color: #867d7d;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .adminCard {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 3px #00000070;
+  }
+
+  .adminCard1 {
+    background-color: #10435e;
+    padding: 10px;
+    height: 20%;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 10px 10px 0px 0px;
+  }
+}
+
+@media (max-width: 815px) {
+  .mainpage {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #d8e3e7;
+  }
+
+  .loginHero2 i {
+    font-size: 15pt;
+    color: #10435e;
+  }
+
+  .loginHero1 {
+    display: none;
+  }
+
+  .loginHero1 img {
+    display: none;
+    height: 70%;
+    width: 70%;
+  }
+
+  .loginHero1 h3 {
+    display: none;
+    font-size: 14pt;
+  }
+
+  .loginHero1 h6 {
+    display: none;
+    font-size: 12pt;
+  }
+
+  .loginHero2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .loginBox {
+    height: 50%;
+    width: 95%;
+  }
+
+  .headerhero1 h2 {
+    font-size: 17pt;
+    margin-right: 30%;
+  }
+
+  .SignupBTN {
+    height: 65%;
+    width: 32%;
+    font-size: 8pt;
+  }
+
+  .loginform label {
+    font-size: 10pt;
+    margin: 0px;
+  }
+
+  .mainpage2 {
+    display: none;
+  }
+
+  .mainpage2hero1 img {
+    height: 30%;
+    width: 95%;
+  }
+
+  .info {
+    height: 50%;
+    width: 90%;
+  }
+
+  .info a {
+    text-decoration: none;
+    color: #1ad9ef;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12pt;
+  }
+
+  .info i {
+    color: #1ad9ef;
+    font-size: 12pt;
+  }
+
+  .info p {
+    text-decoration: none;
+    color: #e5f1ef;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12pt;
+  }
+
+  .mainpage2hero2 {
+    height: 30%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .mainpage2hero1 {
+    height: 50%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .mainpage2hero2 h4 {
+    margin: 5px;
+    text-decoration: none;
+    color: #e5f1ef;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15pt;
+  }
+
+  .mainpage2hero2 p {
+    margin: 5px;
+    text-decoration: none;
+    color: #e5f1ef;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13pt;
+  }
+
+  .mainpage2hero2 video {
+    height: 70%;
+    width: 100%;
+    margin: 10px;
+  }
+
+  .regcountainer {
+    height: 90%;
+    width: 90%;
+  }
+
+  .registerhero1 h1 {
+    font-size: 15pt;
+  }
+
+  .registerhero1 {
+    height: 10%;
+    padding: 5px;
+  }
+
+  .registerhero2 {
+    height: 92%;
+  }
+
+  .signinBTN {
+    height: 100%;
+    width: 20%;
+    font-size: 10pt;
+  }
+
+  .reg1 select option {
+    height: 10%;
+  }
+
+  #Submitbtn {
+    width: 40%;
+    height: 10%;
+  }
+
+  .heroreg2 {
+    height: 60%;
+    width: 90%;
+  }
+
+  .regcountainer {
+    height: 100%;
+    width: 100%;
+  }
+
+  .regcountainer label {
+    font-size: 12pt;
+  }
+
+  .policyCheck h6 {
+    font-size: 9pt;
+  }
+
+  .ppBTN {
+    font-size: 9pt;
+    background: none;
+  }
+}
+
+@media (max-width: 500px) {
   .body {
     height: 100vh;
     width: 100vw;
@@ -2222,7 +3360,7 @@ span.multiselect-native-select select {
   }
 
   .registerhero1 h1 {
-    font-size: 15pt;
+    font-size: 13pt;
   }
 
   .registerhero1 {
@@ -2248,204 +3386,89 @@ span.multiselect-native-select select {
     height: 20%;
   }
 
-  .homemain {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .homehero1 {
-    height: 50%;
+  .regcountainer {
+    height: 100%;
     width: 100%;
   }
-  .welcome {
-    height: 80%;
-    width: 95%;
-  }
-  .welcome1 {
-    height: 15%;
-    display: flex;
-    align-items: center;
-  }
 
-  .welcome1 h3 {
-    font-size: 15pt;
-  }
-
-  .welcome2 {
-    height: 85%;
-  }
-
-  .welcome2 h3 {
-    font-size: 15pt;
-  }
-
-  .homehero2 {
-    height: 50%;
-    width: 70%;
-  }
-
-  .homehero2 img {
-    height: 95%;
-    width: 95%;
-  }
-
-  .getstartedBTN {
-    height: 17%;
-    width: 40%;
-  }
-
-  .serviceMain {
+  #registrationForm {
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .serviceCard1 {
-    height: 15%;
-  }
-
-  .serviceCard2 {
-    height: 85%;
-  }
-
-  .serviceTitle h1 {
-    display: none;
-    color: #fbffff;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 8pt;
-  }
-
-  .serviseBox {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .serviceCard {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px 3px #00000070;
-  }
-
-  .serviceCard1 {
-    height: 15%;
-    width: 100%;
-    background-color: #32d6af;
-    border-radius: 10px 10px 0px 0px;
-    display: flex;
-    padding: 10px;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
   }
 
-  .serviceCard1 h3 {
-    color: #424242;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 10pt;
-  }
-
-  .serviceCard2 {
-    height: 85%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .serviceCard2 img {
+  .regdiv1 {
     height: 50%;
-    width: 50%;
+    width: 100%;
   }
 
-  .time {
-    height: 15%;
-    width: 80%;
+  .regdiv1 .input {
+    font-size: 9pt;
+    border-radius: 3px;
+  }
+
+  .regdiv2 .input {
+    font-size: 9pt;
+    border-radius: 3px;
+  }
+
+  .regdiv1 label {
+    margin: 0;
+    font-size: 9pt;
+  }
+
+  .input {
+    border-radius: 3px;
+    padding: 0;
+  }
+
+  .policyCheck {
     display: flex;
-    justify-content: center;
     align-items: center;
-    border: none;
-    margin: 20px;
-    border-radius: 10px;
-    background-color: #10435e;
   }
 
-  .time h4 {
-    color: #1ad9ef;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 8pt;
+  .policyCheck h6 {
+    font-size: 7pt;
   }
 
-  .Bookcountainer {
-    height: 98%;
-    width: 90%;
+  .policyCheck input {
+    font-size: 7pt;
+    margin: 0px 2px 0px 2px;
   }
 
-  .Bookhero1 {
-    padding: 10px 0px;
+  .regdiv2 {
+    height: 50%;
+    width: 100%;
+    margin: 0;
   }
 
-  .Bookhero1 h1 {
-    font-size: 10pt;
+  .regdiv1 input {
+    height: 10%;
+    margin: 0;
+  }
+  .regdiv2 input {
+    height: 10%;
+    margin: 0;
   }
 
-  .book1 input {
-    height: 7%;
+  .regdiv2 label {
+    font-size: 9pt;
+    margin: 0;
   }
 
-  .book1 select {
-    height: 7%;
-  }
-
-  #bookingBtn {
-    height: 7%;
-    width: 50%;
-  }
-
-  .notificationBox {
+  .heroreg2 {
     height: 90%;
-    width: 90%;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    box-shadow: 3px 3px 10px 3px #00000070;
   }
 
-  .notif1 {
-    height: 7%;
+  #Password {
+    height: 10%;
+    border-radius: 3px;
   }
 
-  .notif1 h2 {
-    font-size: 10pt;
-  }
-  .notif2 {
-    height: 93%;
-  }
-  .notifdiv {
-    height: 18%;
-    width: 100%;
-    display: flex;
-    justify-content: baseline;
-    padding: 10px;
-    box-shadow: 3px 3px 10px 1px #00000070;
-  }
-
-  .notifdiv p {
+  .signinBTN a {
     font-size: 10pt;
   }
 }

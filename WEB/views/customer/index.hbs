@@ -1,23 +1,26 @@
 <div>
   <section id="mainpage1" class="mainpage">
     <div class="loginHero1">
-      <img src="/assets/images/calendar.svg" alt="" />
+      <img src="/assets/images/full.png" alt="" height="500px" />
       <h3>Hi! Lets go and Book your car for</h3>
       <h3>what service you want us todo.</h3>
 
-      <a href="#mainpage2" class="clickmehere">Click Here for more!</a>
-      {{! <h6>Scroll Down for more info <i class='fal fa-smile-beam'></i></h6> }}
+      <a href="" class="clickmehere">Scroll Down for more info
+        <i class="fal fa-smile-beam"></i></a>
+      {{! <h6>Scroll Down for more info <i class="fal fa-smile-beam"></i></h6> }}
     </div>
 
     <div class="loginHero2">
-      <i class="fab fa-neos icon icons"></i>
+      <h2 class="AlertsLOGIN"><i
+          class="bx bxs-bell-ring"
+        ></i>{{resData.message}}</h2>
       <div class="loginBox">
         <div class="headerhero1">
           <h2>Welcome to Login<i class="fad fa-users"></i></h2>
         </div>
 
         <div class="loginform">
-          <h2 class="AlertsLOGIN">{{resData.message}}</h2>
+
           <form action="/Login" id="loginform" method="POST">
             <label for=""><i class="fad fa-user"></i> Username:</label>
             <div class="input-box">
@@ -33,10 +36,7 @@
                 id="passwordLogIn"
                 required
               />
-              <span class="eye" onClick="myFunction()">
-                <i id="hide1" class="fal fa-eye active"></i>
-                <i id="hideme" class="fal fa-eye-slash active"></i>
-              </span>
+
             </div>
 
             <input

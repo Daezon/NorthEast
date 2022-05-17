@@ -2,10 +2,7 @@
     <div class="registerbox">
       <div class="regcountainer">
 
-        <div class="heroreg1">
-          <img src="/assets/images/undraw_online_ad_re_ol62.svg" alt="" />
-        </div>
-
+        <h2 class="AlertsLOGIN">{{resData.message}}</h2>
         <div class="heroreg2">
           <div class="registerhero1">
             <h1>Sign Up <i class="fad fa-users"></i></h1>
@@ -16,7 +13,7 @@
           </div>
 
           <div class="registerhero2">
-            <h2 class="AlertsLOGIN">{{resData.message}}</h2>
+            
             <form action="/Register" id="registrationForm" method="POST">
               <div class="regdiv1">
                 <label for="Fullname"><i class="fad fa-user"></i>
@@ -87,7 +84,7 @@
                 <label for="Password"><i class="fad fa-lock-alt"></i>
                   Password:</label>
 
-                <div class="input-text">
+                
                   <input
                     class="input"
                     type="password"
@@ -95,11 +92,11 @@
                     name="Password"
                     required
                   />
-                  <span class="eye2" onClick="myFunctionpassword()">
+                  {{!-- <span class="eye2" onClick="myFunctionpassword()">
                     <i id="hide1" class="fal fa-eye active"></i>
                     <i id="hideme" class="fal fa-eye-slash active"></i>
-                  </span>
-                </div>
+                  </span> --}}
+               
 
                 <div class="accept">
                   {{!-- <input type="checkbox" required /> --}}
@@ -224,7 +221,7 @@
                             Hazard communication to ensure that the hazards of all chemicals produced, imported, or used in the workplace are classified, and that information concerning the classified hazard is transmitted to the employers and employees.
                             <BR><BR>
                             IV. WHO SHOULD KNOW THIS POLICY?
-                            <BR> <BR>
+                            <BR><BR>
                             This policy covers car owners and any kind of vehicles.
                           </p>
                           <input type="checkbox" name="" id="" required> I Agree to the Privacy Policy

@@ -149,13 +149,14 @@
                       name="ServiceName"
                     >{{{serviceName}}}</td>
                     <td data-lable="Time" name="Time">{{{serviceTime}}}</td>
-                    <td data-lable="remove" name="remove"><form action="">
+                    <td data-lable="remove" name="remove">
+                      <form onsubmit="return removeCart(event)">
                         <input
+                          class="removeCart"
                           type="submit"
                           value="Remove"
-                          class="removeCart"
-                          id="removeCart"
                         />
+                        <input type="hidden" value="{{{_id}}}" name="id" />
                       </form>
                     </td>
 
@@ -167,7 +168,7 @@
 
           <div class="subTotal">
             <label for="">Total Time Duration:
-              <span id="duration">{{{Duration}}}</span>
+              <span id="duration">{{{data}}}</span>
             </label>
             <a href="http://localhost:8282/Booking">Send Schedule</a>
           </div>

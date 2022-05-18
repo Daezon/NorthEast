@@ -232,29 +232,34 @@ const updateServiceConfirm = async (event) => {
 };
 
 // addToCArt
-const addCartBtn = async (event) => {
-  event.preventDefault;
-  const token = await req.cookies.authToken;
 
-  const baseURL = await fetch(
-    `http://localhost:8080/api/services/${Service_id}`,
-    {
-      method: "POST",
-      headers: {
-        authToken: token,
-        "Content-type": "application/json",
-        Accept: "application/json",
-        responseType: "json",
-      },
-      body: JSON.stringify({
-        Clientid: req.User._id,
-        serviceName: serviceurl.data.data.Servicename,
-        serviceTime: serviceurl.data.data.Time,
-        serviceImage: serviceurl.data.data.Image,
-        carttype: OnCart,
-      }),
-    }
-  );
+const AddCartBtn = async (event) => {
+  event.preventDefault();
+  const Service_id = event.target.ServiceID.value;
+  console.log(Service_id);
+  const baseURL = await fetch(`http://localhost:8080/api/cart/${Service_id}`, {
+    method: "POST",
+    headers: {
+      authToken: getCookie("authToken"),
+      "Content-type": "application/json",
+      Accept: "application/json",
+      responseType: "json",
+    },
+  });
   const result = await baseURL.json();
   console.log(result.data);
+  alert(result.message);
+};
+
+// removeCArt
+
+const removeCart = async (event) => {
+  // event.preventDefault();
+  const id = await event.target.id.value;
+  console.log(id);
+  const baseURL = await fetch(`http://localhost:8080/api/itemdelete/${id}`, {
+    method: "DELETE",
+  });
+  const result = await baseURL.json();
+  alert(result.message);
 };

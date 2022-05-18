@@ -56,17 +56,11 @@
           />
         </div>
         <p class="serviceTime">{{{Time}}}</p>
-        <form action="/Services" method="POST">
-          <input
-            class="addCartBtn"
-            type="submit"
-            value="Add Cart"
-            onsubmit="return addCartBtn(event)"
-          />
-          <input type="hidden" value="{{{_id}}}" name="id" />
+        <form onsubmit="return AddCartBtn(event)">
+          <input class="addCartBtn" type="submit" value="Add Cart" />
+          <input type="hidden" value="{{{_id}}}" name="ServiceID" />
         </form>
       </div>
     {{/each}}
-
   </div>
 </div>

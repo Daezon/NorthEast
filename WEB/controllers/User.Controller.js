@@ -169,43 +169,6 @@ exports.userLogin = async (req, res) => {
     console.log(error);
   }
 };
-// exports.userLogin = async (req, res) => {
-//   const options = {
-//     method: 'POST',
-//     headers: {
-//       'Content-type': 'application/json',
-//       Accept: 'application/json',
-//       responseType: 'json',
-//     },
-//     body: JSON.stringify({
-//       Email: req.body.emailLogIn,
-//       Password: req.body.passwordLogIn,
-//     }),
-//   };
-
-//   const response = await fetch(`${URI}/user/login`, options);
-//   const resData = await response.json();
-//   //console.log(resData);
-//   const token = await resData.token;
-//   console.log(token);
-
-//   if (response.status == 200) {
-//     res.cookie('authToken', resData.token, { maxAge: 24 * 60 * 60 * 1000 });
-//     res.cookie('userId', resData._id, { maxAge: 24 * 60 * 60 * 1000 });
-//     res.render('customer/customerhome', {
-//       layout: 'customer/customerhome',
-//       resData: resData,
-//       success: true,
-//       message: resData.message,
-//     });
-//   } else {
-//     res.render('customer/index', {
-//       layout: 'customer/index',
-//       resData: resData,
-//       success: true,
-//     });
-//   }
-// };
 
 //Displaying Image Service Start
 exports.customerServices = async (req, res) => {
@@ -337,36 +300,13 @@ exports.AdminAddProduct = async (req, res) => {
     console.log(error);
   }
 };
-//Add Product End
-
-// //Displaying Image Service Start
-// exports.customerBooking = async (req, res) => {
-//   // const userId = req.cookies.userId;
-//   // console.log(userId);
-//   const options = {
-//     method: "GET",
-//     headers: {
-//       // Authorization: req.cookies.authToken,
-//       "Content-type": "application/json",
-//       Accept: "application/json",
-//       responseType: "json",
-//     },
-//   };
-//   const response = await fetch(`${URI}/services`, options);
-//   const resData = await response.json();
-//   console.log(resData);
-//   const { Servicename, Image, Time } = resData.data;
-//   res.render("customer/customerBooking", {
-//     layout: "customer/customerBooking",
-//     resData: resData,
-//   });
-// };
 
 // displayCart;
 exports.customerCart = async (req, res) => {
   const userId = req.cookies.userId;
   const token = req.cookies.authToken;
-  console.log(token);
+  // console.log(token);
+  // console.log(userId);
   const options = {
     method: "GET",
     headers: {
@@ -375,61 +315,28 @@ exports.customerCart = async (req, res) => {
       responseType: "json",
     },
   };
-  const optionTwo = {
+
+  const optionsTwo = {
     method: "GET",
     headers: {
+      authToken: token,
       "Content-type": "application/json",
-      authToken: req.cookies.authToken,
       Accept: "application/json",
       responseType: "json",
     },
   };
+
   const response = await fetch(`${URI}/cart/${userId}`, options);
+  const responseTwo = await fetch(`${URI}/duration`, optionsTwo);
   const resData = await response.json();
+  const resDataTwo = await responseTwo.json();
+  console.log(resDataTwo);
+  // const { data } = resDataTwo.data;
 
   // {{{resDataTwo.data.}}}
   res.render("customer/customerCart", {
     layout: "customer/customerCart",
     resData: resData,
+    data: resDataTwo.data,
   });
 };
-
-// //addtocart
-// exports.customerCart = async (req, res) => {
-//   const token = await req.cookies.authToken;
-//   // console.log(req.cookies.authToken)
-//   const options = {
-//     method: "POST",
-//     headers: {
-//       authToken: token,
-//       "Content-type": "application/json",
-//       Accept: "application/json",
-//       responseType: "json",
-//     },
-//     body: JSON.stringify({
-//       Clientid: req.User._id,
-//       serviceName: serviceurl.data.data.Servicename,
-//       serviceTime: serviceurl.data.data.Time,
-//       serviceImage: serviceurl.data.data.Image,
-//       carttype: carttype,
-//     }),
-//   };
-
-//   const response = await fetch(`${URI}/cart/{Ser}`, options);
-//   const resData = await response.json();
-//   console.log(resData);
-
-//   if (response.status == 200) {
-//     res.render("customer/customerServices", {
-//       layout: "customer/customerServices",
-//       resData: resData,
-//       success: true,
-//     });
-//   } else {
-//     res.render("customer/customerServices", {
-//       layout: "customer/customerServices",
-//       resData: resData,
-//       success: true,
-//     });
-//   }
-// };

@@ -16,7 +16,9 @@ exports.getbooking = async (req, res) => {
     const carturl = await axios.get(
       `http://localhost:8080/api/cart/${Clientid}`
     );
+
     const cartArr = await carturl.data.data;
+
     const humanTime = req.body.Time;
     const humanDate = req.body.Date;
 
@@ -24,6 +26,7 @@ exports.getbooking = async (req, res) => {
     console.log(scheduledTime);
     const findDate = await Booking.find({ Schedule: scheduledTime });
     console.log(findDate);
+
     if (findDate.length >= 1) {
       return res
         .status(403)
@@ -51,6 +54,8 @@ exports.getbooking = async (req, res) => {
           }
         );
       }
+      // update the cart type
+
       return res.status(200).send(saveBooking);
     }
   } catch (err) {
@@ -277,5 +282,15 @@ exports.getArchieve = async (req, res) => {
       .json({ data: ArchieveArr, message: "Get All Archieve", status: 200 });
   } catch (err) {
     return res.status(400).json({ message: err.message, status: 400 });
+  }
+};
+exports.updateCartType = async (req, res) => {
+  try {
+    const booking = await axios.get(
+      `http://localhost:8080/api/Booking/${req.params._id}`
+    );
+    console.log(booking.data);
+  } catch (e) {
+    console.log(e);
   }
 };

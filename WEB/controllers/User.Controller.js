@@ -236,10 +236,12 @@ exports.sendrequest = async (req, res) => {
       ContactNumber: req.body.ContactNumber,
       CarandModel: req.body.CarandModel,
       RequestType: req.body.RequestType,
+      Date: req.body.Date,
+      Time: req.body.Time,
     }),
   };
 
-  const response = await fetch(`${URI}/sendrequest`, options);
+  const response = await fetch(`${URI}/getBooking`, options);
   const resData = await response.json();
   console.log(resData);
 

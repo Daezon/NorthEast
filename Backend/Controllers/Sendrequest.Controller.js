@@ -1,9 +1,20 @@
 const RequestService = require('../Models/Sendrequest.Model');
 const Joi = require('joi');
+// const sendrequest = require('../Models/Sendrequest.Model')
 
 //send Request
 exports.sendrequestService = async (req, res) => {
   try {
+    const find = await sendrequest.find({ Time: req.body.Time });
+    const reqfind = await sendrequest.find({ Day: req.body.Day })
+
+    const validationSchema  = Joi.object({
+      Time: Joi.number()
+    });
+
+    if (find.length >= 1 && reqfind.length >=1) {
+      return res.status(403).send({ message: 'Email is already existing' });
+    } else {
     const newRequest = new RequestService({
       FullName: req.body.FullName,
       CarMileage: req.body.CarMileage,
@@ -14,8 +25,13 @@ exports.sendrequestService = async (req, res) => {
       Time: req.body.Time,
       RequestType: req.body.RequestType,
     });
+
+    const { error } = validationSchema.validate(req.body);
+    if (error) return res.status(400).send(error.details[0].message);
+
     const saveRequest = await newRequest.save();
     return res.status(200).send(saveRequest);
+     }
   } catch (err) {
     return res.status(400).json({ message: err.message, status: 400 });
   }
@@ -44,7 +60,6 @@ exports.idgetRequest = async (req, res) => {
       statusCode: 200,
     });
   } catch (err) {
-    console.log(err);
     return res.status(400).json({ message: err.message, statusCode: 400 });
   }
 };
@@ -161,7 +176,7 @@ exports.getCancelled = async (req, res) => {
     const allCancelled = await RequestService.find();
     const CancelledArr = [];
     for (let i = 0; i < allCancelled.length; i++) {
-      if (allCancelled[i].RequestType === 'Done') {
+      if (allCancelled[i].RequestType === 'Cancelled') {
         CancelledArr.push(allCancelled[i]);
       }
     }

@@ -29,7 +29,7 @@ const sendRequestSchema = new Schema({
     required: true,
   },
   Time: {
-    type: String,
+    type: Number,
     required: true,
   },
   RequestType: {

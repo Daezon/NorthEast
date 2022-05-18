@@ -522,6 +522,43 @@ body {
   flex-direction: column;
 }
 
+.TimePicker {
+  background-color: none;
+  display: flex;
+  height: 8%;
+  width: 90%;
+  border: none;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.TimePicker select {
+  outline: none;
+  height: 90%;
+  border: none;
+  width: 10%;
+  font-family: "Roboto Slab", serif;
+  background-color: #f4f7f7;
+  color: #232323;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.TimePicker option {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.TimePicker p {
+  font-family: "Roboto Slab", serif;
+  font-weight: 600;
+  color: #f4f7f7;
+}
+
 .addimageContainer label {
   font-family: "Roboto Slab", serif;
   color: #f4f7f7;
@@ -537,6 +574,7 @@ body {
   width: 90%;
   border-radius: 10px;
   font-size: 18pt;
+  outline: none;
 }
 
 .chooseFile {

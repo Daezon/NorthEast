@@ -1,105 +1,106 @@
-const fetch = require('node-fetch');
-const URI = 'http://localhost:8080/api';
+const fetch = require("node-fetch");
+const URI = "http://localhost:8080/api";
 
 //Render
 exports.renderAddProduct = async (req, res) => {
-  res.render('admin/AdminAddproduct', {
-    layout: 'admin/AdminAddproduct',
+  res.render("admin/AdminAddproduct", {
+    layout: "admin/AdminAddproduct",
   });
 };
 
 exports.renderAddService = async (req, res) => {
-  res.render('admin/AdminAddservice', {
-    layout: 'admin/AdminAddservice',
+  res.render("admin/AdminAddservice", {
+    layout: "admin/AdminAddservice",
   });
 };
 
 exports.AdminSchedules = async (req, res) => {
-  res.render('admin/AdminSchedules', {
-    layout: 'admin/AdminSchedules',
+  res.render("admin/AdminSchedules", {
+    layout: "admin/AdminSchedules",
   });
 };
 
 exports.AdminArchive = async (req, res) => {
-  res.render('admin/AdminArchive', {
-    layout: 'admin/AdminArchive',
+  res.render("admin/AdminArchive", {
+    layout: "admin/AdminArchive",
   });
 };
 
 exports.AdminHome = async (req, res) => {
-  res.render('admin/AdminHome', {
-    layout: 'admin/AdminHome',
+  res.render("admin/AdminHome", {
+    layout: "admin/AdminHome",
   });
 };
 
 exports.AdminProducts = async (req, res) => {
-  res.render('admin/AdminProducts', {
-    layout: 'admin/AdminProducts',
+  res.render("admin/AdminProducts", {
+    layout: "admin/AdminProducts",
   });
 };
 
 exports.AdminRequest = async (req, res) => {
-  res.render('admin/AdminRequest', {
-    layout: 'admin/AdminRequest',
+  res.render("admin/AdminRequest", {
+    layout: "admin/AdminRequest",
   });
 };
 
 exports.AdminServices = async (req, res) => {
-  res.render('admin/AdminServices', {
-    layout: 'admin/AdminServices',
+  res.render("admin/AdminServices", {
+    layout: "admin/AdminServices",
   });
 };
 
 exports.AdminUserAccount = async (req, res) => {
-  res.render('admin/AdminUserAccount', {
-    layout: 'admin/AdminUserAccount',
+  res.render("admin/AdminUserAccount", {
+    layout: "admin/AdminUserAccount",
   });
 };
 
 exports.Updateproduct = async (req, res) => {
-  res.render('admin/Updateproduct', {
-    layout: 'admin/Updateproduct',
+  res.render("admin/Updateproduct", {
+    layout: "admin/Updateproduct",
   });
 };
 
 exports.Updateservice = async (req, res) => {
-  res.render('admin/Updateservice', {
-    layout: 'admin/Updateservice',
+  res.render("admin/Updateservice", {
+    layout: "admin/Updateservice",
   });
 };
 
 // //Add Service
 exports.AdminAddService = async (req, res) => {
   try {
-    const image = req.body;
-    console.log(image);
+    console.log(req.file);
+    console.log(req.body);
     const options = {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-type': 'application/json',
-        Accept: 'application/json',
-        responseType: 'json',
+        "Content-type": "application/json",
+        Accept: "application/json",
+        responseType: "json",
       },
       body: JSON.stringify({
         Servicename: req.body.Servicename,
         image_service: req.file.path,
-        Time: req.body.Time,
+        hourClient: req.body.hourClient,
+        minuteClient: req.body.minuteClient,
       }),
     };
 
     const response = await fetch(`${URI}/addservice`, options);
     const resData = await response.json();
 
-    console.log('result:', resData);
+    console.log("result:", resData);
     if (response.status === 200) {
-      res.redirect('/Admin/Services');
+      res.redirect("/Admin/Services");
       // res.render('admin/AdminServices', {
       //   layout: 'admin/AdminServices',
       //   resData: resData,
       //   sucess: true,
       // });
     } else {
-      res.redirect('/Admin/Services');
+      res.redirect("/Admin/Services");
       // // res.render('admin/AdminServices', {
       // //   layout: 'admin/AdminServices',
       // //   resData: resData,
@@ -118,11 +119,11 @@ exports.AdminAddProduct = async (req, res) => {
     const image = req.body;
     console.log(image);
     const options = {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-type': 'application/json',
-        Accept: 'application/json',
-        responseType: 'json',
+        "Content-type": "application/json",
+        Accept: "application/json",
+        responseType: "json",
       },
       body: JSON.stringify({
         Productname: req.body.Productname,
@@ -135,16 +136,16 @@ exports.AdminAddProduct = async (req, res) => {
 
     const resData = await response.json();
 
-    console.log('result:', resData);
+    console.log("result:", resData);
     if (response.status === 200) {
-      res.redirect('/Admin/Products');
+      res.redirect("/Admin/Products");
       // res.render('admin/AdminProducts', {
       //   layout: 'admin/AdminProducts',
       //   resData: resData,
       //   sucess: true,
       // });
     } else {
-      res.redirect('/Admin/Products');
+      res.redirect("/Admin/Products");
       // res.render('admin/AdminProducts', {
       //   layout: 'admin/AdminProducts',
       //   resData: resData,
@@ -162,20 +163,20 @@ exports.AdminServices = async (req, res) => {
   // const adminId = req.cookies.adminId;
   // console.log(adminId);
   const options = {
-    method: 'GET',
+    method: "GET",
     headers: {
       // Authorization: req.cookies.authToken,
-      'Content-type': 'application/json',
-      Accept: 'application/json',
-      responseType: 'json',
+      "Content-type": "application/json",
+      Accept: "application/json",
+      responseType: "json",
     },
   };
   const response = await fetch(`${URI}/services`, options);
   const resData = await response.json();
   console.log(resData.data);
   const { Servicename, Time, Image } = resData.data;
-  res.render('admin/AdminServices', {
-    layout: 'admin/AdminServices',
+  res.render("admin/AdminServices", {
+    layout: "admin/AdminServices",
     resData: resData,
   });
 };
@@ -186,20 +187,20 @@ exports.AdminProducts = async (req, res) => {
   // const userId = req.cookies.userId;
   // console.log(userId);
   const options = {
-    method: 'GET',
+    method: "GET",
     headers: {
       // Authorization: req.cookies.authToken,
-      'Content-type': 'application/json',
-      Accept: 'application/json',
-      responseType: 'json',
+      "Content-type": "application/json",
+      Accept: "application/json",
+      responseType: "json",
     },
   };
   const response = await fetch(`${URI}/product`, options);
   const resData = await response.json();
   // console.log(resData);
   const { Productname, Image, Price } = resData.data;
-  res.render('Admin/AdminProducts', {
-    layout: 'Admin/AdminProducts',
+  res.render("Admin/AdminProducts", {
+    layout: "Admin/AdminProducts",
     resData: resData,
   });
 };
@@ -208,11 +209,11 @@ exports.AdminProducts = async (req, res) => {
 //display Request
 exports.AdminRequest = async (req, res) => {
   const options = {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'Content-type': 'application/json',
-      Accept: 'application/json',
-      responseType: 'json',
+      "Content-type": "application/json",
+      Accept: "application/json",
+      responseType: "json",
     },
   };
   const response = await fetch(`${URI}/getdefault`, options);
@@ -230,8 +231,8 @@ exports.AdminRequest = async (req, res) => {
     Time,
     RequestType,
   } = resData.data;
-  res.render('Admin/AdminRequest', {
-    layout: 'Admin/AdminRequest',
+  res.render("Admin/AdminRequest", {
+    layout: "Admin/AdminRequest",
     resData: resData,
   });
 };
@@ -240,11 +241,11 @@ exports.AdminRequest = async (req, res) => {
 //display Schedules
 exports.AdminSchedules = async (req, res) => {
   const options = {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'Content-type': 'application/json',
-      Accept: 'application/json',
-      responseType: 'json',
+      "Content-type": "application/json",
+      Accept: "application/json",
+      responseType: "json",
     },
   };
   const response = await fetch(`${URI}/getapprove`, options);
@@ -262,8 +263,8 @@ exports.AdminSchedules = async (req, res) => {
     Time,
     RequestType,
   } = resData.data;
-  res.render('admin/AdminSchedules', {
-    layout: 'admin/AdminSchedules',
+  res.render("admin/AdminSchedules", {
+    layout: "admin/AdminSchedules",
     resData: resData,
   });
 };
@@ -271,11 +272,11 @@ exports.AdminSchedules = async (req, res) => {
 
 exports.AdminHome = async (req, res) => {
   const options = {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'Content-type': 'application/json',
-      Accept: 'application/json',
-      responseType: 'json',
+      "Content-type": "application/json",
+      Accept: "application/json",
+      responseType: "json",
     },
   };
   const response = await fetch(`${URI}/getDone`, options);
@@ -293,8 +294,8 @@ exports.AdminHome = async (req, res) => {
     Time,
     RequestType,
   } = resData.data;
-  res.render('admin/AdminHome', {
-    layout: 'admin/AdminHome',
+  res.render("admin/AdminHome", {
+    layout: "admin/AdminHome",
     resData: resData,
   });
 };
@@ -302,11 +303,11 @@ exports.AdminHome = async (req, res) => {
 //display Archive
 exports.AdminArchive = async (req, res) => {
   const options = {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'Content-type': 'application/json',
-      Accept: 'application/json',
-      responseType: 'json',
+      "Content-type": "application/json",
+      Accept: "application/json",
+      responseType: "json",
     },
   };
   const response = await fetch(`${URI}/getArchieve`, options);
@@ -324,8 +325,8 @@ exports.AdminArchive = async (req, res) => {
     Time,
     RequestType,
   } = resData.data;
-  res.render('admin/AdminArchive', {
-    layout: 'admin/AdminArchive',
+  res.render("admin/AdminArchive", {
+    layout: "admin/AdminArchive",
     resData: resData,
   });
 };
@@ -334,11 +335,11 @@ exports.AdminArchive = async (req, res) => {
 //display Useraccounts
 exports.AdminUserAccount = async (req, res) => {
   const options = {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'Content-type': 'application/json',
-      Accept: 'application/json',
-      responseType: 'json',
+      "Content-type": "application/json",
+      Accept: "application/json",
+      responseType: "json",
     },
   };
   const response = await fetch(`${URI}/users`, options);
@@ -356,8 +357,8 @@ exports.AdminUserAccount = async (req, res) => {
     Time,
     RequestType,
   } = resData.data;
-  res.render('admin/AdminUserAccount', {
-    layout: 'admin/AdminUserAccount',
+  res.render("admin/AdminUserAccount", {
+    layout: "admin/AdminUserAccount",
     resData: resData,
   });
 };
@@ -371,11 +372,11 @@ exports.imageUpdateproduct = async (req, res) => {
   const Product_id = req.body.Product_id;
   console.log(Product_id);
   const options = {
-    method: 'PUT',
+    method: "PUT",
     headers: {
-      'Content-type': 'application/json',
-      Accept: 'application/json',
-      responseType: 'json',
+      "Content-type": "application/json",
+      Accept: "application/json",
+      responseType: "json",
     },
     body: JSON.stringify({
       Productname: req.body.Productname,
@@ -389,14 +390,14 @@ exports.imageUpdateproduct = async (req, res) => {
   console.log(resData);
 
   if (response.status === 200) {
-    res.redirect('/Admin/Products');
+    res.redirect("/Admin/Products");
     // res.render('admin/AdminProducts', {
     //   layout: 'admin/AdminProducts',
     //   resData: resData,
     //   sucess: true,
     // });
   } else {
-    res.redirect('/Admin/Products');
+    res.redirect("/Admin/Products");
     // res.render('admin/AdminProducts', {
     //   layout: 'admin/AdminProducts',
     //   resData: resData,
@@ -414,11 +415,11 @@ exports.imageUpdateservice = async (req, res) => {
   const Service_id = req.body.Service_id;
   console.log(Service_id);
   const options = {
-    method: 'PUT',
+    method: "PUT",
     headers: {
-      'Content-type': 'application/json',
-      Accept: 'application/json',
-      responseType: 'json',
+      "Content-type": "application/json",
+      Accept: "application/json",
+      responseType: "json",
     },
     body: JSON.stringify({
       Servicename: req.body.Servicename,
@@ -432,14 +433,14 @@ exports.imageUpdateservice = async (req, res) => {
   console.log(resData);
 
   if (response.status === 200) {
-    res.redirect('/Admin/Services');
+    res.redirect("/Admin/Services");
     // res.render('admin/Updateservice', {
     //   layout: 'admin/Updateservice',
     //   resData: resData,
     //   sucess: true,
     // });
   } else {
-    res.redirect('/Admin/Services');
+    res.redirect("/Admin/Services");
     // res.render('admin/Updateservice', {
     //   layout: 'admin/Updateservice',
     //   resData: resData,

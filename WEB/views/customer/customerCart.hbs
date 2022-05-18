@@ -136,84 +136,39 @@
               </thead>
 
               <tbody>
-                {{!-- {{#each resData.data}} --}}
-                <tr>
-                  <td data-lable="Image" name="Image"><img
-                      src="/assets/images/overhauling.png"
-                      alt=""
-                      height="80px"
-                      width="80px"
-                    /></td>
-                  <td
-                    data-lable="ServiceName"
-                    name="ServiceName"
-                  >Overhauling</td>
-                  <td data-lable="Time" name="Time">24</td>
-                  <td data-lable="remove" name="remove"><form action="">
-                      <input
-                        type="submit"
-                        value="Remove"
-                        class="removeCart"
-                        id="removeCart"
-                      />
-                    </form></td>
+                {{#each resData.data}}
+                  <tr>
+                    <td data-lable="Image" name="Image"><img
+                        src="{{{serviceImage}}}"
+                        alt=""
+                        height="80px"
+                        width="80px"
+                      /></td>
+                    <td
+                      data-lable="ServiceName"
+                      name="ServiceName"
+                    >{{{serviceName}}}</td>
+                    <td data-lable="Time" name="Time">{{{serviceTime}}}</td>
+                    <td data-lable="remove" name="remove"><form action="">
+                        <input
+                          type="submit"
+                          value="Remove"
+                          class="removeCart"
+                          id="removeCart"
+                        />
+                      </form>
+                    </td>
 
-                </tr>
-
-                <tr>
-                  <td data-lable="Image" name="Image"><img
-                      src="/assets/images/overhauling.png"
-                      alt=""
-                      height="80px"
-                      width="80px"
-                    /></td>
-                  <td
-                    data-lable="ServiceName"
-                    name="ServiceName"
-                  >Overhauling</td>
-                  <td data-lable="Time" name="Time">24</td>
-                  <td data-lable="remove" name="remove"><form action="">
-                      <input
-                        type="submit"
-                        value="Remove"
-                        class="removeCart"
-                        id="removeCart"
-                      />
-
-                    </form></td>
-
-                </tr>
-
-                <tr>
-                  <td data-lable="Image" name="Image"><img
-                      src="/assets/images/overhauling.png"
-                      alt=""
-                      height="80px"
-                      width="80px"
-                    /></td>
-                  <td
-                    data-lable="ServiceName"
-                    name="ServiceName"
-                  >Overhauling</td>
-                  <td data-lable="Time" name="Time">24</td>
-                  <td data-lable="remove" name="remove">
-                    <form action="">
-                      <input
-                        type="submit"
-                        value="Remove"
-                        class="removeCart"
-                        id="removeCart"
-                      />
-                    </form>
-                  </td>
-
-                </tr>
-                {{!-- {{/each}} --}}
+                  </tr>
+                {{/each}}
               </tbody>
             </table>
           </div>
+
           <div class="subTotal">
-            <label for="">Total Time: 24 hr</label>
+            <label for="">Total Time Duration:
+              <span id="duration">{{{Duration}}}</span>
+            </label>
             <a href="http://localhost:8282/Booking">Send Schedule</a>
           </div>
         </div>

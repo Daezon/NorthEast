@@ -13,6 +13,9 @@ const UserRoute = require('./Routes/User.Routes');
 const ServiceRoute = require('./Routes/Services.Routes');
 const SendrequestRoute = require('./Routes/Sendrequest.Routes');
 const ProductRoute = require('./Routes/Product.Routes');
+const FeedbackRoute = require('./Routes/Feedback.Routes');
+const CartRoute = require('./Routes/Cart.Routes');
+const BookingRoute = require('./Routes/Booking.Routes');
 
 const app = express();
 const dbURI = process.env.dbURI;
@@ -29,6 +32,9 @@ app.use('/api', UserRoute);
 app.use('/api', ServiceRoute);
 app.use('/api', SendrequestRoute);
 app.use('/api', ProductRoute);
+app.use('/api',FeedbackRoute);
+app.use('/api', CartRoute);
+app.use('/api', BookingRoute);
 
 const options = {
   useNewUrlParser: true,

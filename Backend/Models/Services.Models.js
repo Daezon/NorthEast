@@ -9,11 +9,9 @@ const ServiceSchema = new Schema({
   },
   Image: {
     type: String,
-
   },
   Time: {
     type: String,
-    required: true,
   },
 });
 const Service = mongoose.model("Service", ServiceSchema);

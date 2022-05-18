@@ -1,6 +1,7 @@
 const { response } = require("express");
 const fetch = require("node-fetch");
 const URI = "http://localhost:8080/api";
+const { ms, s, m, h, d } = require("time-convert");
 
 exports.register = async (req, res) => {
   res.render("customer/Register", {
@@ -268,14 +269,9 @@ exports.sendrequest = async (req, res) => {
     },
     body: JSON.stringify({
       FullName: req.body.FullName,
-      Gender: req.body.Gender,
-      Age: req.body.Age,
       CarMileage: req.body.CarMileage,
       ContactNumber: req.body.ContactNumber,
-      Services: req.body.Services,
       CarandModel: req.body.CarandModel,
-      Day: req.body.Day,
-      Time: req.body.Time,
       RequestType: req.body.RequestType,
     }),
   };
@@ -343,25 +339,97 @@ exports.AdminAddProduct = async (req, res) => {
 };
 //Add Product End
 
-//Displaying Image Service Start
-exports.customerBooking = async (req, res) => {
-  // const userId = req.cookies.userId;
-  // console.log(userId);
+// //Displaying Image Service Start
+// exports.customerBooking = async (req, res) => {
+//   // const userId = req.cookies.userId;
+//   // console.log(userId);
+//   const options = {
+//     method: "GET",
+//     headers: {
+//       // Authorization: req.cookies.authToken,
+//       "Content-type": "application/json",
+//       Accept: "application/json",
+//       responseType: "json",
+//     },
+//   };
+//   const response = await fetch(`${URI}/services`, options);
+//   const resData = await response.json();
+//   console.log(resData);
+//   const { Servicename, Image, Time } = resData.data;
+//   res.render("customer/customerBooking", {
+//     layout: "customer/customerBooking",
+//     resData: resData,
+//   });
+// };
+
+// displayCart;
+exports.customerCart = async (req, res) => {
+  const userId = req.cookies.userId;
+  const token = req.cookies.authToken;
+  console.log(token);
   const options = {
     method: "GET",
     headers: {
-      // Authorization: req.cookies.authToken,
       "Content-type": "application/json",
       Accept: "application/json",
       responseType: "json",
     },
   };
-  const response = await fetch(`${URI}/services`, options);
+  const optionTwo = {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json",
+      authToken: req.cookies.authToken,
+      Accept: "application/json",
+      responseType: "json",
+    },
+  };
+  const response = await fetch(`${URI}/cart/${userId}`, options);
   const resData = await response.json();
-  console.log(resData);
-  const { Servicename, Image, Time } = resData.data;
-  res.render("customer/customerBooking", {
-    layout: "customer/customerBooking",
+
+  // {{{resDataTwo.data.}}}
+  res.render("customer/customerCart", {
+    layout: "customer/customerCart",
     resData: resData,
   });
 };
+
+// //addtocart
+// exports.customerCart = async (req, res) => {
+//   const token = await req.cookies.authToken;
+//   // console.log(req.cookies.authToken)
+//   const options = {
+//     method: "POST",
+//     headers: {
+//       authToken: token,
+//       "Content-type": "application/json",
+//       Accept: "application/json",
+//       responseType: "json",
+//     },
+//     body: JSON.stringify({
+//       Clientid: req.User._id,
+//       serviceName: serviceurl.data.data.Servicename,
+//       serviceTime: serviceurl.data.data.Time,
+//       serviceImage: serviceurl.data.data.Image,
+//       carttype: carttype,
+//     }),
+//   };
+
+//   const response = await fetch(`${URI}/cart/{Ser}`, options);
+//   const resData = await response.json();
+//   console.log(resData);
+
+//   if (response.status == 200) {
+//     res.render("customer/customerServices", {
+//       layout: "customer/customerServices",
+//       resData: resData,
+//       success: true,
+//     });
+//   } else {
+//     res.render("customer/customerServices", {
+//       layout: "customer/customerServices",
+//       resData: resData,
+//       success: true,
+//     });
+//   }
+// };

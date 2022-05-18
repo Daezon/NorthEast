@@ -1,0 +1,19 @@
+{
+  "name": "time-converter",
+  "keywords": [],
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint-clean": "eslint . --fix",
+    "lint-init": "eslint --init",
+    "test": "mocha ./spec --recursive"
+  },
+  "author": "Thomas Volk",
+  "license": "BOII",
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}

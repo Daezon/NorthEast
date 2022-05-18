@@ -1,19 +1,19 @@
 function getCookie(name) {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
+  if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
 //Delete Service
 function Deletedetails(event) {
   // event.preventDefault();
-  console.log(getCookie('authToken'));
+  console.log(getCookie("authToken"));
   const Service_id = event.target.id.value;
   (async () => {
     try {
       const baseURL = await fetch(
         `http://localhost:8080/api/service/delete/${Service_id}`,
-        { method: 'DELETE', headers: { Authorization: getCookie('authToken') } }
+        { method: "DELETE", headers: { Authorization: getCookie("authToken") } }
       );
       const result = await baseURL.json();
       console.log(result.data);
@@ -26,13 +26,13 @@ function Deletedetails(event) {
 //Delete Product
 function DeleteProduct(event) {
   // event.preventDefault();
-  console.log(getCookie('authToken'));
+  console.log(getCookie("authToken"));
   const Product_id = event.target.id.value;
   (async () => {
     try {
       const baseURL = await fetch(
         `http://localhost:8080/api/product/delete/${Product_id}`,
-        { method: 'DELETE', headers: { Authorization: getCookie('authToken') } }
+        { method: "DELETE", headers: { Authorization: getCookie("authToken") } }
       );
       const result = await baseURL.json();
       console.log(result.data);
@@ -46,23 +46,23 @@ const updateConfirm = async (event) => {
   // console.log('nanayko');
   event.preventDefault();
 
-  const text = document.getElementById('Productname').value;
+  const text = document.getElementById("Productname").value;
 
-  const productId = document.getElementById('ProductID').value;
+  const productId = document.getElementById("ProductID").value;
 
-  const price = document.getElementById('Price').value;
+  const price = document.getElementById("Price").value;
 
-  const image = document.getElementById('ImageFile').value;
+  const image = document.getElementById("ImageFile").value;
   console.log(image);
   try {
     const baseURL = await fetch(
       `http://localhost:8080/api/product/update/${productId}`,
       {
-        method: 'PUT',
+        method: "PUT",
         headers: {
-          'Content-type': 'application/json',
-          Accept: 'application/json',
-          responseType: 'json',
+          "Content-type": "application/json",
+          Accept: "application/json",
+          responseType: "json",
         },
         body: JSON.stringify({
           Productname: text,
@@ -81,18 +81,18 @@ const updateConfirm = async (event) => {
 //Accept Request
 const Acceptrequest = async (event) => {
   //   event.preventDefault();
-  console.log(getCookie('authToken'));
+  console.log(getCookie("authToken"));
   const requestID = event.target.id.value;
   try {
-    const baseURL = await fetch('http://localhost:8080/api/updateRequest', {
-      method: 'PUT',
+    const baseURL = await fetch("http://localhost:8080/api/updateRequest", {
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: getCookie('authToken'),
+        "Content-Type": "application/json",
+        Authorization: getCookie("authToken"),
       },
       body: JSON.stringify({
         requestID: requestID,
-        RequestType: 'Accept',
+        RequestType: "Accept",
       }),
     });
     const result = await baseURL.json();
@@ -105,18 +105,18 @@ const Acceptrequest = async (event) => {
 //Decline Request
 const Declinerequest = async (event) => {
   //   event.preventDefault();
-  console.log(getCookie('authToken'));
+  console.log(getCookie("authToken"));
   const requestID = event.target.id.value;
   try {
-    const baseURL = await fetch('http://localhost:8080/api/updateRequest', {
-      method: 'PUT',
+    const baseURL = await fetch("http://localhost:8080/api/updateRequest", {
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: getCookie('authToken'),
+        "Content-Type": "application/json",
+        Authorization: getCookie("authToken"),
       },
       body: JSON.stringify({
         requestID: requestID,
-        RequestType: 'Decline',
+        RequestType: "Decline",
       }),
     });
     const result = await baseURL.json();
@@ -129,18 +129,18 @@ const Declinerequest = async (event) => {
 //Donerequest
 const Donerequest = async (event) => {
   //   event.preventDefault();
-  console.log(getCookie('authToken'));
+  console.log(getCookie("authToken"));
   const requestID = event.target.id.value;
   try {
-    const baseURL = await fetch('http://localhost:8080/api/updateRequest', {
-      method: 'PUT',
+    const baseURL = await fetch("http://localhost:8080/api/updateRequest", {
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: getCookie('authToken'),
+        "Content-Type": "application/json",
+        Authorization: getCookie("authToken"),
       },
       body: JSON.stringify({
         requestID: requestID,
-        RequestType: 'Done',
+        RequestType: "Done",
       }),
     });
     const result = await baseURL.json();
@@ -153,18 +153,18 @@ const Donerequest = async (event) => {
 //Cancelledrequest
 const Cancelledrequest = async (event) => {
   //   event.preventDefault();
-  console.log(getCookie('authToken'));
+  console.log(getCookie("authToken"));
   const requestID = event.target.id.value;
   try {
-    const baseURL = await fetch('http://localhost:8080/api/updateRequest', {
-      method: 'PUT',
+    const baseURL = await fetch("http://localhost:8080/api/updateRequest", {
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: getCookie('authToken'),
+        "Content-Type": "application/json",
+        Authorization: getCookie("authToken"),
       },
       body: JSON.stringify({
         requestID: requestID,
-        RequestType: 'Cancelled',
+        RequestType: "Cancelled",
       }),
     });
     const result = await baseURL.json();
@@ -184,7 +184,7 @@ function GetService(event) {
     try {
       const baseURL = await fetch(
         `http://localhost:8080/api/services/${Service_id}`,
-        { method: 'GET', headers: { Authorization: getCookie('authToken') } }
+        { method: "GET", headers: { Authorization: getCookie("authToken") } }
       );
       const result = await baseURL.json();
 
@@ -199,23 +199,23 @@ const updateServiceConfirm = async (event) => {
   // console.log();
   event.preventDefault();
 
-  const text = document.getElementById('Servicename').value;
+  const text = document.getElementById("Servicename").value;
 
-  const serviceId = document.getElementById('ServiceID').value;
+  const serviceId = document.getElementById("ServiceID").value;
 
-  const time = document.getElementById('Time').value;
+  const time = document.getElementById("Time").value;
 
-  const image = document.getElementById('ImageFile').value;
+  const image = document.getElementById("ImageFile").value;
   console.log(image);
   try {
     const baseURL = await fetch(
       `http://localhost:8080/api/service/update/${serviceId}`,
       {
-        method: 'PUT',
+        method: "PUT",
         headers: {
-          'Content-type': 'application/json',
-          Accept: 'application/json',
-          responseType: 'json',
+          "Content-type": "application/json",
+          Accept: "application/json",
+          responseType: "json",
         },
         body: JSON.stringify({
           Servicename: text,
@@ -229,4 +229,32 @@ const updateServiceConfirm = async (event) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+// addToCArt
+const addCartBtn = async (event) => {
+  event.preventDefault;
+  const token = await req.cookies.authToken;
+
+  const baseURL = await fetch(
+    `http://localhost:8080/api/services/${Service_id}`,
+    {
+      method: "POST",
+      headers: {
+        authToken: token,
+        "Content-type": "application/json",
+        Accept: "application/json",
+        responseType: "json",
+      },
+      body: JSON.stringify({
+        Clientid: req.User._id,
+        serviceName: serviceurl.data.data.Servicename,
+        serviceTime: serviceurl.data.data.Time,
+        serviceImage: serviceurl.data.data.Image,
+        carttype: OnCart,
+      }),
+    }
+  );
+  const result = await baseURL.json();
+  console.log(result.data);
 };

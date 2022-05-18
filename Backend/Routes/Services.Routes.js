@@ -14,14 +14,14 @@ const imageStorageService = multer.diskStorage({
 });
 const upload = multer({ storage: imageStorageService });
 
-// router.post(
-//   '/addproduct',
-//   upload.single('image_product'),
-//   ServiceController.addProduct
-// );
+router.post(
+  '/addservice',
+  upload.single('image_service'),
+  ServiceController.addService
+);
 
-router.post('/addservice', ServiceController.addService);
-
+// router.post('/addservice', ServiceController.addService);
+router.get('/try', ServiceController.serviceTry)
 router.get('/services/:_id', ServiceController.getServiceID);
 router.get('/services', ServiceController.getService);
 router.put(

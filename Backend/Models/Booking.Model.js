@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const bookingSchema = new Schema({
-
   FullName: {
     type: String,
 
@@ -20,16 +19,19 @@ const bookingSchema = new Schema({
   CarandModel: {
     type: String,
   },
-  
-  Schedule:{
+
+  Schedule: {
     type: Number,
+  },
+
+  ScheduleDate: {
+    type: String,
   },
 
   RequestType: {
     type: String,
   },
-  cart:[String],
-
+  cart: [String],
 });
 const Booking = mongoose.model("booking", bookingSchema);
 module.exports = Booking;

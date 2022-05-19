@@ -52,11 +52,11 @@
             src="{{{Image}}}"
             alt=""
             class="serviceImage"
-            style="height: 250px; width:250px"
+            style="height: 200px; width:200px"
           />
         </div>
         <p class="serviceTime">{{{Time}}}</p>
-        <form onsubmit="return AddCartBtn(event)">
+        <form class="addCartFrom" onsubmit="return AddCartBtn(event)">
           <input class="addCartBtn" type="submit" value="Add Cart" />
           <input type="hidden" value="{{{_id}}}" name="ServiceID" />
         </form>

@@ -1,6 +1,12 @@
 const fetch = require("node-fetch");
 const URI = "http://localhost:8080/api";
 
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
 //Render
 exports.renderAddProduct = async (req, res) => {
   res.render("admin/AdminAddproduct", {
@@ -208,6 +214,8 @@ exports.AdminProducts = async (req, res) => {
 
 //display Request
 exports.AdminRequest = async (req, res) => {
+  const userId = req.cookies.userId;
+  const token = req.cookies.authToken;
   const options = {
     method: "GET",
     headers: {
@@ -216,9 +224,35 @@ exports.AdminRequest = async (req, res) => {
       responseType: "json",
     },
   };
-  const response = await fetch(`${URI}/getdefault`, options);
+
+  const optionsTwo = {
+    method: "GET",
+    headers: {
+      authToken: token,
+      "Content-type": "application/json",
+      Accept: "application/json",
+      responseType: "json",
+    },
+  };
+
+  const optionsThree = {
+    method: "GET",
+    headers: {
+      authToken: token,
+      "Content-type": "application/json",
+      Accept: "application/json",
+      responseType: "json",
+    },
+  };
+
+  const response = await fetch(`${URI}/default`, options);
+  const responseTwo = await fetch(`${URI}/cart/${userId}`, optionsTwo);
+  const responseThree = await fetch(`${URI}/duration`, optionsThree);
+
   const resData = await response.json();
-  console.log(resData);
+  const resDataTwo = await responseTwo.json();
+  const resDataThree = await responseThree.json();
+  console.log(resDataThree);
   const {
     FullName,
     Gender,
@@ -234,6 +268,8 @@ exports.AdminRequest = async (req, res) => {
   res.render("Admin/AdminRequest", {
     layout: "Admin/AdminRequest",
     resData: resData,
+    data: resDataTwo.data,
+    data: resDataThree.data,
   });
 };
 //end

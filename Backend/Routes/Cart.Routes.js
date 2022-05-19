@@ -8,7 +8,7 @@ router.post("/cart/:_id", verify, CartController.addToCart);
 
 router.get("/cart/:_id", CartController.getCart);
 
-router.get("/updatecart", verify, CartController.updateCart);
+router.put("/updatecart/:_id", CartController.updateCart);
 
 router.delete("/itemdelete/:_id", CartController.deleteCart);
 

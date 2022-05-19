@@ -236,7 +236,7 @@ exports.sendrequest = async (req, res) => {
       ContactNumber: req.body.ContactNumber,
       CarandModel: req.body.CarandModel,
       RequestType: req.body.RequestType,
-      Date: req.body.Date,
+      Date: req.body.Day,
       Time: req.body.Time,
     }),
   };

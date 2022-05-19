@@ -31,5 +31,6 @@ router.get("/done", BookingController.getDone);
 router.get("/cancelled", BookingController.getCancelled);
 
 router.get("/archieve", BookingController.getArchieve);
+router.put("/bookingCartUpdate/:_id", BookingController.bookingCartUpdate);
 
 module.exports = router;

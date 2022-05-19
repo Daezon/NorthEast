@@ -75,14 +75,13 @@
                 <thead>
                   <tr>
                     <th>Full Name</th>
-                    <th>Gender</th>
-                    <th>Age</th>
                     <th>Car Mileage</th>
                     <th>Contact Number</th>
                     <th>Service</th>
                     <th>Car Model</th>
                     <th>Date</th>
                     <th>Time</th>
+                    <th>Total Time Duration</th>
                     <th>Status</th>
                     <th></th>
                   </tr>
@@ -92,8 +91,6 @@
                   {{#each resData.data}}
                 <tr>
                   <td data-lable='Full Name' name='FullName'>{{{FullName}}}</td>
-                  <td data-lable='Gender' name='Gender'>{{{Gender}}}</td>
-                  <td data-lable='Age' name='Age'>{{{Age}}}</td>
                   <td
                     data-lable='Car Mileage'
                     name='CarMileage'
@@ -102,13 +99,13 @@
                     data-lable='Contact Number'
                     name='ContactNumber'
                   >{{{ContactNumber}}}</td>
-                  <td data-lable='Service' name='Services'>{{{Services}}}</td>
+                  <td data-lable='Service' name='Services'>{{{cart}}}</td>
                   <td
                     data-lable='Car Model'
                     name='CarandModel'
                   >{{{CarandModel}}}</td>
-                  <td data-lable='Day' name='Day'>{{{Day}}}</td>
-                  <td data-lable='Time' name='Time'>{{{Time}}}</td>
+                  <td data-lable='Day' name='Day'>{{{ScheduleDate}}}</td>
+                  <td data-lable='Total Time Duration' name="Duration">{{{data}}}</td>
                   <td data-lable='Approve'>
                     <form action='' onsubmit='return Acceptrequest(event)'>
                       <input class='tblBTN1' type='submit' value='Accept' />

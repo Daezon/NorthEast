@@ -1,8 +1,8 @@
 const Booking = require("../Models/Booking.Model");
 const axios = require("axios");
-
+const timestampToDate = require("timestamp-to-date");
 //getcartitem
-
+const Converter = require("timestamp-conv");
 exports.getbooking = async (req, res) => {
   try {
     //
@@ -25,8 +25,12 @@ exports.getbooking = async (req, res) => {
     const scheduledTime = toTimestamp(`${humanDate} ${humanTime}`);
     console.log(scheduledTime);
     const findDate = await Booking.find({ Schedule: scheduledTime });
-    console.log(findDate);
-
+    const convertedTime = new Date(scheduledTime * 1000);
+    const convertedDate = convertedTime.getDate();
+    const convertedYear = convertedTime.getFullYear();
+    const convertedMonth = convertedTime.getMonth() + 1;
+    const complete = `${convertedMonth}-${convertedDate}-${convertedYear}`;
+    console.log(complete);
     if (findDate.length >= 1) {
       return res
         .status(403)
@@ -38,6 +42,7 @@ exports.getbooking = async (req, res) => {
         ContactNumber: req.body.ContactNumber,
         CarandModel: req.body.CarandModel,
         Schedule: scheduledTime,
+        ScheduleDate: complete,
         RequestType: req.body.RequestType,
       });
       const saveBooking = await sendBooking.save();
@@ -54,13 +59,14 @@ exports.getbooking = async (req, res) => {
           }
         );
       }
-      // update the cart type
-
+      const updateTheCart = await axios.put(
+        `http://localhost:8080/api/bookingCartUpdate/${saveBooking._id}`
+      );
       return res.status(200).send(saveBooking);
     }
   } catch (err) {
     console.log(err);
-    return res.status(400).json({ message: error.message, statusCode: 400 });
+    return res.status(400).json({ message: err.message, statusCode: 400 });
   }
 };
 
@@ -284,13 +290,19 @@ exports.getArchieve = async (req, res) => {
     return res.status(400).json({ message: err.message, status: 400 });
   }
 };
-exports.updateCartType = async (req, res) => {
+exports.bookingCartUpdate = async (req, res) => {
   try {
-    const booking = await axios.get(
-      `http://localhost:8080/api/Booking/${req.params._id}`
-    );
-    console.log(booking.data);
-  } catch (e) {
-    console.log(e);
+    const bookingID = req.params._id;
+    const getInfo = await Booking.find({ _id: bookingID });
+    const cartLength = getInfo[0].cart;
+    for (let i = 0; i < cartLength.length; i++) {
+      const cartID = await cartLength[i];
+      const updateCart = await axios.put(
+        `http://localhost:8080/api/updatecart/${cartID}`
+      );
+    }
+    return res.status(200).json({ message: "Item Updated", status: 200 });
+  } catch (error) {
+    console.log(error);
   }
 };

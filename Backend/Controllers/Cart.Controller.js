@@ -10,18 +10,11 @@ exports.addToCart = async (req, res) => {
     const serviceurl = await axios.get(
       `http://localhost:8080/api/services/${req.params._id}`
     );
-
     const findClientid = await Cart.find({ Clientid: req.User._id });
-    const findserviceName = await Cart.find({
-      serviceName: serviceurl.data.data.Servicename,
-    });
-    const findCarttype = await Cart.find({ carttype: "Oncart" });
-    console.log(findClientid, findserviceName, findCarttype);
-    if (
-      findCarttype.length >= 1 &&
-      findClientid.length >= 1 &&
-      findserviceName.length >= 1
-    ) {
+    const serviceName = serviceurl.data.data.Servicename;
+    const isContain = findClientid.find((cart) => cart.serviceName === serviceName);
+
+    if (isContain) {
       return res.status(403).send({ message: "Already added" });
     } else {
       const carttype = "Oncart";
@@ -53,12 +46,9 @@ exports.getCart = async (req, res) => {
     const cart = await Cart.find({
       Clientid: Clientid,
     });
-
     const arr = [];
     for (let i = 0; i < cart.length; i++) {
-      if (cart[i].carttype === "Oncart") {
-        arr.push(cart[i]);
-      }
+      arr.push(cart[i]);
     }
 
     return res.status(200).json({
@@ -72,21 +62,32 @@ exports.getCart = async (req, res) => {
   }
 };
 
-//update
+//updatecart
 exports.updateCart = async (req, res) => {
   try {
-    const cartID = req.params._id;
-    const updateCart = await Cart.updateOne(
-      { _id: cartID },
-      {
-        carttype: "onRequest",
-      }
+    const Clientid = req.User._id;
+    const carturl = await axios.get(
+      `http://localhost:8080/api/cart/${Clientid}`
     );
-    return res.status(200).json({
-      message: "Updated!",
-      data: updateCart,
-      statusCode: 200,
-    });
+    const carturlsize = carturl.data.data;
+
+    const arr = [];
+    for (let i = 0; i < carturlsize.length; i++) {
+      arr.push(carturlsize[i]);
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      const cart = await Cart.updateOne(
+        { _id: arr[i]._id },
+        {
+          carttype: "Onrequest",
+        }
+      );
+      return res.status(200).json({
+        message: "Updated!",
+        statusCode: 200,
+      });
+    }
   } catch (err) {
     console.log(err);
     return res.status(400).json({ message: error.message, statusCode: 400 });
@@ -94,7 +95,6 @@ exports.updateCart = async (req, res) => {
 };
 
 //deletecart
-
 exports.deleteCart = async (req, res) => {
   const id = req.params._id;
   console.log(id);
@@ -141,6 +141,8 @@ exports.duration = async (req, res) => {
     }
 
     const Duration = prettyMilliseconds(sum);
+
+
 
     return res.status(200).json({
       message: "Duration",

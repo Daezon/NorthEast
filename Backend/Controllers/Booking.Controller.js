@@ -1,8 +1,12 @@
 const Booking = require("../Models/Booking.Model");
+const Cart = require("../Models/Cart.Model");
 const axios = require("axios");
+const HumanToMilliseconds = require("human-to-milliseconds");
+const prettyMilliseconds = require("pretty-ms");
 const timestampToDate = require("timestamp-to-date");
 //getcartitem
 const Converter = require("timestamp-conv");
+
 exports.getbooking = async (req, res) => {
   try {
     //
@@ -13,6 +17,7 @@ exports.getbooking = async (req, res) => {
     //   console.log(toTimestamp('05/18/2022 03:00:30'));
     //
     const Clientid = req.User._id;
+    const findClientCart = await Cart.find({ Clientid: Clientid });
     const carturl = await axios.get(
       `http://localhost:8080/api/cart/${Clientid}`
     );
@@ -30,38 +35,57 @@ exports.getbooking = async (req, res) => {
     const convertedYear = convertedTime.getFullYear();
     const convertedMonth = convertedTime.getMonth() + 1;
     const complete = `${convertedMonth}-${convertedDate}-${convertedYear}`;
-    console.log(complete);
+
+    const allTime = [];
+    for (let i = 0; i < findClientCart.length; i++) {
+      const text = await findClientCart[i].serviceTime;
+      const removeSpace = text.replace(" ", "");
+      const timeConvertMili = HumanToMilliseconds(`${removeSpace}`);
+      allTime.push(timeConvertMili);
+    }
+
+    let totalTime = 0;
+    for (let i = 0; i < allTime.length; i++) {
+      totalTime += parseInt(allTime[i]);
+    }
+
+    const Duration = prettyMilliseconds(totalTime);
+
     if (findDate.length >= 1) {
       return res
         .status(403)
         .send({ message: "Scheduled time is Already Taken!" });
     } else {
       const sendBooking = new Booking({
+        Clientid: Clientid,
         FullName: req.body.FullName,
         CarMileage: req.body.CarMileage,
+        cart: findClientCart,
         ContactNumber: req.body.ContactNumber,
         CarandModel: req.body.CarandModel,
         Schedule: scheduledTime,
         ScheduleDate: complete,
+        duration: Duration,
+        time: humanTime,
         RequestType: req.body.RequestType,
       });
       const saveBooking = await sendBooking.save();
 
-      for (let i = 0; i < cartArr.length; i++) {
-        await Booking.findOneAndUpdate(
-          {
-            FullName: req.body.FullName,
-          },
-          {
-            $addToSet: {
-              cart: cartArr[i],
-            },
-          }
-        );
-      }
-      const updateTheCart = await axios.put(
-        `http://localhost:8080/api/bookingCartUpdate/${saveBooking._id}`
-      );
+      // for (let i = 0; i < cartArr.length; i++) {
+      //   await Booking.findOneAndUpdate(
+      //     {
+      //       FullName: req.body.FullName,
+      //     },
+      //     {
+      //       $addToSet: {
+      //         cart: cartArr[i],
+      //       },
+      //     }
+      //   );
+      // }
+      // const updateTheCart = await axios.put(
+      //   `http://localhost:8080/api/bookingCartUpdate/${saveBooking._id}`
+      // );
       return res.status(200).send(saveBooking);
     }
   } catch (err) {
@@ -73,9 +97,33 @@ exports.getbooking = async (req, res) => {
 //getall
 exports.getallBooking = async (req, res) => {
   try {
-    const allBooking = await Booking.find();
+    const bookings = await Booking.find();
+
+    let allBookings = [];
+    for(let i = 0;i < bookings.length;i++){
+      const findClientCart = await Cart.find({ Clientid: bookings[i].Clientid });
+      const allTime = [];
+      for (let i = 0; i < findClientCart.length; i++) {
+        const text = await findClientCart[i].serviceTime;
+        const removeSpace = text.replace(" ", "");
+        const timeConvertMili = HumanToMilliseconds(`${removeSpace}`);
+        allTime.push(timeConvertMili);
+      }
+
+      let totalTime = 0;
+      for (let i = 0; i < allTime.length; i++) {
+        totalTime += parseInt(allTime[i]);
+      }
+  
+      const Duration = prettyMilliseconds(totalTime);
+      allBookings.push({
+        ...bookings[i],
+        totalTime: Duration
+      })
+    }
+    console.log("allBookings", allBookings)
     return res.status(200).json({
-      data: allBooking,
+      data: allBookings,
       message: "All Booking",
       status: 200,
     });
@@ -225,6 +273,7 @@ exports.getDefault = async (req, res) => {
         defaultArr.push(allDefault[i]);
       }
     }
+    console.log(defaultArr)
     return res
       .status(200)
       .json({ data: defaultArr, message: "Get All Default", status: 200 });

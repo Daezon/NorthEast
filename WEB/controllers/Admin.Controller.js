@@ -225,51 +225,28 @@ exports.AdminRequest = async (req, res) => {
     },
   };
 
-  const optionsTwo = {
-    method: "GET",
-    headers: {
-      authToken: token,
-      "Content-type": "application/json",
-      Accept: "application/json",
-      responseType: "json",
-    },
-  };
-
-  const optionsThree = {
-    method: "GET",
-    headers: {
-      authToken: token,
-      "Content-type": "application/json",
-      Accept: "application/json",
-      responseType: "json",
-    },
-  };
-
   const response = await fetch(`${URI}/default`, options);
-  const responseTwo = await fetch(`${URI}/cart/${userId}`, optionsTwo);
-  const responseThree = await fetch(`${URI}/duration`, optionsThree);
-
   const resData = await response.json();
-  const resDataTwo = await responseTwo.json();
-  const resDataThree = await responseThree.json();
-  console.log(resDataThree);
-  const {
-    FullName,
-    Gender,
-    Age,
-    CarMilage,
-    ContactNumber,
-    Services,
-    CarandModel,
-    Day,
-    Time,
-    RequestType,
-  } = resData.data;
+  const data = resData.data;
+
+  let newDatas = [];
+  for(let i = 0;i < data.length;i++){
+    const cart = data[i].cart;
+    const services = []
+    for(let x = 0;x < cart.length;x++){
+      services.push(cart[x].serviceName);
+    }
+    newDatas.push({
+      ...data[i],
+      services: services
+    });
+  }
+
+  // console.log("resData", newDatas)
+
   res.render("Admin/AdminRequest", {
     layout: "Admin/AdminRequest",
-    resData: resData,
-    data: resDataTwo.data,
-    data: resDataThree.data,
+    resData: newDatas,
   });
 };
 //end
@@ -284,24 +261,27 @@ exports.AdminSchedules = async (req, res) => {
       responseType: "json",
     },
   };
-  const response = await fetch(`${URI}/getapprove`, options);
+  const response = await fetch(`${URI}/approve`, options);
   const resData = await response.json();
-  console.log(resData);
-  const {
-    FullName,
-    Gender,
-    Age,
-    CarMilage,
-    ContactNumber,
-    Services,
-    CarandModel,
-    Day,
-    Time,
-    RequestType,
-  } = resData.data;
+  const data = resData.data;
+
+  let newDatas = [];
+  for(let i = 0;i < data.length;i++){
+    const cart = data[i].cart;
+    const services = []
+    for(let x = 0;x < cart.length;x++){
+      services.push(cart[x].serviceName);
+    }
+    newDatas.push({
+      ...data[i],
+      services: services
+    });
+  }
+
+
   res.render("admin/AdminSchedules", {
     layout: "admin/AdminSchedules",
-    resData: resData,
+    resData: newDatas,
   });
 };
 //end

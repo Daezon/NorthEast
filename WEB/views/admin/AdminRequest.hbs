@@ -88,7 +88,7 @@
                 </thead>
   
                 <tbody>
-                  {{#each resData.data}}
+                  {{#each resData}}
                 <tr>
                   <td data-lable='Full Name' name='FullName'>{{{FullName}}}</td>
                   <td
@@ -99,13 +99,14 @@
                     data-lable='Contact Number'
                     name='ContactNumber'
                   >{{{ContactNumber}}}</td>
-                  <td data-lable='Service' name='Services'>{{{cart}}}</td>
+                   <td data-lable='Service' name='Services'>{{{services}}}</td>
                   <td
                     data-lable='Car Model'
                     name='CarandModel'
                   >{{{CarandModel}}}</td>
                   <td data-lable='Day' name='Day'>{{{ScheduleDate}}}</td>
-                  <td data-lable='Total Time Duration' name="Duration">{{{data}}}</td>
+                  <td data-lable='Time' name="Time">{{{time}}}</td>
+                  <td data-lable='Total Time Duration' name="Duration">{{{duration}}}</td>
                   <td data-lable='Approve'>
                     <form action='' onsubmit='return Acceptrequest(event)'>
                       <input class='tblBTN1' type='submit' value='Accept' />

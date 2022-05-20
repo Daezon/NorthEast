@@ -65,32 +65,19 @@ exports.getCart = async (req, res) => {
 //updatecart
 exports.updateCart = async (req, res) => {
   try {
-    const Clientid = req.User._id;
-    const carturl = await axios.get(
-      `http://localhost:8080/api/cart/${Clientid}`
-    );
-    const carturlsize = carturl.data.data;
-
-    const arr = [];
-    for (let i = 0; i < carturlsize.length; i++) {
-      arr.push(carturlsize[i]);
-    }
-
-    for (let i = 0; i < arr.length; i++) {
-      const cart = await Cart.updateOne(
-        { _id: arr[i]._id },
-        {
-          carttype: "Onrequest",
-        }
-      );
+    const Clientid = req.params._id;
+    const updateClientCart = await Cart.updateMany({ Clientid: Clientid },{carttype: "onRequest"});
+    
+    
       return res.status(200).json({
         message: "Updated!",
+        data:updateClientCart,
         statusCode: 200,
       });
-    }
+
   } catch (err) {
     console.log(err);
-    return res.status(400).json({ message: error.message, statusCode: 400 });
+    return res.status(400).json({ message: err.message, statusCode: 400 });
   }
 };
 

@@ -40,9 +40,6 @@ const UsersSchema = new Schema({
       Date: {
         type: String,
       },
-      reqType: {
-        type: String,
-      },
     },
   ],
 });

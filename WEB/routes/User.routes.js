@@ -12,9 +12,12 @@ router.get("/Products", UserController.customerProducts);
 router.get("/Home", UserController.customerhome);
 router.get("/TermsAndCondition", UserController.condition);
 router.get("/Cart", UserController.customerCart);
+router.get("/Feedback", UserController.customerFeedBack);
+
 // Post
 router.post("/Register", UserController.userregister);
 router.post("/Login", UserController.userLogin);
 router.post("/Booking", UserController.sendrequest);
+router.post("/Feedback", UserController.FeedBackComment);
 
 module.exports = router;

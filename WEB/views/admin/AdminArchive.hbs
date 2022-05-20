@@ -80,6 +80,7 @@
                     <th>Car Model</th>
                     <th>Date</th>
                     <th>Time</th>
+                    <th>Total Time Duration</th>
                     <th>Status</th>
                   </tr>
                 </thead>
@@ -107,8 +108,9 @@
                         data-lable='Car Model'
                         name='CarandModel'
                       >{{{CarandModel}}}</td>
-                      <td data-lable='Day' name='Day'>{{{Day}}}</td>
+                      <td data-lable='Day' name='Day'>{{{ScheduleDate}}}</td>
                       <td data-lable='Time' name='Time'>{{{Time}}}</td>
+                      <td data-lable='Total Time Duration' name="Duration">{{{duration}}}</td>
                       <td data-lable='Status'>{{{RequestType}}}</td>
                     </tr>
                   {{/each}}

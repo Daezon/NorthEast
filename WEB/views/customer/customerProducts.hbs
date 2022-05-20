@@ -1,48 +1,47 @@
 <div>
-  <nav>
-    <div class="logo">
-      {{! <i class='fab fa-neos icon icons'></i> }}
-      NorthEast
-    </div>
-    <label for="btn" class="icon">
-      <span class="fa fa-bars"></span>
-    </label>
-    <input type="checkbox" id="btn" />
-    <ul>
-      <li>
-        <a href="http://localhost:8282/home">Home
-          <i class="bx bx-home"></i></a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/Services">Service
-          <i class="bx bx-wrench"></i></a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/Products">Product
-          <i class="bx bx-store-alt"></i>
-        </a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/CART">Cart
-          <i class="bx bx-cart"></i>
-        </a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/Notification">Notification
-          <i class="bx bx-bell"></i></a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/Login">Log Out
-          <i class="fad fa-sign-out-alt"></i></a>
-      </li>
-    </ul>
-  </nav>
+	<nav>
+		<div class="logo">
+			NorthEast
+		</div>
+		<ul>
+			<li>
+				<a href="http://localhost:8282/home">Home
+					<i class="bx bx-home"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Services">Service
+					<i class="bx bx-wrench"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Products">Product
+					<i class="bx bx-store-alt"></i>
+				</a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/CART">Cart
+					<i class="bx bx-cart"></i>
+				</a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Notification">Notification
+					<i class="bx bx-bell"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Feedback">Feedback
+					<i class="bx bxs-like"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Login">Log Out
+					<i class="fad fa-sign-out-alt"></i></a>
+			</li>
 
-  <div class="titleProduct">
-    <h1>Product</h1>
-  </div>
+		</ul>
+	</nav>
+	<div class="titleProduct">
+		<h1>Product</h1>
+	</div>
 
-  {{! <div class='searchProduct'>
+	{{! <div class='searchProduct'>
     <input
       type='text'
       name=''
@@ -52,23 +51,23 @@
     <input type='button' value='Search' class='searchBTN' />
   </div> }}
 
-  <div class="wrapperGrid">
+	<div class="wrapperGrid">
 
-    {{#each resData.data}}
-      <div class="containerServ">
-        <h1 class="name" name>{{{Productname}}}</h1>
-        <div class="imghero">
-          <img
-            src="{{{Image}}}"
-            alt=""
-            class="serviceImage"
-            style="height: 250px; width:250px"
-          />
-        </div>
-        <p class="serviceTime">{{{Price}}}</p>
+		{{#each resData.data}}
+			<div class="containerServ">
+				<h1 class="name" name>{{{Productname}}}</h1>
+				<div class="imghero">
+					<img
+						src="{{{Image}}}"
+						alt=""
+						class="serviceImage"
+						style="height: 250px; width:250px"
+					/>
+				</div>
+				<p class="serviceTime">{{{Price}}}</p>
 
-      </div>
-    {{/each}}
+			</div>
+		{{/each}}
 
-  </div>
+	</div>
 </div>

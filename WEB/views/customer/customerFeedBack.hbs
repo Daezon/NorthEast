@@ -38,29 +38,31 @@
 		</ul>
 	</nav>
 
-	<div class="homemain">
-		<div class="homehero2">
-			<img src="/assets/images/bghome.gif" alt="" />
+	<div class="commentContainer">
+		<div class="commentFormdiv">
+			<img src="" alt="" />
+			<h1>Thank you for trusting and using our Website.</h1>
+			<h1>Please leave a comment for us to be posted at feedback.</h1>
+			<div class="alert alert-danger">{{resData.message}}</div>
+			<form action="/Feedback" class="commentForm" method="POST">
+				<input
+					type="text"
+					name="Message"
+					id="commentText"
+					placeholder="Add comment..."
+				/>
+				<input type="submit" id="submitComment" value="Post" />
+			</form>
 		</div>
-
-		<div class="homehero1">
-			<div class="welcome">
-				<div class="welcome2">
-					<h4>We Bring You The Best Work Ever</h4>
-					<h2>
-						Welcome to NorthEast Scheduling Website
-					</h2>
-					<p>
-						Save time and add efficiency by allowing ourCustomer to book their
-						Cars Online
-					</p>
-					<button class="getstartedBTN">
-						<a href="http://localhost:8282/Booking">Get Started
-							<i class="fad fa-check"></i></a>
-					</button>
+		<div class="allcomments">
+			<h2>Feedback:</h2>
+			{{#each resData.data}}
+				<div class="comment">
+					<h1 class="Customer ID">{{{Commentatorid}}}</h1>
+					<p>{{{Message}}}</p>
+					<h3 class="date">{{{Date}}}</h3>
 				</div>
-			</div>
+			{{/each}}
 		</div>
 	</div>
-
 </div>

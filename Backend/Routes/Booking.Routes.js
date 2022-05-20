@@ -20,6 +20,8 @@ router.put("/cancelled/:_id", BookingController.updateCanBooking);
 
 router.put("/done/:_id", BookingController.updateDoneBooking);
 
+//get
+
 router.get("/approve", BookingController.getApprove);
 
 router.get("/decline", BookingController.getDeclined);

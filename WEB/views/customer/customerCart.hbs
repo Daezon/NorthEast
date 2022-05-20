@@ -1,52 +1,50 @@
 <div>
-  <nav>
-    <div class="logo">
-      NorthEast
-    </div>
-    <label for="btn" class="icon">
-      <span class="fa fa-bars"></span>
-    </label>
-    <input type="checkbox" id="btn" />
-    <ul>
-      <li>
-        <a href="http://localhost:8282/home">Home
-          <i class="bx bx-home"> </i></a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/Services">Service
-          <i class="bx bx-wrench"></i>
-        </a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/Products">Product
-          <i class="bx bx-store-alt"></i>
-        </a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/CART">Cart
-          <i class="bx bx-cart"></i>
-        </a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/Notification">Notification
-          <i class="bx bx-bell"></i>
-        </a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/Login">Log Out
-          <i class="fad fa-sign-out-alt"></i>
-        </a>
-      </li>
-    </ul>
-  </nav>
+	<nav>
+		<div class="logo">
+			NorthEast
+		</div>
+		<ul>
+			<li>
+				<a href="http://localhost:8282/home">Home
+					<i class="bx bx-home"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Services">Service
+					<i class="bx bx-wrench"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Products">Product
+					<i class="bx bx-store-alt"></i>
+				</a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/CART">Cart
+					<i class="bx bx-cart"></i>
+				</a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Notification">Notification
+					<i class="bx bx-bell"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Feedback">Feedback
+					<i class="bx bxs-like"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Login">Log Out
+					<i class="fad fa-sign-out-alt"></i></a>
+			</li>
 
-  <div class="cartMain">
-    <div class="titleProduct">
-      <h1>Your Service Cart</h1>
-    </div>
+		</ul>
+	</nav>
 
-    <div class="cartBox">
-      {{! <table>
+	<div class="cartMain">
+		<div class="titleProduct">
+			<h1>Your Service Cart</h1>
+		</div>
+
+		<div class="cartBox">
+			{{! <table>
         <thead>
           <th>Service</th>
           <th></th>
@@ -116,66 +114,66 @@
 
       </table> }}
 
-      <div class="Tablemanage">
+			<div class="Tablemanage">
 
-        <div class="col">
-          <div class="table-container">
-            <h1 class="tableHeading"></h1>
-            <table
-              id="data"
-              class="table table-striped table-bordered"
-              style="width:100%"
-            >
-              <thead>
-                <tr>
-                  <th>Image</th>
-                  <th>Service Name</th>
-                  <th>Time</th>
-                  <th>Remove</th>
-                </tr>
-              </thead>
+				<div class="col">
+					<div class="table-container">
+						<h1 class="tableHeading"></h1>
+						<table
+							id="data"
+							class="table table-striped table-bordered"
+							style="width:100%"
+						>
+							<thead>
+								<tr>
+									<th>Image</th>
+									<th>Service Name</th>
+									<th>Time</th>
+									<th>Remove</th>
+								</tr>
+							</thead>
 
-              <tbody>
-                {{#each resData.data}}
-                  <tr>
-                    <td data-lable="Image" name="Image"><img
-                        src="{{{serviceImage}}}"
-                        alt=""
-                        height="80px"
-                        width="80px"
-                      /></td>
-                    <td
-                      data-lable="ServiceName"
-                      name="ServiceName"
-                    >{{{serviceName}}}</td>
-                    <td data-lable="Time" name="Time">{{{serviceTime}}}</td>
-                    <td data-lable="remove" name="remove">
-                      <form onsubmit="return removeCart(event)">
-                        <input
-                          class="removeCart"
-                          type="submit"
-                          value="Remove"
-                        />
-                        <input type="hidden" value="{{{_id}}}" name="id" />
-                      </form>
-                    </td>
+							<tbody>
+								{{#each resData.data}}
+									<tr>
+										<td data-lable="Image" name="Image"><img
+												src="{{{serviceImage}}}"
+												alt=""
+												height="80px"
+												width="80px"
+											/></td>
+										<td
+											data-lable="ServiceName"
+											name="ServiceName"
+										>{{{serviceName}}}</td>
+										<td data-lable="Time" name="Time">{{{serviceTime}}}</td>
+										<td data-lable="remove" name="remove">
+											<form onsubmit="return removeCart(event)">
+												<input
+													class="removeCart"
+													type="submit"
+													value="Remove"
+												/>
+												<input type="hidden" value="{{{_id}}}" name="id" />
+											</form>
+										</td>
 
-                  </tr>
-                {{/each}}
-              </tbody>
-            </table>
-          </div>
+									</tr>
+								{{/each}}
+							</tbody>
+						</table>
+					</div>
 
-          <div class="subTotal">
-            <label for="">Total Time Duration:
-              <span id="duration">{{{data}}}</span>
-            </label>
-            <a href="http://localhost:8282/Booking">Proceed To Booking</a>
-          </div>
-        </div>
+					<div class="subTotal">
+						<label for="">Total Time Duration:
+							<span id="duration">{{{data}}}</span>
+						</label>
+						<a href="http://localhost:8282/Booking">Proceed To Booking</a>
+					</div>
+				</div>
 
-      </div>
+			</div>
 
-    </div>
-  </div>
+		</div>
+	</div>
 </div>

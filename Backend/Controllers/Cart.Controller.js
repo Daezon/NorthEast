@@ -12,7 +12,7 @@ exports.addToCart = async (req, res) => {
     );
     const findClientid = await Cart.find({ Clientid: req.User._id });
     const serviceName = serviceurl.data.data.Servicename;
-    const isContain = findClientid.find((cart) => cart.serviceName === serviceName);
+    const isContain = findClientid.find((cart) => cart.serviceName === serviceName && cart.carttype === "Oncart");
 
     if (isContain) {
       return res.status(403).send({ message: "Already added" });
@@ -45,15 +45,12 @@ exports.getCart = async (req, res) => {
     const Clientid = req.params._id;
     const cart = await Cart.find({
       Clientid: Clientid,
+      carttype: "Oncart"
     });
-    const arr = [];
-    for (let i = 0; i < cart.length; i++) {
-      arr.push(cart[i]);
-    }
 
     return res.status(200).json({
       message: "My cart",
-      data: arr,
+      data: cart,
       statusCode: 200,
     });
   } catch (err) {

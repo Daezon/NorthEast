@@ -17,7 +17,7 @@ exports.getbooking = async (req, res) => {
     //   console.log(toTimestamp('05/18/2022 03:00:30'));
     //
     const Clientid = req.User._id;
-    const findClientCart = await Cart.find({ Clientid: Clientid });
+    const findClientCart = await Cart.find({ Clientid: Clientid, carttype: "Oncart" });
     const carturl = await axios.get(
       `http://localhost:8080/api/cart/${Clientid}`
     );
@@ -71,21 +71,8 @@ exports.getbooking = async (req, res) => {
       });
       const saveBooking = await sendBooking.save();
 
-      // for (let i = 0; i < cartArr.length; i++) {
-      //   await Booking.findOneAndUpdate(
-      //     {
-      //       FullName: req.body.FullName,
-      //     },
-      //     {
-      //       $addToSet: {
-      //         cart: cartArr[i],
-      //       },
-      //     }
-      //   );
-      // }
-      // const updateTheCart = await axios.put(
-      //   `http://localhost:8080/api/bookingCartUpdate/${saveBooking._id}`
-      // );
+      await Cart.updateMany({ Clientid: Clientid },{carttype: "onRequest"});
+
       return res.status(200).send(saveBooking);
     }
   } catch (err) {

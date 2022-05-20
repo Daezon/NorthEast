@@ -295,7 +295,7 @@ exports.AdminHome = async (req, res) => {
       responseType: "json",
     },
   };
-  const response = await fetch(`${URI}/getDone`, options);
+  const response = await fetch(`${URI}/done`, options);
   const resData = await response.json();
   console.log(resData);
   const {

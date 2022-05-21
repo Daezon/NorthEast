@@ -342,3 +342,44 @@ exports.bookingCartUpdate = async (req, res) => {
     console.log(error);
   }
 };
+
+
+//getAllTimew/Date
+
+exports.getDates = async( req, res) =>{
+  try{
+    
+    const findDate = await Booking.distinct("ScheduleDate");
+
+    return res.status(200).json({
+      message: "Booking Retrived",
+      data: findDate,
+      statusCode: 200,
+      
+    });
+  } catch (err) {
+    return res.status(400).json({ message: err.message, statusCode: 400 });
+  }
+};
+
+exports.getDatewithTime = async (req, res) => {
+  try{
+    const dates = req.params.ScheduleDate;
+    
+    const findTime = await Booking.find({ ScheduleDate: dates})
+
+    return res.status(200).json({
+      message: "Booking Retrived",
+      data: findTime,
+      statusCode: 200,
+      
+    });
+    
+  }catch(err){
+    return res.status(400).json({ message: err.message, statusCode: 400 });
+  }
+}
+
+
+
+

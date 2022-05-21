@@ -6,7 +6,11 @@ const BookingController = require("../Controllers/Booking.Controller");
 
 router.post("/getBooking", verify, BookingController.getbooking);
 
+router.get("/getDate",BookingController.getDates);
+
 router.get("/booking", BookingController.getallBooking);
+
+router.get("/time/:ScheduleDate",BookingController.getDatewithTime);
 
 router.get("/booking/:_id", BookingController.idgetbooking);
 

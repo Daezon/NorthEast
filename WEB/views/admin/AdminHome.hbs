@@ -64,30 +64,7 @@
           </li>
         </ul>
       </div>
-  
-      {{!-- <div class='container-fluid px-4'>
-  
-        <div class='reportcontainer'>
-          <div class='boxbox'>
-            <h1><i class='bx bx-wrench'></i> Services</h1>
-            <p>45</p>
-          </div>
-  
-          <div class='boxbox'>
-            <h1><i class='bx bx-cart'></i>Product</h1>
-            <p>108</p>
-          </div>
-  
-          <div class='boxbox'>
-            <h1><i class='bx bxs-calendar-check'></i>Schedules</h1>
-            <p>8</p>
-          </div>
-  
-          <div class='boxbox'>
-            <h1><i class='bx bxs-user-pin'></i>Request</h1>
-            <p>27 </p>
-          </div>
-        </div> --}}
+
   
         <div class='Tablemanage'>
           <h3 class='fs-4 mb-3'>Recent Customers</h3>
@@ -104,19 +81,18 @@
                     <th>Car Model</th>
                     <th>Date</th>
                     <th>Time</th>
+                    <th>Total Time Duration</th>
                     <th>Status</th>
                   </tr>
                 </thead>
   
                 <tbody>
-                  {{#each resData.data}}
+                  {{#each resData}}
                     <tr>
                       <td
                         data-lable='Full Name'
                         name='FullName'
                       >{{{FullName}}}</td>
-                      {{!-- <td data-lable='Gender' name='Gender'>{{{Gender}}}</td>
-                      <td data-lable='Age' name='Age'>{{{Age}}}</td> --}}
                       <td
                         data-lable='Car Mileage'
                         name='CarMileage'
@@ -128,13 +104,14 @@
                       <td
                         data-lable='Service'
                         name='Services'
-                      >{{{Services}}}</td>
+                      >{{{services}}}</td>
                       <td
                         data-lable='Car Model'
                         name='CarandModel'
                       >{{{CarandModel}}}</td>
                       <td data-lable='Day' name='Day'>{{{ScheduleDate}}}</td>
                       <td data-lable='Time' name='Time'>{{{time}}}</td>
+                      <td data-lable='Total Time Duration' name="Duration">{{{duration}}}</td>
                       <td data-lable='Status'>{{{RequestType}}}</td>
                     </tr>
                   {{/each}}

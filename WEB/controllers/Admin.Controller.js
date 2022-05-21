@@ -285,7 +285,10 @@ exports.AdminSchedules = async (req, res) => {
 };
 //end
 
+// GETHOME
 exports.AdminHome = async (req, res) => {
+	const userId = req.cookies.userId;
+	const token = req.cookies.authToken;
 	const options = {
 		method: "GET",
 		headers: {
@@ -294,29 +297,35 @@ exports.AdminHome = async (req, res) => {
 			responseType: "json",
 		},
 	};
+
 	const response = await fetch(`${URI}/done`, options);
 	const resData = await response.json();
-	console.log(resData);
-	const {
-		FullName,
-		Gender,
-		Age,
-		CarMilage,
-		ContactNumber,
-		Services,
-		CarandModel,
-		Day,
-		Time,
-		RequestType,
-	} = resData.data;
+	const data = resData.data;
+
+	let newDatas = [];
+	for (let i = 0; i < data.length; i++) {
+		const cart = data[i].cart;
+		const services = [];
+		for (let x = 0; x < cart.length; x++) {
+			services.push(cart[x].serviceName);
+		}
+		newDatas.push({
+			...data[i],
+			services: services,
+		});
+	}
+
 	res.render("admin/AdminHome", {
 		layout: "admin/AdminHome",
-		resData: resData,
+		resData: newDatas,
 	});
 };
+// GETHOME END
 
 //display Archive
 exports.AdminArchive = async (req, res) => {
+	const userId = req.cookies.userId;
+	const token = req.cookies.authToken;
 	const options = {
 		method: "GET",
 		headers: {
@@ -325,13 +334,27 @@ exports.AdminArchive = async (req, res) => {
 			responseType: "json",
 		},
 	};
+
 	const response = await fetch(`${URI}/archieve`, options);
 	const resData = await response.json();
-	console.log(resData);
-	const {} = resData.data;
+	const data = resData.data;
+
+	let newDatas = [];
+	for (let i = 0; i < data.length; i++) {
+		const cart = data[i].cart;
+		const services = [];
+		for (let x = 0; x < cart.length; x++) {
+			services.push(cart[x].serviceName);
+		}
+		newDatas.push({
+			...data[i],
+			services: services,
+		});
+	}
+
 	res.render("admin/AdminArchive", {
 		layout: "admin/AdminArchive",
-		resData: resData,
+		resData: newDatas,
 	});
 };
 //end

@@ -86,7 +86,7 @@
                 </thead>
   
                 <tbody>
-                  {{#each resData.data}}
+                  {{#each resData}}
                     <tr>
                       <td
                         data-lable='Full Name'
@@ -103,13 +103,13 @@
                       <td
                         data-lable='Service'
                         name='Services'
-                      >{{{Services}}}</td>
+                      >{{{services}}}</td>
                       <td
                         data-lable='Car Model'
                         name='CarandModel'
                       >{{{CarandModel}}}</td>
                       <td data-lable='Day' name='Day'>{{{ScheduleDate}}}</td>
-                      <td data-lable='Time' name='Time'>{{{Time}}}</td>
+                      <td data-lable='Time' name='Time'>{{{time}}}</td>
                       <td data-lable='Total Time Duration' name="Duration">{{{duration}}}</td>
                       <td data-lable='Status'>{{{RequestType}}}</td>
                     </tr>

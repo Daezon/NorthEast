@@ -267,6 +267,30 @@ exports.sendrequest = async (req, res) => {
 };
 //End Booking
 
+// timeView start
+exports.customerTimeView = async (req, res) => {
+	const options = {
+		method: "GET",
+		headers: {
+			"Content-type": "application/json",
+			Accept: "application/json",
+			responseType: "json",
+		},
+	};
+	const response = await fetch(`${URI}/getDate`, options);
+	const responseTwo = await fetch(`${URI}/time/${ScheduleDate}`, optionsTwo);
+	const resData = await response.json();
+	const resDataTwo = await responseTwo.json();
+	console.log(resData);
+	const {} = resData.data;
+	res.render("customer/customerBooking", {
+		layout: "customer/customerBooking",
+		resData: resData,
+		resDataTwo: resDataTwo,
+	});
+};
+// timeView end
+
 // feedback post
 exports.FeedBackComment = async (req, res) => {
   const token = await req.cookies.authToken;

@@ -371,7 +371,7 @@ exports.getDates = async( req, res) =>{
 exports.getDatewithTime = async (req, res) => {
   try{
     const dates = req.params.ScheduleDate;
-    
+
     const findTime = await Booking.find({ ScheduleDate: dates})
 
     return res.status(200).json({

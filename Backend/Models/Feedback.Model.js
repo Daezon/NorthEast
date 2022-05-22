@@ -11,7 +11,8 @@ const FeedbackSchema = new Schema({
 
   },
   Date: {
-    type: Number,
+    type: String,
+
   },
 });
 const FeedBack = mongoose.model("Feedback", FeedbackSchema);

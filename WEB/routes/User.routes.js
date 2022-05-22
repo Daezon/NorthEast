@@ -13,7 +13,10 @@ router.get("/Home", UserController.customerhome);
 router.get("/TermsAndCondition", UserController.condition);
 router.get("/Cart", UserController.customerCart);
 router.get("/Feedback", UserController.customerFeedBack);
+
 router.get("/Booking", UserController.customerTimeView);
+
+router.get("/Notification", UserController.notificationGet);
 
 // Post
 router.post("/Register", UserController.userregister);

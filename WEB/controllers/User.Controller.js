@@ -434,3 +434,27 @@ exports.customerCart = async (req, res) => {
 		data: resDataTwo.data,
 	});
 };
+
+//display notification
+exports.notificationGet = async (req, res) => {
+	const userId = req.cookies.userId;
+	console.log(userId);
+	const options = {
+		method: "GET",
+		headers: {
+			Authorization: req.cookies.authToken,
+			"Content-type": "application/json",
+			Accept: "application/json",
+			responseType: "json",
+		},
+	};
+	const response = await fetch(`${URI}/user/notification/accept/${userId}`, options);
+	const resData = await response.json();
+	console.log(resData);
+	const { Message} = resData.data;
+	res.render("customer/customerNotification", {
+		layout: "customer/customerNotification",
+		resData: resData,
+	});
+};
+//end notification

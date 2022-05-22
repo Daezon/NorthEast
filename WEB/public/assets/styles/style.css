@@ -1638,8 +1638,8 @@ input::-webkit-inner-spin-button {
 }
 
 .Bookcountainer2 {
-	height: 80%;
-	width: 50%;
+	height: 70%;
+	width: 40%;
 	background-color: #d8e3e7;
 	border: none;
 	border-radius: 10px;
@@ -1648,6 +1648,15 @@ input::-webkit-inner-spin-button {
 	justify-content: center;
 	flex-direction: column;
 	margin: 10px;
+}
+
+.timeViewContainer {
+	width: 100%;
+	height: 100%;
+}
+
+.listContainer {
+	box-shadow: 3px 3px 10px 3px #00000070;
 }
 
 .Bookhero1 {
@@ -2170,6 +2179,128 @@ h1.loader {
 	color: #989999;
 }
 /* feedback end */
+
+/* timeview start */
+.slideshow-container {
+	position: relative;
+	background: #f1f1f1f1;
+}
+
+.mySlides {
+	height: 110px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 20px;
+}
+
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -30px;
+	padding: 16px;
+	color: #888;
+	font-weight: bold;
+	font-size: 20px;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+
+.next {
+	position: absolute;
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+}
+
+.dot-container {
+	text-align: center;
+	padding: 20px;
+	background: #ddd;
+}
+
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+	background-color: #717171;
+}
+
+.dayButton {
+	height: 100%;
+	width: 10%;
+	cursor: pointer;
+	border: none;
+	border-radius: 10px;
+	background-color: #058d8f;
+	font-weight: 600;
+	font-size: 15pt;
+	color: #f4f7f7;
+	transition: all 0.3s ease 0s;
+}
+
+.dayButton:hover {
+	background-color: #132c33;
+}
+
+.dayword {
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.timeList {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	background-color: #132c33;
+	font-size: 15pt;
+	color: #f4f7f7;
+	height: 80px;
+	width: 100%;
+	margin: 20px;
+}
+
+.timeListTime {
+	height: 100%;
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 20px;
+}
+
+.timeListDuration {
+	height: 100%;
+	width: 50%;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	justify-content: flex-end;
+}
+/* timeview end */
+
 /* pc */
 @media screen and (max-width: 1500px) {
 	.loginHero1 img {

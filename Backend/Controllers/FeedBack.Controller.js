@@ -20,7 +20,7 @@ exports.feedBackComment = async (req, res) => {
 		const getHours = date.getHours();
 		const getMinutes = date.getMinutes();
 		const finalDate = `${getYear}-${getMonth}-${getDate} ${getHours}:${getMinutes}`;
-		console.log(finalDate);
+		
 		
 
 

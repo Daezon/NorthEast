@@ -5,33 +5,35 @@
 		</div>
 		<ul>
 			<li>
-				<a href="http://localhost:8282/home">Home
-					<i class="bx bx-home"></i></a>
+				<a href="http://localhost:8282/home"><p>Home</p>
+					<i class="bx bx-home"></i>
+				</a>
 			</li>
 			<li>
-				<a href="http://localhost:8282/Services">Service
+				<a href="http://localhost:8282/Services">
+					<p>Service</p>
 					<i class="bx bx-wrench"></i></a>
 			</li>
 			<li>
-				<a href="http://localhost:8282/Products">Product
+				<a href="http://localhost:8282/Products"><p>Product</p>
 					<i class="bx bx-store-alt"></i>
 				</a>
 			</li>
 			<li>
-				<a href="http://localhost:8282/CART">Cart
+				<a href="http://localhost:8282/CART"><p>Cart</p>
 					<i class="bx bx-cart"></i>
 				</a>
 			</li>
 			<li>
-				<a href="http://localhost:8282/Notification">Notification
+				<a href="http://localhost:8282/Notification"><p>Notification</p>
 					<i class="bx bx-bell"></i></a>
 			</li>
 			<li>
-				<a href="http://localhost:8282/Feedback">Feedback
+				<a href="http://localhost:8282/Feedback"><p>Feedback</p>
 					<i class="bx bxs-like"></i></a>
 			</li>
 			<li>
-				<a href="http://localhost:8282/Login">Log Out
+				<a href="http://localhost:8282/Login"><p>Log Out</p>
 					<i class="fad fa-sign-out-alt"></i></a>
 			</li>
 
@@ -44,42 +46,30 @@
 			<div class="timeViewContainer">
 				<div class="listContainer">
 					<div class="slideshow-container">
-
-						<div class="mySlides">
-							<button class="dayButton">May 22</button>
-							<button class="dayButton">May 23</button>
-							<button class="dayButton">May 24</button>
-						</div>
-
-						<div class="mySlides">
-							<button class="dayButton">May 25</button>
-							<button class="dayButton">May 26</button>
-							<button class="dayButton">May 27</button>
-						</div>
-
-						<div class="mySlides">
-							<button class="dayButton">May 28</button>
-							<button class="dayButton">May 29</button>
-							<button class="dayButton">May 30</button>
+						<div class="boxTimeList">
+							{{#each resData}}
+								<div class="mySlides">
+									<div class="dayButton">May 23</div>
+									<div class="timeList">
+										<div class="timeListTime">9am</div>
+										<div class="timeListDuration">1 h 24 m</div>
+									</div>
+								</div>
+							{{/each}}
 						</div>
 
 						<a class="prev" onclick="plusSlides(-1)">❮</a>
 						<a class="next" onclick="plusSlides(1)">❯</a>
 					</div>
 
-					<div class="dot-container">
+					{{! <div class="dot-container">
 						<span class="dot" onclick="currentSlide(1)"></span>
 						<span class="dot" onclick="currentSlide(2)"></span>
 						<span class="dot" onclick="currentSlide(3)"></span>
-					</div>
+					</div> }}
 				</div>
+
 				<div class="dayword">
-					{{#each resData.data}}
-						<div class="timeList">
-							<div class="timeListTime">{{{ScheduleDate}}}</div>
-							<div class="timeListDuration">{{{ScheduleDate}}}</div>
-						</div>
-					{{/each}}
 				</div>
 			</div>
 		</div>
@@ -175,6 +165,5 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>

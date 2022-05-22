@@ -66,11 +66,15 @@ nav ul {
 
 nav ul li {
 	display: inline-block;
-	background-color: none;
 	margin: 0 5px;
 }
 
 nav ul li a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: none;
+	flex-direction: row;
 	color: #f4f7f7;
 	text-decoration: none;
 	line-height: 70px;
@@ -2187,12 +2191,13 @@ h1.loader {
 }
 
 .mySlides {
-	height: 110px;
+	height: 90%;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	padding: 20px;
+	padding: 30px;
 }
 
 .prev,
@@ -2245,8 +2250,11 @@ h1.loader {
 }
 
 .dayButton {
-	height: 100%;
-	width: 10%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 15%;
+	width: 100%;
 	cursor: pointer;
 	border: none;
 	border-radius: 10px;
@@ -2278,8 +2286,9 @@ h1.loader {
 	font-size: 15pt;
 	color: #f4f7f7;
 	height: 80px;
-	width: 100%;
+	width: 95%;
 	margin: 20px;
+	border-radius: 50px;
 }
 
 .timeListTime {
@@ -2479,6 +2488,10 @@ h1.loader {
 		width: 30%;
 		font-size: 12pt;
 	}
+
+	/* service get */
+
+	/* service end */
 }
 
 /* SMALL LAPTOP DESTOP */
@@ -3045,11 +3058,16 @@ h1.loader {
 		margin: 0px;
 		width: 150px;
 		float: none;
-		display: list-item;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		border-bottom: 1px solid rgb(0, 0, 0, 0.3);
 	}
 
 	nav ul ul li a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		line-height: 50px;
 	}
 
@@ -3057,6 +3075,10 @@ h1.loader {
 		position: relative;
 		top: -70px;
 		left: 150px;
+	}
+
+	nav ul li a p {
+		display: none;
 	}
 	/* nav end */
 }

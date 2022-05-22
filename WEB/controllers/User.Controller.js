@@ -278,10 +278,11 @@ exports.customerTimeView = async (req, res) => {
 		},
 	};
 	const response = await fetch(`${URI}/getDate`, options);
-	const responseTwo = await fetch(`${URI}/time/${ScheduleDate}`, optionsTwo);
+	const responseTwo = await fetch(`${URI}/time/${scheduleDate}`, optionsTwo);
 	const resData = await response.json();
 	const resDataTwo = await responseTwo.json();
-	console.log(resData);
+	console.log("resData", resData);
+	console.log(resDataTwo);
 	const {} = resData.data;
 	res.render("customer/customerBooking", {
 		layout: "customer/customerBooking",
@@ -448,10 +449,13 @@ exports.notificationGet = async (req, res) => {
 			responseType: "json",
 		},
 	};
-	const response = await fetch(`${URI}/user/notification/accept/${userId}`, options);
+	const response = await fetch(
+		`${URI}/user/notification/accept/${userId}`,
+		options
+	);
 	const resData = await response.json();
 	console.log(resData);
-	const { Message} = resData.data;
+	const { Message } = resData.data;
 	res.render("customer/customerNotification", {
 		layout: "customer/customerNotification",
 		resData: resData,

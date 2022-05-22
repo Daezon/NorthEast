@@ -1,169 +1,173 @@
 <div>
-	<nav>
-		<div class="logo">
-			NorthEast
-		</div>
-		<ul>
-			<li>
-				<a href="http://localhost:8282/home"><p>Home</p>
-					<i class="bx bx-home"></i>
-				</a>
-			</li>
-			<li>
-				<a href="http://localhost:8282/Services">
-					<p>Service</p>
-					<i class="bx bx-wrench"></i></a>
-			</li>
-			<li>
-				<a href="http://localhost:8282/Products"><p>Product</p>
-					<i class="bx bx-store-alt"></i>
-				</a>
-			</li>
-			<li>
-				<a href="http://localhost:8282/CART"><p>Cart</p>
-					<i class="bx bx-cart"></i>
-				</a>
-			</li>
-			<li>
-				<a href="http://localhost:8282/Notification"><p>Notification</p>
-					<i class="bx bx-bell"></i></a>
-			</li>
-			<li>
-				<a href="http://localhost:8282/Feedback"><p>Feedback</p>
-					<i class="bx bxs-like"></i></a>
-			</li>
-			<li>
-				<a href="http://localhost:8282/Login"><p>Log Out</p>
-					<i class="fad fa-sign-out-alt"></i></a>
-			</li>
+  <nav>
+    <div class="logo">
+      NorthEast
+    </div>
+    <ul>
+      <li>
+        <a href="http://localhost:8282/home"><p>Home</p>
+          <i class="bx bx-home"></i>
+        </a>
+      </li>
+      <li>
+        <a href="http://localhost:8282/Services">
+          <p>Service</p>
+          <i class="bx bx-wrench"></i></a>
+      </li>
+      <li>
+        <a href="http://localhost:8282/Products"><p>Product</p>
+          <i class="bx bx-store-alt"></i>
+        </a>
+      </li>
+      <li>
+        <a href="http://localhost:8282/CART"><p>Cart</p>
+          <i class="bx bx-cart"></i>
+        </a>
+      </li>
+      <li>
+        <a href="http://localhost:8282/Notification"><p>Notification</p>
+          <i class="bx bx-bell"></i></a>
+      </li>
+      <li>
+        <a href="http://localhost:8282/Feedback"><p>Feedback</p>
+          <i class="bx bxs-like"></i></a>
+      </li>
+      <li>
+        <a href="http://localhost:8282/Login"><p>Log Out</p>
+          <i class="fad fa-sign-out-alt"></i></a>
+      </li>
 
-		</ul>
-	</nav>
+    </ul>
+  </nav>
 
-	<div class="bookingMain">
+  <div class="bookingMain">
 
-		<div class="Bookcountainer2">
-			<div class="timeViewContainer">
-				<div class="listContainer">
-					<div class="slideshow-container">
-						<div class="boxTimeList">
-							{{#each resData}}
-								<div class="mySlides">
-									<div class="dayButton">May 23</div>
-									<div class="timeList">
-										<div class="timeListTime">9am</div>
-										<div class="timeListDuration">1 h 24 m</div>
-									</div>
-								</div>
-							{{/each}}
-						</div>
+    <div class="Bookcountainer2">
+      <div class="timeViewContainer">
+        <div class="listContainer">
+          <div class="slideshow-container">
+            <div class="boxTimeList">
+              <div id="bookingDates" data-locations="{{{dates}}}"></div>
+              {{#each dates}}
+                <div class="mySlides">
+                  <div class="dayButton">{{{this}}}</div>
 
-						<a class="prev" onclick="plusSlides(-1)">❮</a>
-						<a class="next" onclick="plusSlides(1)">❯</a>
-					</div>
+                  <div class="timeListData">
+                    {{! <div class="timeList">
+                      <div class="timeListTime">9am</div>
+                      <div class="timeListDuration">1 h 24 m</div>
+                    </div> }}
+                  </div>
+                </div>
+              {{/each}}
+            </div>
 
-					{{! <div class="dot-container">
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+          </div>
+
+          {{! <div class="dot-container">
 						<span class="dot" onclick="currentSlide(1)"></span>
 						<span class="dot" onclick="currentSlide(2)"></span>
 						<span class="dot" onclick="currentSlide(3)"></span>
 					</div> }}
-				</div>
+        </div>
 
-				<div class="dayword">
-				</div>
-			</div>
-		</div>
+        <div class="dayword">
+        </div>
+      </div>
+    </div>
 
-		<div class="Bookcountainer">
-			<div class="Bookhero1">
-				<h1>Scheduling Form <i class="bx bx-book-bookmark"></i></h1>
-			</div>
+    <div class="Bookcountainer">
+      <div class="Bookhero1">
+        <h1>Scheduling Form <i class="bx bx-book-bookmark"></i></h1>
+      </div>
 
-			<div class="Bookhero2">
-				<h2 class="AlertsLOGIN">{{resData.message}}</h2>
-				<div class="book1">
-					<form action="/Booking" method="POST">
-						<div class="bookingHERO1">
+      <div class="Bookhero2">
+        <h2 class="AlertsLOGIN">{{resData.message}}</h2>
+        <div class="book1">
+          <form action="/Booking" method="POST">
+            <div class="bookingHERO1">
 
-							<label for="CarandModel"><i class="fad fa-cars"></i>
-								Car and Model:</label>
-							<input
-								type="text"
-								name="CarandModel"
-								id="CarandModel"
-								placeholder="Honda Civic A/T CVT 2021"
-								required
-							/>
+              <label for="CarandModel"><i class="fad fa-cars"></i>
+                Car and Model:</label>
+              <input
+                type="text"
+                name="CarandModel"
+                id="CarandModel"
+                placeholder="Honda Civic A/T CVT 2021"
+                required
+              />
 
-							<label for="Fullname"><i class="fad fa-user"></i>
-								Fullname:</label>
-							<input type="text" name="FullName" id="Fullname" required />
+              <label for="Fullname"><i class="fad fa-user"></i>
+                Fullname:</label>
+              <input type="text" name="FullName" id="Fullname" required />
 
-							<label for="CarMileage"><i class="fad fa-map-marker-alt"></i>
-								Car Mileage:</label>
-							<input
-								type="text"
-								name="CarMileage"
-								id="CarMileage"
-								placeholder="20,000km"
-								required
-							/>
+              <label for="CarMileage"><i class="fad fa-map-marker-alt"></i>
+                Car Mileage:</label>
+              <input
+                type="text"
+                name="CarMileage"
+                id="CarMileage"
+                placeholder="20,000km"
+                required
+              />
 
-							<label for="ContactNumber"><i class="fad fa-mobile-alt"></i>
-								Contact Number:</label>
-							<input
-								type="number"
-								name="ContactNumber"
-								id="ContactNumber"
-								placeholder="09*********"
-								required
-							/>
-						</div>
+              <label for="ContactNumber"><i class="fad fa-mobile-alt"></i>
+                Contact Number:</label>
+              <input
+                type="number"
+                name="ContactNumber"
+                id="ContactNumber"
+                placeholder="09*********"
+                required
+              />
+            </div>
 
-						<div class="bookingHERO2">
-							<label for="Day"><i class="fas fa-calendar-week"></i>
-								Date:</label>
-							<input type="date" name="Day" id="Day" />
+            <div class="bookingHERO2">
+              <label for="Day"><i class="fas fa-calendar-week"></i>
+                Date:</label>
+              <input type="date" name="Day" id="Day" />
 
-							<label for="Time"><i class="far fa-alarm-clock"></i> Time:</label>
-							<select id="Time" name="Time" required>
-								<option value="8:00:00" name="Time">8:00am</option>
-								<option value="9:00:00" name="Time">9:00am</option>
-								<option value="10:00:00" name="Time">10:00am</option>
-								<option value="11:00:00" name="Time">11:00am</option>
-								<option value="13:00:00" name="Time">1:00pm</option>
-								<option value="14:00:00" name="Time">2:00pm</option>
-								<option value="15:00:00" name="Time">3:00pm</option>
-								<option value="16:00:00" name="Time">4:00pm</option>
-							</select>
+              <label for="Time"><i class="far fa-alarm-clock"></i> Time:</label>
+              <select id="Time" name="Time" required>
+                <option value="8:00:00" name="Time">8:00am</option>
+                <option value="9:00:00" name="Time">9:00am</option>
+                <option value="10:00:00" name="Time">10:00am</option>
+                <option value="11:00:00" name="Time">11:00am</option>
+                <option value="13:00:00" name="Time">1:00pm</option>
+                <option value="14:00:00" name="Time">2:00pm</option>
+                <option value="15:00:00" name="Time">3:00pm</option>
+                <option value="16:00:00" name="Time">4:00pm</option>
+              </select>
 
-							<label for="">Other Service</label>
-							<textarea
-								class="textArea"
-								name=""
-								id=""
-								cols="30"
-								rows="10"
-								height="100px"
-							></textarea>
+              <label for="">Other Service</label>
+              <textarea
+                class="textArea"
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+                height="100px"
+              ></textarea>
 
-							<label for="RequestType" id="RequestType1"></label>
-							<select name="RequestType" id="RequestType2">
-								<option value="Default">Default</option>
-							</select>
+              <label for="RequestType" id="RequestType1"></label>
+              <select name="RequestType" id="RequestType2">
+                <option value="Default">Default</option>
+              </select>
 
-							<input
-								type="submit"
-								value="Send Request"
-								id="bookingBtn"
-								class="bookingBtn"
-							/>
+              <input
+                type="submit"
+                value="Send Request"
+                id="bookingBtn"
+                class="bookingBtn"
+              />
 
-							{{!-- <h1>{{resData.message}}</h1> --}}
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+              {{!-- <h1>{{resData.message}}</h1> --}}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

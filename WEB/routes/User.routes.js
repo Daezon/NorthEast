@@ -6,7 +6,7 @@ const UserController = require("../controllers/User.Controller");
 router.get("/Register", UserController.register);
 router.get("/LogIn", UserController.index);
 router.get("/Services", UserController.customerServices);
-router.get("/Booking", UserController.customerBooking);
+// router.get("/Booking", UserController.customerBooking);
 router.get("/Notification", UserController.customerNotification);
 router.get("/Products", UserController.customerProducts);
 router.get("/Home", UserController.customerhome);

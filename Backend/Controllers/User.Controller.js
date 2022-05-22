@@ -4,6 +4,7 @@ const Joi = require("joi");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const axios = require("axios");
+const { userregister } = require("../../WEB/controllers/User.Controller");
 
 //register
 exports.addUser = async (req, res) => {
@@ -280,5 +281,21 @@ exports.notificationDecline = async (req, res) => {
     return res.status(200).json({ message: "Notification Sent!", status: 200 });
   } catch (error) {
     console.log(error);
+  }
+};
+
+//getllNotif
+
+exports.getNotification = async (req, res) => {
+  try {
+    const getNotif = await Users.findById(req.params._id);
+
+    return res.status(200).json({
+      message: "Booking Retrived",
+      data: getNotif.Notification,
+      statusCode: 200,
+    });
+  } catch (err) {
+    console.log(err);
   }
 };

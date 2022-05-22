@@ -7,7 +7,7 @@ router.get("/Register", UserController.register);
 router.get("/LogIn", UserController.index);
 router.get("/Services", UserController.customerServices);
 // router.get("/Booking", UserController.customerBooking);
-router.get("/Notification", UserController.customerNotification);
+// router.get("/Notification", UserController.customerNotification);
 router.get("/Products", UserController.customerProducts);
 router.get("/Home", UserController.customerhome);
 router.get("/TermsAndCondition", UserController.condition);

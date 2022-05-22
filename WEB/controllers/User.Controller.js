@@ -448,13 +448,10 @@ exports.notificationGet = async (req, res) => {
       responseType: "json",
     },
   };
-  const response = await fetch(
-    `${URI}/user/notification/accept/${userId}`,
-    options
-  );
+  const response = await fetch(`${URI}/user/notification/${userId}`, options);
   const resData = await response.json();
   console.log(resData);
-  const { Message } = resData.data;
+  const { message } = resData.data;
   res.render("customer/customerNotification", {
     layout: "customer/customerNotification",
     resData: resData,

@@ -4,6 +4,7 @@ const axios = require("axios");
 const HumanToMilliseconds = require("human-to-milliseconds");
 const prettyMilliseconds = require("pretty-ms");
 const timestampToDate = require("timestamp-to-date");
+const Users = require("../Models/User.Model");
 //getcartitem
 const Converter = require("timestamp-conv");
 
@@ -166,6 +167,57 @@ exports.updateAproBooking = async (req, res) => {
       { _id: req.params._id },
       {
         RequestType: accept,
+      }
+    );
+    const id = req.params._id;
+    const url = await axios.get(`http://localhost:8080/api/booking/${id}`);
+    const result = url.data.data;
+    const userID = result.Clientid;
+    // const titleResult = result.serviceName;
+
+    const timestamp = Date.now();
+    const date = new Date(timestamp);
+    const datevalues = [
+      date.getFullYear(),
+      date.getMonth() + 1,
+      date.getDate(),
+      date.getHours(),
+      date.getMinutes(),
+    ];
+    const getYear = date.getFullYear();
+    const getMonth = date.getMonth() + 1;
+    const getDate = date.getDate();
+    const getHours = date.getHours();
+    const getMinutes = date.getMinutes();
+    const finalDate = `${getYear}-${getMonth}-${getDate} ${getHours}:${getMinutes}`;
+
+    console.log(userID);
+    // const requestTypeResult = result.RequestType;
+    const RequestTypeStats = "Accepted";
+    const message = `Your Request Schedule on ${finalDate} has been ${RequestTypeStats}`;
+
+    const getDone = await Booking.updateOne(
+      { _id: id },
+      {
+        RequestType: RequestTypeStats,
+      }
+    );
+
+    await Users.findOneAndUpdate(
+      {
+        _id: userID,
+      },
+      {
+        $addToSet: {
+          Notification: [
+            {
+              // Title: titleResult,
+              Message: message,
+              Date: finalDate,
+              reqType: RequestTypeStats,
+            },
+          ],
+        },
       }
     );
     return res

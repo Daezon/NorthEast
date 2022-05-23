@@ -1,58 +1,55 @@
 <div>
-  <nav>
-    <div class="logo">
-      NorthEast
-    </div>
-    <ul>
-      <li>
-        <a href="http://localhost:8282/home"><p>Home</p>
-          <i class="bx bx-home"></i>
-        </a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/Services">
-          <p>Service</p>
-          <i class="bx bx-wrench"></i></a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/Products"><p>Product</p>
-          <i class="bx bx-store-alt"></i>
-        </a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/CART"><p>Cart</p>
-          <i class="bx bx-cart"></i>
-        </a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/Notification"><p>Notification</p>
-          <i class="bx bx-bell"></i></a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/Feedback"><p>Feedback</p>
-          <i class="bx bxs-like"></i></a>
-      </li>
-      <li>
-        <a href="http://localhost:8282/Login"><p>Log Out</p>
-          <i class="fad fa-sign-out-alt"></i></a>
-      </li>
+	<nav>
+		<input id="nav-toggle" type="checkbox" />
+		<div class="logo"><strong>N</strong>orthEast</div>
+		<ul class="links">
+			<li>
+				<a href="http://localhost:8282/home">Home <i class="bx bx-home"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Services">Service
+					<i class="bx bx-wrench"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Products">Product
+					<i class="bx bx-store-alt"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/CART">Cart <i class="bx bx-cart"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Notification">Notification
+					<i class="bx bx-notification"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Feedback">Feedback
+					<i class="bx bx-like"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/Login">Log Out
+					<i class="bx bx-log-in-circle"></i></a>
+			</li>
+		</ul>
+		<label for="nav-toggle" class="icon-burger">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</label>
+	</nav>
 
-    </ul>
-  </nav>
+	<div class="notificationMain">
+		<div class="notificationBox">
+			<div class="notif1">
+				<h2>Notification <i class="bx bx-bell"></i></h2>
+			</div>
 
-  <div class="notificationMain">
-    <div class="notificationBox">
-      <div class="notif1">
-        <h2>Notification <i class="bx bx-bell"></i></h2>
-      </div>
-
-      <div class="notif2">
-        {{#each resData.data}}
-          <div class="notifdiv">
-            <p>{{{Message}}}</p>
-          </div>
-        {{/each}}
-      </div>
-    </div>
-  </div>
+			<div class="notif2">
+				{{#each resData.data}}
+					<div class="notifdiv">
+						<p>{{{Message}}}</p>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
 </div>

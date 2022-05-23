@@ -1,67 +1,67 @@
 <div>
 	<nav>
-		<div class="logo">
-			NorthEast
-		</div>
-		<ul>
+		<input id="nav-toggle" type="checkbox" />
+		<div class="logo"><strong>N</strong>orthEast</div>
+		<ul class="links">
 			<li>
-				<a href="http://localhost:8282/home"><p>Home</p>
-					<i class="bx bx-home"></i>
-				</a>
+				<a href="http://localhost:8282/home">Home <i class="bx bx-home"></i></a>
 			</li>
 			<li>
-				<a href="http://localhost:8282/Services">
-					<p>Service</p>
+				<a href="http://localhost:8282/Services">Service
 					<i class="bx bx-wrench"></i></a>
 			</li>
 			<li>
-				<a href="http://localhost:8282/Products"><p>Product</p>
-					<i class="bx bx-store-alt"></i>
-				</a>
+				<a href="http://localhost:8282/Products">Product
+					<i class="bx bx-store-alt"></i></a>
 			</li>
 			<li>
-				<a href="http://localhost:8282/CART"><p>Cart</p>
-					<i class="bx bx-cart"></i>
-				</a>
+				<a href="http://localhost:8282/CART">Cart <i class="bx bx-cart"></i></a>
 			</li>
 			<li>
-				<a href="http://localhost:8282/Notification"><p>Notification</p>
-					<i class="bx bx-bell"></i></a>
+				<a href="http://localhost:8282/Notification">Notification
+					<i class="bx bx-notification"></i></a>
 			</li>
 			<li>
-				<a href="http://localhost:8282/Feedback"><p>Feedback</p>
-					<i class="bx bxs-like"></i></a>
+				<a href="http://localhost:8282/Feedback">Feedback
+					<i class="bx bx-like"></i></a>
 			</li>
 			<li>
-				<a href="http://localhost:8282/Login"><p>Log Out</p>
-					<i class="fad fa-sign-out-alt"></i></a>
+				<a href="http://localhost:8282/Login">Log Out
+					<i class="bx bx-log-in-circle"></i></a>
 			</li>
-
 		</ul>
+		<label for="nav-toggle" class="icon-burger">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</label>
 	</nav>
-	<div class="titleService">
-		<h1>Services</h1>
-	</div>
+	<div class="Servicemain">
+		<div class="titleService">
+			<h1>Services</h1>
+		</div>
 
-	<div class="wrapperGrid">
+		<div class="wrapperGrid">
 
-		{{#each resData.data}}
-			<div class="containerServ">
-				<h1 class="name">{{{Servicename}}}</h1>
-				<div class="imghero">
-					<img
-						src="{{{Image}}}"
-						alt=""
-						class="serviceImage"
-						style="height: 200px; width:200px"
-					/>
+			{{#each resData.data}}
+				<div class="containerServ">
+					<h1 class="name">{{{Servicename}}}</h1>
+					<div class="imghero">
+						<img
+							src="{{{Image}}}"
+							alt=""
+							class="serviceImage"
+							style="height: 200px; width:200px"
+						/>
+					</div>
+					<p class="serviceTime">{{{Time}}}</p>
+					<form class="addCartFrom" onsubmit="return AddCartBtn(event)">
+						<input class="addCartBtn" type="submit" value="Add Cart" />
+						<input type="hidden" value="{{{_id}}}" name="ServiceID" />
+					</form>
 				</div>
-				<p class="serviceTime">{{{Time}}}</p>
-				<form class="addCartFrom" onsubmit="return AddCartBtn(event)">
-					<input class="addCartBtn" type="submit" value="Add Cart" />
-					<input type="hidden" value="{{{_id}}}" name="ServiceID" />
-				</form>
-			</div>
-		{{/each}}
+			{{/each}}
+		</div>
 	</div>
+
 </div>

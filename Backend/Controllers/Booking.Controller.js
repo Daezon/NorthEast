@@ -239,6 +239,57 @@ exports.updateDecBooking = async (req, res) => {
         RequestType: decline,
       }
     );
+    const id = req.params._id;
+    const url = await axios.get(`http://localhost:8080/api/booking/${id}`);
+    const result = url.data.data;
+    const userID = result.Clientid;
+    // const titleResult = result.serviceName;
+
+    const timestamp = Date.now();
+    const date = new Date(timestamp);
+    const datevalues = [
+      date.getFullYear(),
+      date.getMonth() + 1,
+      date.getDate(),
+      date.getHours(),
+      date.getMinutes(),
+    ];
+    const getYear = date.getFullYear();
+    const getMonth = date.getMonth() + 1;
+    const getDate = date.getDate();
+    const getHours = date.getHours();
+    const getMinutes = date.getMinutes();
+    const finalDate = `${getYear}-${getMonth}-${getDate} ${getHours}:${getMinutes}`;
+
+    console.log(userID);
+    // const requestTypeResult = result.RequestType;
+    const RequestTypeStats = "Declined";
+    const message = `Your Request Schedule on ${finalDate} has been ${RequestTypeStats}`;
+
+    const getDecline = await Booking.updateOne(
+      { _id: id },
+      {
+        RequestType: RequestTypeStats,
+      }
+    );
+
+    await Users.findOneAndUpdate(
+      {
+        _id: userID,
+      },
+      {
+        $addToSet: {
+          Notification: [
+            {
+              // Title: titleResult,
+              Message: message,
+              Date: finalDate,
+              reqType: RequestTypeStats,
+            },
+          ],
+        },
+      }
+    );
     return res
       .status(200)
       .json({ data: updateBooking, message: "Booking Updated", status: 200 });

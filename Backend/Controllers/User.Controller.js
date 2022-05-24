@@ -254,7 +254,7 @@ exports.notificationDecline = async (req, res) => {
 		const RequestTypeStats = "Declined";
 		const message = `Your Request Schedule on ${finalDate} has been ${RequestTypeStats}`;
 
-		const getDone = await Booking.updateOne(
+		const getDecline = await Booking.updateOne(
 			{ _id: id },
 			{
 				RequestType: RequestTypeStats,

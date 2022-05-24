@@ -39,10 +39,12 @@
 
 	<div class="commentContainer">
 		<div class="commentFormdiv">
-			<img src="" alt="" />
 			<h1>Thank you for trusting and using our Website.</h1>
 			<h1>Please leave a comment for us to be posted at feedback.</h1>
-			<div class="alert alert-danger">{{resData.message}}</div>
+			<div
+				class="alert alert-danger"
+				id="arlertFeedback"
+			>{{resData.message}}</div>
 			<form action="/Feedback" class="commentForm" method="POST">
 				<input
 					type="text"

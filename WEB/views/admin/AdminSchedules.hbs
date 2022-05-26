@@ -1,137 +1,151 @@
 <div>
-  <div class="main">
-     <div class="navigator">
-        <ul>
-          <div class="webName">
-            <span class="webnameIcon"><i class='fab fa-neos icon icons'></i></span>
-            <span class="webnameWord">orthEast</span></a>
-          </div>
+	<div class="main">
+		<div class="navigator">
+			<ul>
+				<div class="webName">
+					<span class="webnameIcon"><i
+							class="fab fa-neos icon icons"
+						></i></span>
+					<span class="webnameWord">orthEast</span>
+				</div>
 
-          <li class="list">
-            <a href='http://localhost:8282/Admin/Home'><span class="iconNav"><ion-icon name="home" ></ion-icon></span>
-            <span class="titleNav">Dashboard</span></a>
-          </li>
+				<li class="list">
+					<a href="http://localhost:8282/Admin/Home"><span
+							class="iconNav"
+						><ion-icon name="home"></ion-icon></span>
+						<span class="titleNav">Dashboard</span></a>
+				</li>
 
-          <li class="list">
-            <a href='http://localhost:8282/Admin/services'><span class="iconNav"
-              ><ion-icon name="build-outline"></ion-icon
-            ></span>
-            <span class="titleNav">Services</span></a>
-          </li>
-          
-          <li class="list">
-            <a href='http://localhost:8282/Admin/products'><span class="iconNav"><ion-icon name="cart-outline"></ion-icon></span>
-            <span class="titleNav">Products</span></a>
-          </li>
+				<li class="list">
+					<a href="http://localhost:8282/Admin/services"><span
+							class="iconNav"
+						><ion-icon name="build-outline"></ion-icon></span>
+						<span class="titleNav">Services</span></a>
+				</li>
 
-          <li class="list">
-            <a href="http://localhost:8282/Admin/request">
-              <span class="iconNav"
-              ><ion-icon name="mail-outline"></ion-icon></span>
-            <span class="titleNav">Request</span>
-            </a>
-          </li>
+				<li class="list">
+					<a href="http://localhost:8282/Admin/products"><span
+							class="iconNav"
+						><ion-icon name="cart-outline"></ion-icon></span>
+						<span class="titleNav">Products</span></a>
+				</li>
 
-          <li class="list active">
-            <a href='http://localhost:8282/Admin/Schedules'><span class="iconNav"
-              ><ion-icon name="calendar-outline"></ion-icon></span>
-            <span class="titleNav">Schedules</span>
-            </a>
-          </li>
+				<li class="list">
+					<a href="http://localhost:8282/Admin/request">
+						<span class="iconNav"><ion-icon
+								name="mail-outline"
+							></ion-icon></span>
+						<span class="titleNav">Request</span>
+					</a>
+				</li>
 
-          <li class="list">
-            <a href="http://localhost:8282/Admin/useraccounts">
-              <span class="iconNav"
-              ><ion-icon name="people-outline"></ion-icon
-            ></span>
-            <span class="titleNav">User Accounts</span>
-            </a>
-          </li>
+				<li class="list active">
+					<a href="http://localhost:8282/Admin/Schedules"><span
+							class="iconNav"
+						><ion-icon name="calendar-outline"></ion-icon></span>
+						<span class="titleNav">Schedules</span>
+					</a>
+				</li>
 
-          <li class="list">
-            <a href='http://localhost:8282/Admin/archive'><span class="iconNav"
-              ><ion-icon name="archive-outline"></ion-icon
-            ></span>
-            <span class="titleNav">Archive</span></a>
-          </li>
+				<li class="list">
+					<a href="http://localhost:8282/Admin/useraccounts">
+						<span class="iconNav"><ion-icon
+								name="people-outline"
+							></ion-icon></span>
+						<span class="titleNav">User Accounts</span>
+					</a>
+				</li>
 
-          <li class="list">
-            <a href="http://localhost:8282/Login"><span class="iconNav"
-              ><ion-icon name="log-out-outline"></ion-icon
-            ></span>
-            <span class="titleNav">Log Out</span></a>
-            
-          </li>
-        </ul>
-      </div>
+				<li class="list">
+					<a href="http://localhost:8282/Admin/archive"><span
+							class="iconNav"
+						><ion-icon name="archive-outline"></ion-icon></span>
+						<span class="titleNav">Archive</span></a>
+				</li>
 
-  
-        <div class='Tablemanage'>
-          <h3 class='fs-4 mb-3'>Schedules</h3>
-          <div class='col'>
-            <div class='table-container'>
-              <h1 class='tableHeading'></h1>
-              <table id="data" class="table table-striped table-bordered" style="width:100%">
-                <thead>
-                  <tr>
-                    <th>Full Name</th>
-                    <th>Car Mileage</th>
-                    <th>Contact Number</th>
-                    <th>Service</th>
-                    <th>Car Model</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Total Time Duration</th>
-                    <th>Status</th>
-                    <th></th>
-                  </tr>
-                </thead>
-  
-                <tbody>
-                  {{#each resData}}
-                <tr>
-                  <td data-lable='Full Name' name='FullName'>{{{FullName}}}</td>
-                  {{!-- <td data-lable='Gender' name='Gender'>{{{Gender}}}</td>
+				<li class="list">
+					<a href="http://localhost:8282/Login"><span class="iconNav"><ion-icon
+								name="log-out-outline"
+							></ion-icon></span>
+						<span class="titleNav">Log Out</span></a>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="Tablemanage">
+			<h3 class="fs-4 mb-3">Schedules</h3>
+			<div class="col">
+				<div class="table-container">
+					<h1 class="tableHeading"></h1>
+					<table
+						id="data"
+						class="table table-striped table-bordered"
+						style="width:100%"
+					>
+						<thead>
+							<tr>
+								<th>Full Name</th>
+								<th>Car Mileage</th>
+								<th>Contact Number</th>
+								<th>Service</th>
+								<th>Car Model</th>
+								<th>Date</th>
+								<th>Time</th>
+								<th>Total Time Duration</th>
+								<th>Status</th>
+								<th></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							{{#each resData}}
+								<tr>
+									<td data-lable="Full Name" name="FullName">{{{FullName}}}</td>
+									{{!-- <td data-lable='Gender' name='Gender'>{{{Gender}}}</td>
                   <td data-lable='Age' name='Age'>{{{Age}}}</td> --}}
-                  <td
-                    data-lable='Car Mileage'
-                    name='CarMileage'
-                  >{{{CarMileage}}}</td>
-                  <td
-                    data-lable='Contact Number'
-                    name='ContactNumber'
-                  >{{{ContactNumber}}}</td>
-                  <td data-lable='Service' name='Services'>{{{services}}}</td>
-                  <td
-                    data-lable='Car Model'
-                    name='CarandModel'
-                  >{{{CarandModel}}}</td>
-                  <td data-lable='Day' name='Day'>{{{ScheduleDate}}}</td>
-                  <td data-lable='Time' name='Time'>{{{time}}}</td>
-                  <td data-lable='Total Time Duration' name="Duration">{{{duration}}}</td>
-                  <td data-lable='Done'>
-                    <form action='' onsubmit='return Donerequest(event)'>
-                      <input class='tblBTN1' type='submit' value='Done' />
-                      <input type='hidden' value='{{{_id}}}' name='id' />
-                    </form>
-                  </td>
-                  <td data-lable='Cancelled'>
-                    <form action='' onsubmit='return Cancelledrequest(event)'>
-                      <input class='tblBTN2' type='submit' value='Cancelled' />
-                      <input type='hidden' value='{{{_id}}}' name='id' />
-                    </form>
-                  </td>
-                </tr>
-              {{/each}}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-  
-      <div class="toggleNav">
-        <ion-icon class="open" name="menu-outline"></ion-icon>
-        <ion-icon class="closeNav" name="close-circle-outline"></ion-icon>
-      </div>
-  </div>
+									<td
+										data-lable="Car Mileage"
+										name="CarMileage"
+									>{{{CarMileage}}}</td>
+									<td
+										data-lable="Contact Number"
+										name="ContactNumber"
+									>{{{ContactNumber}}}</td>
+									<td data-lable="Service" name="Services">{{{services}}}</td>
+									<td
+										data-lable="Car Model"
+										name="CarandModel"
+									>{{{CarandModel}}}</td>
+									<td data-lable="Day" name="Day">{{{ScheduleDate}}}</td>
+									<td data-lable="Time" name="Time">{{{time}}}</td>
+									<td
+										data-lable="Total Time Duration"
+										name="Duration"
+									>{{{duration}}}</td>
+									<td data-lable="Done">
+										<form action="" onsubmit="return Donerequest(event)">
+											<input class="tblBTN1" type="submit" value="Done" />
+											<input type="hidden" value="{{{_id}}}" name="id" />
+										</form>
+									</td>
+									<td data-lable="Cancelled">
+										<form action="" onsubmit="return Cancelledrequest(event)">
+											<input class="tblBTN2" type="submit" value="Cancelled" />
+											<input type="hidden" value="{{{_id}}}" name="id" />
+										</form>
+									</td>
+								</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="toggleNav">
+			<ion-icon class="open" name="menu-outline"></ion-icon>
+			<ion-icon class="closeNav" name="close-circle-outline"></ion-icon>
+		</div>
+	</div>
 </div>

@@ -12,6 +12,18 @@ body {
 	background-color: #d8e3e7;
 }
 
+.dataTables_info {
+	display: none;
+}
+
+.dataTables_paginate {
+	display: none;
+}
+
+#data_filter {
+	display: none;
+}
+
 .terms {
 	padding: 70px;
 }
@@ -47,7 +59,7 @@ nav {
 	font-family: "Montserrat", sans-serif;
 	padding: 0 5%;
 	height: 70px;
-	background-color: #132c33;
+	background-color: #00446d;
 }
 nav .logo {
 	font-family: "Roboto Slab", serif;
@@ -933,8 +945,7 @@ input::-webkit-inner-spin-button {
 .homemain {
 	height: 100%;
 	width: 100%;
-	background-color: #d8e3e7;
-	display: flex;
+	background-color: #10223a;
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
@@ -961,7 +972,7 @@ input::-webkit-inner-spin-button {
 }
 
 .welcome2 h4 {
-	color: #1f4e5f;
+	color: #f4f7f7;
 	font-family: "Roboto Slab", serif;
 	font-weight: bold;
 	font-size: 30pt;
@@ -999,7 +1010,7 @@ input::-webkit-inner-spin-button {
 }
 
 .getstartedBTN {
-	background-color: #1f4e5f;
+	background-color: #ed2729;
 	height: 8%;
 	width: 25%;
 	border: none;
@@ -1357,7 +1368,7 @@ input::-webkit-inner-spin-button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: row;
+	flex-direction: column;
 }
 
 .book1 form {

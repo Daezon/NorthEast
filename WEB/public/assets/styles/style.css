@@ -1847,7 +1847,6 @@ input::-webkit-inner-spin-button {
 	width: 95%;
 	margin: 20px;
 	border-radius: 50px;
-	overflow: scroll;
 }
 
 .timeListTime {

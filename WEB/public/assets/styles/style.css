@@ -138,17 +138,20 @@ nav .icon-burger .line {
 	height: 100vh;
 	width: 100vw;
 	padding: 60px 10px 10px 10px;
-	background-color: #d8e3e7;
+	/* background-color: #d8e3e7; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	background-image: url("../images/allbg.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .cartBox {
 	height: 90%;
 	width: 100%;
-	background-color: #d8e3e7;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -473,7 +476,11 @@ table img {
 .productMain {
 	height: 100vh;
 	width: 100vw;
-	background-color: #d8e3e7;
+	/* background-color: #d8e3e7; */
+	background-image: url("../images/allbg.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -945,7 +952,12 @@ input::-webkit-inner-spin-button {
 .homemain {
 	height: 100%;
 	width: 100%;
-	background-color: #10223a;
+
+	/* background-color: #10223a; */
+	background-image: url("../images/allbg.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
@@ -1041,7 +1053,11 @@ input::-webkit-inner-spin-button {
 .serviceMain {
 	height: 100vh;
 	width: 100vw;
-	background-color: #d8e3e7;
+	/* background-color: #d8e3e7; */
+	background-image: url("../images/allbg.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -1640,7 +1656,11 @@ input::-webkit-inner-spin-button {
 	padding: 90px 10px 10px 10px;
 	height: 100%;
 	width: 100%;
-	background-color: #d8e3e7;
+	/* background-color: #d8e3e7; */
+	background-image: url("../images/allbg.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	display: flex;
 	justify-content: center;
 	align-items: center;

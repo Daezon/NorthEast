@@ -46,59 +46,49 @@
 
 			<div class="Tablemanage">
 
-				<div class="col">
-					<div class="table-container">
-						<h1 class="tableHeading"></h1>
-						<table
-							id="data"
-							class="table table-striped table-bordered"
-							{{! style="width:100%" }}
-						>
-							<thead>
+				<div class="table-container">
+					<h1 class="tableHeading"></h1>
+					<table id="data" class="table">
+						<thead id="head">
+							<tr>
+								<th>Image</th>
+								<th>Service Name</th>
+								<th>Time</th>
+								<th>Remove Button</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							{{#each resData.data}}
 								<tr>
-									<th>Image</th>
-									<th>Service Name</th>
-									<th>Time</th>
-									<th>Remove Button</th>
+									<td data-lable="Image" name="Image"><img
+											src="{{{serviceImage}}}"
+											alt=""
+											height="80px"
+											width="80px"
+										/></td>
+									<td
+										data-lable="ServiceName"
+										name="ServiceName"
+									>{{{serviceName}}}</td>
+									<td data-lable="Time" name="Time">{{{serviceTime}}}</td>
+									<td data-lable="remove" name="remove">
+										<form onsubmit="return removeCart(event)">
+											<input class="removeCart" type="submit" value="Remove" />
+											<input type="hidden" value="{{{_id}}}" name="id" />
+										</form>
+									</td>
 								</tr>
-							</thead>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>
 
-							<tbody>
-								{{#each resData.data}}
-									<tr>
-										<td data-lable="Image" name="Image"><img
-												src="{{{serviceImage}}}"
-												alt=""
-												height="80px"
-												width="80px"
-											/></td>
-										<td
-											data-lable="ServiceName"
-											name="ServiceName"
-										>{{{serviceName}}}</td>
-										<td data-lable="Time" name="Time">{{{serviceTime}}}</td>
-										<td data-lable="remove" name="remove">
-											<form onsubmit="return removeCart(event)">
-												<input
-													class="removeCart"
-													type="submit"
-													value="Remove"
-												/>
-												<input type="hidden" value="{{{_id}}}" name="id" />
-											</form>
-										</td>
-									</tr>
-								{{/each}}
-							</tbody>
-						</table>
-					</div>
-
-					<div class="subTotal">
-						<label for="">Expected Time of Completion :
-							<span id="duration">{{{data}}}</span>
-						</label>
-						<a href="http://localhost:8282/Booking">Proceed To Booking</a>
-					</div>
+				<div class="subTotal">
+					<label for="">Expected Time of Completion :
+						<span id="duration">{{{data}}}</span>
+					</label>
+					<a href="http://localhost:8282/Booking">Proceed To Booking</a>
 				</div>
 
 			</div>

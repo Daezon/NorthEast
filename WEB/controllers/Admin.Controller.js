@@ -225,7 +225,7 @@ exports.AdminRequest = async (req, res) => {
 		},
 	};
 
-	const response = await fetch(`${URI}/default`, options);
+	const response = await fetch(`${URI}/pending`, options);
 	const resData = await response.json();
 	const data = resData.data;
 

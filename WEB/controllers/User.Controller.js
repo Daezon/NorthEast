@@ -62,6 +62,12 @@ exports.customerFeedBack = async (req, res) => {
 		layout: "customer/customerFeedBack",
 	});
 };
+
+exports.customerTransactions = async (req, res) => {
+	res.render("customer/customerTransactions", {
+		layout: "customer/customerTransactions",
+	});
+};
 //register
 exports.userregister = async (req, res) => {
 	const options = {
@@ -459,3 +465,40 @@ exports.notificationGet = async (req, res) => {
 	});
 };
 //end notification
+
+//display booking client
+exports.customerTransactions = async (req, res) => {
+	const userId = req.cookies.userId;
+	const token = req.cookies.authToken;
+	const options = {
+		method: "GET",
+		headers: {
+			authToken: token,
+			"Content-type": "application/json",
+			Accept: "application/json",
+			responseType: "json",
+		},
+	};
+
+	const response = await fetch(`${URI}/clientbooking/${userId}`, options);
+	const resData = await response.json();
+	const data = resData.data;
+
+	let newDatas = [];
+	for (let i = 0; i < data.length; i++) {
+		const cart = data[i].cart;
+		const services = [];
+		for (let x = 0; x < cart.length; x++) {
+			services.push(cart[x].serviceName);
+		}
+		newDatas.push({
+			...data[i],
+			services: services,
+		});
+	}
+
+	res.render("customer/customerTransactions", {
+		layout: "customer/customerTransactions",
+		resData: newDatas,
+	});
+};

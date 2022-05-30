@@ -18,6 +18,7 @@ router.get("/Booking", UserController.customerTimeView);
 
 router.get("/Notification", UserController.notificationGet);
 
+router.get("/Transactions", UserController.customerTransactions);
 // Post
 router.post("/Register", UserController.userregister);
 router.post("/Login", UserController.userLogin);

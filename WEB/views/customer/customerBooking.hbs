@@ -4,7 +4,8 @@
 		<div class="logo"><strong>N</strong>orthEast</div>
 		<ul class="links">
 			<li>
-				<a href="http://localhost:8282/home">Home <i class="bx bx-home"></i></a>
+				<a href="http://localhost:8282/home">Home
+					<i class="bx bx-home"></i></a>
 			</li>
 			<li>
 				<a href="http://localhost:8282/Services">Service
@@ -15,7 +16,12 @@
 					<i class="bx bx-store-alt"></i></a>
 			</li>
 			<li>
-				<a href="http://localhost:8282/CART">Cart <i class="bx bx-cart"></i></a>
+				<a href="http://localhost:8282/CART">Cart
+					<i class="bx bx-cart"></i></a>
+			</li>
+			<li>
+				<a href="http://localhost:8282/transactions">Transacions
+					<i class="bx bx-book-bookmark"></i></a>
 			</li>
 			<li>
 				<a href="http://localhost:8282/Notification">Notification
@@ -44,6 +50,7 @@
 				<div class="listContainer">
 					<div class="slideshow-container">
 						<div class="boxTimeList">
+							<h2>List of Schedule Date</h2>
 							<div id="bookingDates" data-locations="{{{dates}}}"></div>
 							{{#each dates}}
 								<div class="mySlides">
@@ -96,10 +103,6 @@
 								required
 							/>
 
-							<label for="Fullname"><i class="fad fa-user"></i>
-								Fullname:</label>
-							<input type="text" name="FullName" id="Fullname" required />
-
 							<label for="CarMileage"><i class="fad fa-map-marker-alt"></i>
 								Car Mileage:</label>
 							<input
@@ -109,6 +112,10 @@
 								placeholder="20,000km"
 								required
 							/>
+
+							<label for="Fullname"><i class="fad fa-user"></i>
+								Full Name:</label>
+							<input type="text" name="FullName" id="Fullname" required />
 
 							<label for="ContactNumber"><i class="fad fa-mobile-alt"></i>
 								Contact Number:</label>
@@ -138,19 +145,20 @@
 								<option value="16:00:00" name="Time">4:00pm</option>
 							</select>
 
-							<label for="">Other Service</label>
-							<textarea
-								class="textArea"
-								name=""
-								id=""
-								cols="30"
-								rows="10"
-								height="100px"
-							></textarea>
+							<label for="otherService">Other Service</label>
+							<select id="otherService" name="otherService">
+								<option value="" name="otherService">N/A</option>
+								<option value="Car Wash" name="otherService">Car Wash</option>
+								<option value="Tint Install" name="otherService">Tint Install</option>
+								<option value="Car Repaint" name="otherService">Car Repaint</option>
+								<option value="Car Detailing" name="otherService">Car Detailing</option>
+								<option value="Break Cleaning" name="otherService">Break
+									Cleaning</option>
+							</select>
 
 							<label for="RequestType" id="RequestType1"></label>
 							<select name="RequestType" id="RequestType2">
-								<option value="Default">Default</option>
+								<option value="Pending">Pending</option>
 							</select>
 
 							<input

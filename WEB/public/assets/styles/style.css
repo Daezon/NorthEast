@@ -938,8 +938,7 @@ input::-webkit-inner-spin-button {
 .homemain {
 	height: 100%;
 	width: 100%;
-
-	/* background-color: #10223a; */
+	display: flex;
 	background-image: url("../images/allbg.png");
 	background-position: center;
 	background-repeat: no-repeat;
@@ -949,8 +948,21 @@ input::-webkit-inner-spin-button {
 	flex-direction: row;
 }
 
-.homehero1 {
+.transactionMain {
 	height: 100%;
+	width: 100%;
+	display: flex;
+	background-image: url("../images/allbg.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.homehero1 {
+	height: 90%;
 	width: 40%;
 	display: flex;
 	align-items: center;
@@ -1003,8 +1015,8 @@ input::-webkit-inner-spin-button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
-	width: 60%;
+	height: 90%;
+	width: 50%;
 }
 
 .getstartedBTN {
@@ -1485,7 +1497,11 @@ input::-webkit-inner-spin-button {
 .notificationMain {
 	height: 100%;
 	width: 100%;
-	background-color: #d8e3e7;
+	background-image: url("../images/allbg.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* background-color: #d8e3e7; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -1546,63 +1562,6 @@ input::-webkit-inner-spin-button {
 	padding: 10px;
 	font-weight: 500;
 	cursor: pointer;
-}
-
-.adminHomeMain {
-	background-color: #867d7d;
-	height: 100%;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: row;
-}
-
-.adminCard {
-	height: 50%;
-	width: 20%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	margin: 20px;
-	border: none;
-	border-radius: 10px;
-	box-shadow: 3px 3px 10px 3px #00000070;
-}
-
-.adminCard1 {
-	background-color: #10435e;
-	padding: 10px;
-	height: 15%;
-	width: 100%;
-	border: none;
-	display: flex;
-	align-items: center;
-	border-radius: 10px 10px 0px 0px;
-}
-
-.adminCard1 h4 {
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	color: #32d6af;
-	font-size: 20pt;
-}
-
-.adminCard2 {
-	height: 85%;
-	width: 100%;
-	background-color: #eff0ef;
-	border: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 0px 0px 10px 10px;
-}
-
-.adminCard2 h2 {
-	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-	font-size: 50pt;
-	color: #232323;
 }
 
 .mainpage2hero2 video {
@@ -2109,6 +2068,11 @@ input::-webkit-inner-spin-button {
 		width: 70%;
 	}
 
+	.subTotal a {
+		width: 35%;
+		font-size: 12pt;
+	}
+
 	/* nav start */
 
 	nav {
@@ -2303,6 +2267,11 @@ input::-webkit-inner-spin-button {
 		align-items: center;
 		flex-direction: column;
 		box-shadow: 3px 3px 10px 3px #00000070;
+	}
+
+	.subTotal a {
+		width: 30%;
+		font-size: 12pt;
 	}
 
 	.loginButton {
@@ -2993,7 +2962,14 @@ input::-webkit-inner-spin-button {
 }
 
 @media screen and (max-width: 533px) {
+	body {
+		background-color: #10223a;
+	}
 	/* table */
+	.Tablemanage {
+		overflow: scroll;
+	}
+
 	.table thead {
 		display: none;
 	}
@@ -3029,6 +3005,20 @@ input::-webkit-inner-spin-button {
 		font-weight: 600;
 		font-size: 14px;
 		text-align: left;
+	}
+
+	.removeCart {
+		width: 60%;
+		font-size: 12pt;
+	}
+
+	.subTotal label {
+		font-size: 10pt;
+	}
+
+	.subTotal a {
+		width: 50%;
+		font-size: 10pt;
 	}
 	/* table */
 	/* nav start */
@@ -3081,6 +3071,7 @@ input::-webkit-inner-spin-button {
 	nav :checked ~ .icon-burger .line:nth-child(2) {
 		opacity: 0;
 	}
+
 	/* nav end */
 
 	.mainpage {
@@ -3339,6 +3330,10 @@ input::-webkit-inner-spin-button {
 
 	.titleService {
 		margin-top: 70px;
+	}
+
+	.cartMain {
+		height: 100%;
 	}
 
 	.wrapperGrid {

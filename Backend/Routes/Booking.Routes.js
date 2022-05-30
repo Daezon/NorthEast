@@ -14,6 +14,8 @@ router.get("/time/:ScheduleDate", BookingController.getDatewithTime);
 
 router.get("/booking/:_id", BookingController.idgetbooking);
 
+router.get("/clientbooking/:_id", BookingController.getBookingRequest);
+
 // router.put('/booking/update/:_id',BookingController.updateBooking);
 
 router.put("/approve/:_id", BookingController.updateAproBooking);
@@ -30,7 +32,7 @@ router.get("/approve", BookingController.getApprove);
 
 router.get("/decline", BookingController.getDeclined);
 
-router.get("/default", BookingController.getDefault);
+router.get("/pending", BookingController.getPending);
 
 router.get("/done", BookingController.getDone);
 

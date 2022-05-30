@@ -19,7 +19,7 @@ const bookingSchema = new Schema({
       serviceTime: String,
       serviceImage: String,
       carttype: String,
-    }
+    },
   ],
   ContactNumber: {
     type: Number,
@@ -41,6 +41,11 @@ const bookingSchema = new Schema({
   time: {
     type: String,
   },
+
+  otherService: {
+    type: String,
+  },
+
   RequestType: {
     type: String,
   },

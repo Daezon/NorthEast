@@ -12,6 +12,9 @@ body {
 	background-color: #d8e3e7;
 }
 
+.loginLogo img {
+	display: none;
+}
 .status {
 	font-weight: 800;
 	color: #4c01c0;
@@ -191,6 +194,10 @@ nav .logo {
 	font-size: 24px;
 	color: #fff;
 }
+
+nav .logo img {
+	height: 80%;
+}
 nav .links {
 	float: right;
 	padding: 0;
@@ -360,17 +367,19 @@ nav .icon-burger .line {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #d8e3e7;
+	background-color: #00446d;
 	overflow: hidden;
 }
 
 .loginHero1 {
+	padding: 20px;
 	height: 100%;
 	width: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	text-align: center;
 }
 
 .loginHero1 h3 {
@@ -1977,6 +1986,10 @@ input::-webkit-inner-spin-button {
 	nav .links a {
 		font-size: 15px;
 	}
+
+	.loginLogo img {
+		display: none;
+	}
 	/* nav end */
 
 	.getstartedBTN {
@@ -2057,6 +2070,9 @@ input::-webkit-inner-spin-button {
 		height: 350px;
 	}
 
+	.loginLogo img {
+		display: none;
+	}
 	.loginBox {
 		height: 50%;
 	}
@@ -2333,6 +2349,10 @@ input::-webkit-inner-spin-button {
 		display: flex;
 		flex-direction: row;
 		background-color: #d8e3e7;
+	}
+
+	.loginLogo img {
+		display: none;
 	}
 
 	.loginHero1 {
@@ -2745,7 +2765,7 @@ input::-webkit-inner-spin-button {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		background-color: #d8e3e7;
+		background-color: #10223a;
 	}
 
 	.loginHero2 i {

@@ -47,12 +47,12 @@
 			<h1>Your Transacions</h1>
 
 		</div>
-		<div class="Tablemanage">
+		<div class="Tablemanage2">
 
-			<div class="table-container">
-				<h1 class="tableHeading"></h1>
-				<table id="data" class="table">
-					<thead id="head">
+			<div class="table-container2">
+				<h1 class="tableHeading2"></h1>
+				<table id="data" class="table2">
+					<thead id="head2">
 						<tr>
 							<th>Full Name</th>
 							<th>Car Mileage</th>
@@ -69,27 +69,27 @@
 					<tbody>
 						{{#each resData}}
 							<tr>
-								<td data-lable="Full Name" name="FullName">{{{FullName}}}</td>
+								<td data-lable2="Full Name" name="FullName">{{{FullName}}}</td>
 								<td
-									data-lable="Car Mileage"
+									data-lable2="Car Mileage"
 									name="CarMileage"
 								>{{{CarMileage}}}</td>
 								<td
-									data-lable="Contact Number"
+									data-lable2="Contact Number"
 									name="ContactNumber"
 								>{{{ContactNumber}}}</td>
-								<td data-lable="Service" name="Services">{{{services}}}</td>
+								<td data-lable2="Service" name="Services">{{{services}}}</td>
 								<td
 									data-lable="Car Model"
 									name="CarandModel"
 								>{{{CarandModel}}}</td>
-								<td data-lable="Day" name="Day">{{{ScheduleDate}}}</td>
-								<td data-lable="Time" name="Time">{{{time}}}</td>
+								<td data-lable2="Day" name="Day">{{{ScheduleDate}}}</td>
+								<td data-lable2="Time" name="Time">{{{time}}}</td>
 								<td
-									data-lable="Total Time Duration"
+									data-lable=2"Total Time Duration"
 									name="Duration"
 								>{{{duration}}}</td>
-								<td data-lable="Status" c>{{{RequestType}}}</td>
+								<td data-lable2="Status" class="status"><a class="status">{{{RequestType}}}</a></td>
 							</tr>
 						{{/each}}
 					</tbody>

@@ -250,6 +250,7 @@ exports.sendrequest = async (req, res) => {
 			RequestType: req.body.RequestType,
 			Date: req.body.Day,
 			Time: req.body.Time,
+			otherService: req.body.otherService,
 		}),
 	};
 

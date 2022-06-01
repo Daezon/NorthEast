@@ -49,11 +49,16 @@
 			<div class="timeViewContainer">
 				<div class="listContainer">
 					<div class="slideshow-container">
+						{{! <div class="listTitle">
+							<h2>List of Schedule Date</h2>
+						</div> }}
+
 						<div class="boxTimeList">
 							<h2>List of Schedule Date</h2>
 							<div id="bookingDates" data-locations="{{{dates}}}"></div>
 							{{#each dates}}
 								<div class="mySlides">
+
 									<div class="dayButton">{{{this}}}</div>
 
 									<div class="timeListData">
@@ -81,7 +86,7 @@
 
 		<div class="Bookcountainer">
 			<div class="Bookhero1">
-				<h1>Scheduling Form <i class="bx bx-book-bookmark"></i></h1>
+				<h1>Appointment Form <i class="bx bx-book-bookmark"></i></h1>
 			</div>
 
 			<div class="Bookhero2">

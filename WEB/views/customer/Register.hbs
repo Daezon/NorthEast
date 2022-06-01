@@ -1,7 +1,9 @@
   <div>
     <div class="registerbox">
       <div class="regcountainer">
-
+        			<div class="loginLogo">
+				<img src="/assets/images/N.jpg" alt="" />
+			</div>
         <h2 class="AlertsLOGIN">{{resData.message}}</h2>
         <div class="heroreg2">
           <div class="registerhero1">
@@ -27,12 +29,6 @@
                   required
                 />
 
-                {{!-- <label for="Gender"><i class="far fa-venus-mars"></i>
-                  Gender:</label>
-                <select name="Gender" id="Gender">
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select> --}}
 
                 <label for="Address"><i class="fad fa-map-marker-alt"></i>
                   Address:</label>
@@ -44,17 +40,7 @@
                   required
                 />
 
-                {{!-- <label for="Age"><i class="fab fa-gratipay"></i> Age:</label>
-                <input
-                  class="input"
-                  type="number"
-                  id="Age"
-                  name="Age"
-                  pattern="/d{2}"
-                  min="18"
-                  max="80"
-                  required
-                /> --}}
+
 
                 <label for="ContactNumber"><i class="fad fa-mobile-alt"></i>
                   Contact Number:</label>
@@ -224,7 +210,10 @@
                             <BR><BR>
                             This policy covers car owners and any kind of vehicles.
                           </p>
-                          <input type="checkbox" name="" id="" required> I Agree to the Privacy Policy
+                          <div class="checkAgree">
+                            <input type="checkbox" name="" id="" required> <label for="">I Agree to the Privacy Policy</label>
+                          </div>
+                          
                         </div>
                         <div class="modal-footer">
                           <button

@@ -210,10 +210,13 @@
                             <BR><BR>
                             This policy covers car owners and any kind of vehicles.
                           </p>
-                          <div class="checkAgree">
-                            <input type="checkbox" name="" id="" required> <label for="">I Agree to the Privacy Policy</label>
-                          </div>
-                          
+                          {{!-- <label for="checkbox"><input type="checkbox" required> I Agree to the Privacy Policy</label> --}}
+
+                          <label class="container">I Agree to the Privacy Policy
+                            <input type="checkbox" required>
+                            <span class="checkmark"></span>
+                          </label>
+
                         </div>
                         <div class="modal-footer">
                           <button

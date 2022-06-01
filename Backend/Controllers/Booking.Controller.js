@@ -463,10 +463,7 @@ exports.getDates = async (req, res) => {
     let convertedDate = [];
     for (let i = 0; i < findDate.length; i++) {
       const newDate = new Date(findDate[i]);
-      convertedDate.push({
-        converted: newDate.toString().substring(0, 15),
-        old: findDate[i],
-      });
+      convertedDate.push(newDate.toString().substring(0, 15));
     }
 
     return res.status(200).json({
@@ -490,8 +487,16 @@ const convertFrom24To12Format = (time24) => {
 exports.getDatewithTime = async (req, res) => {
   try {
     const dates = req.params.ScheduleDate;
+    const dateObj = new Date(dates);
+    const month = dateObj.getUTCMonth() + 1; //months from 1-12
+    const day = dateObj.getUTCDate() + 1;
+    const year = dateObj.getUTCFullYear();
 
-    const findTime = await Booking.find({ ScheduleDate: dates });
+    const final = `${day === 32 ? month + 1 : month}-${
+      day === 32 ? 1 : day
+    }-${year}`;
+
+    const findTime = await Booking.find({ ScheduleDate: final });
 
     let convertedTime = [];
     for (i = 0; i < findTime.length; i++) {

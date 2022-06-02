@@ -1,77 +1,50 @@
 <div>
 	<div class="main">
-		<div class="navigator">
-			<ul>
-				<div class="webName">
-					<span class="webnameIcon"><i
-							class="fab fa-neos icon icons"
-						></i></span>
-					<span class="webnameWord">orthEast</span>
-				</div>
-
-				<li class="list">
-					<a href="http://localhost:8282/Admin/Home"><span
-							class="iconNav"
-						><ion-icon name="home"></ion-icon></span>
-						<span class="titleNav">Dashboard</span></a>
+		<nav>
+			<input id="nav-toggle" type="checkbox" />
+			<div class="logo"><img src="/assets/images/finalLogo.png" alt="" /></div>
+			<ul class="links">
+				<li>
+					<a href="http://localhost:8282/Admin/Home">Dashboard<i
+							class="bx bx-home"
+						></i></a>
 				</li>
-
-				<li class="list active">
-					<a href="http://localhost:8282/Admin/services"><span
-							class="iconNav"
-						><ion-icon name="build-outline"></ion-icon></span>
-						<span class="titleNav">Services</span></a>
+				<li>
+					<a href="http://localhost:8282/Admin/services">Service
+						<i class="bx bx-wrench"></i></a>
 				</li>
-
-				<li class="list">
-					<a href="http://localhost:8282/Admin/products"><span
-							class="iconNav"
-						><ion-icon name="cart-outline"></ion-icon></span>
-						<span class="titleNav">Products</span></a>
+				<li>
+					<a href="http://localhost:8282/Admin/products">Product
+						<i class="bx bx-store-alt"></i></a>
 				</li>
-
-				<li class="list">
-					<a href="http://localhost:8282/Admin/request">
-						<span class="iconNav"><ion-icon
-								name="mail-outline"
-							></ion-icon></span>
-						<span class="titleNav">Request</span>
-					</a>
+				<li>
+					<a href="http://localhost:8282/Admin/request">Request
+						<i class="bx bx-envelope"></i></a>
 				</li>
-
-				<li class="list">
-					<a href="http://localhost:8282/Admin/Schedules"><span
-							class="iconNav"
-						><ion-icon name="calendar-outline"></ion-icon></span>
-						<span class="titleNav">Schedules</span>
-					</a>
+				<li>
+					<a href="http://localhost:8282/Admin/Schedules">Schedules<i
+							class="bx bx-book-bookmark"
+						></i></a>
 				</li>
-
-				<li class="list">
-					<a href="http://localhost:8282/Admin/useraccounts">
-						<span class="iconNav"><ion-icon
-								name="people-outline"
-							></ion-icon></span>
-						<span class="titleNav">User Accounts</span>
-					</a>
+				<li>
+					<a href="http://localhost:8282/Admin/useraccounts">Accounts
+						<i class="bx bxs-user-circle"></i></a>
 				</li>
-
-				<li class="list">
-					<a href="http://localhost:8282/Admin/archive"><span
-							class="iconNav"
-						><ion-icon name="archive-outline"></ion-icon></span>
-						<span class="titleNav">Archive</span></a>
+				<li>
+					<a href="http://localhost:8282/Admin/archive">Archive
+						<i class="bx bxs-archive"></i></a>
 				</li>
-
-				<li class="list">
-					<a href="http://localhost:8282/Login"><span class="iconNav"><ion-icon
-								name="log-out-outline"
-							></ion-icon></span>
-						<span class="titleNav">Log Out</span></a>
-
+				<li>
+					<a href="http://localhost:8282/Login">Log Out
+						<i class="bx bx-log-in-circle"></i></a>
 				</li>
 			</ul>
-		</div>
+			<label for="nav-toggle" class="icon-burger">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</label>
+		</nav>
 
 		<div class="servicescontainer">
 
@@ -185,11 +158,6 @@
 					</div>
 				{{/each}}
 			</div>
-		</div>
-
-		<div class="toggleNav">
-			<ion-icon class="open" name="menu-outline"></ion-icon>
-			<ion-icon class="closeNav" name="close-circle-outline"></ion-icon>
 		</div>
 	</div>
 </div>

@@ -1,207 +1,176 @@
 <div>
-  <div class='main'>
-    <div class='navigator'>
-      <ul>
-        <div class='webName'>
-          <span class='webnameIcon'><i
-              class='fab fa-neos icon icons'
-            ></i></span>
-          <span class='webnameWord'>orthEast</span>
-        </div>
+	<div class="main">
+		<nav>
+			<input id="nav-toggle" type="checkbox" />
+			<div class="logo"><img src="/assets/images/finalLogo.png" alt="" /></div>
+			<ul class="links">
+				<li>
+					<a href="http://localhost:8282/Admin/Home">Dashboard<i
+							class="bx bx-home"
+						></i></a>
+				</li>
+				<li>
+					<a href="http://localhost:8282/Admin/services">Service
+						<i class="bx bx-wrench"></i></a>
+				</li>
+				<li>
+					<a href="http://localhost:8282/Admin/products">Product
+						<i class="bx bx-store-alt"></i></a>
+				</li>
+				<li>
+					<a href="http://localhost:8282/Admin/request">Request
+						<i class="bx bx-envelope"></i></a>
+				</li>
+				<li>
+					<a href="http://localhost:8282/Admin/Schedules">Schedules<i
+							class="bx bx-book-bookmark"
+						></i></a>
+				</li>
+				<li>
+					<a href="http://localhost:8282/Admin/useraccounts">Accounts
+						<i class="bx bxs-user-circle"></i></a>
+				</li>
+				<li>
+					<a href="http://localhost:8282/Admin/archive">Archive
+						<i class="bx bxs-archive"></i></a>
+				</li>
+				<li>
+					<a href="http://localhost:8282/Login">Log Out
+						<i class="bx bx-log-in-circle"></i></a>
+				</li>
+			</ul>
+			<label for="nav-toggle" class="icon-burger">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</label>
+		</nav>
 
-        <li class='list'>
-          <a href='http://localhost:8282/Admin/Home'><span
-              class='iconNav'
-            ><ion-icon name='home'></ion-icon></span>
-            <span class='titleNav'>Dashboard</span></a>
-        </li>
+		<div class="servicescontainer">
 
-        <li class='list'>
-          <a href='http://localhost:8282/Admin/services'><span
-              class='iconNav'
-            ><ion-icon name='build-outline'></ion-icon></span>
-            <span class='titleNav'>Services</span></a>
-        </li>
-
-        <li class='list active'>
-          <a href='http://localhost:8282/Admin/products'><span
-              class='iconNav'
-            ><ion-icon name='cart-outline'></ion-icon></span>
-            <span class='titleNav'>Products</span></a>
-        </li>
-
-        <li class='list'>
-          <a href='http://localhost:8282/Admin/request'>
-            <span class='iconNav'><ion-icon
-                name='mail-outline'
-              ></ion-icon></span>
-            <span class='titleNav'>Request</span>
-          </a>
-        </li>
-
-        <li class='list'>
-          <a href='http://localhost:8282/Admin/Schedules'><span
-              class='iconNav'
-            ><ion-icon name='calendar-outline'></ion-icon></span>
-            <span class='titleNav'>Schedules</span>
-          </a>
-        </li>
-
-        <li class='list'>
-          <a href='http://localhost:8282/Admin/useraccounts'>
-            <span class='iconNav'><ion-icon
-                name='people-outline'
-              ></ion-icon></span>
-            <span class='titleNav'>User Accounts</span>
-          </a>
-        </li>
-
-        <li class='list'>
-          <a href='http://localhost:8282/Admin/archive'><span
-              class='iconNav'
-            ><ion-icon name='archive-outline'></ion-icon></span>
-            <span class='titleNav'>Archive</span></a>
-        </li>
-
-        <li class='list'>
-          <a href='http://localhost:8282/Login'><span class='iconNav'><ion-icon
-                name='log-out-outline'
-              ></ion-icon></span>
-            <span class='titleNav'>Log Out</span></a>
-
-        </li>
-      </ul>
-    </div>
-
-    <div class='servicescontainer'>
-
-      <div class='searchProducts'>
-        {{! <input type='text' name='' class='searchText' placeholder='Search...' />
+			<div class="searchProducts">
+				{{! <input type='text' name='' class='searchText' placeholder='Search...' />
         <button inputmode='' value='Search' class='searchBTN' id='searchbtn'>
           <i class='bx bx-search-alt-2'></i>
         </button> }}
-        <div class='ServiceWebTitle'>
-          <h1>Products</h1>
-        </div>
+				<div class="ServiceWebTitle">
+					<h1>Products</h1>
+				</div>
 
-        <a href='http://localhost:8282/Admin/addproduct' class='add'>+Add
-          Product</a>
-      </div>
+				<a href="http://localhost:8282/Admin/addproduct" class="add">+Add
+					Product</a>
+			</div>
 
-      <div class='wrapperGrid'>
+			<div class="wrapperGrid">
 
-        {{#each resData.data}}
-          <div class='containerServ'>
-            <h1 class='name' name>{{{Productname}}}</h1>
-            <div class='imghero'>
-              <img
-                src='{{{Image}}}'
-                alt=''
-                class='serviceImage'
-                style='height: 250px; width:250px'
-              />
-            </div>
-            <p class='serviceTime'>{{{Price}}}</p>
-            <div class='functionBtns'>
-              <form
-                class='addImageform'
-                id='UpdateProducts'
-                {{! action='/Admin/ProductsUpdates' }}
-                method='GET'
-                {{! enctype='multipart/form-data' }}
-                onsubmit='return GetProduct(event)'
-              >
+				{{#each resData.data}}
+					<div class="containerServ">
+						<h1 class="name" name>{{{Productname}}}</h1>
+						<div class="imghero">
+							<img
+								src="{{{Image}}}"
+								alt=""
+								class="serviceImage"
+								style="height: 250px; width:250px"
+							/>
+						</div>
+						<p class="serviceTime">{{{Price}}}</p>
+						<div class="functionBtns">
+							<form
+								class="addImageform"
+								id="UpdateProducts"
+								{{! action='/Admin/ProductsUpdates' }}
+								method="GET"
+								{{! enctype='multipart/form-data' }}
+								onsubmit="return GetProduct(event)"
+							>
 
-                <input
-                  class='editBtn'
-                  id='myButton_{{{_id}}}'
-                  type='button'
-                  value='Edit'
-                  onClick='return GetModal(event)'
-                  data-arg1='{{{_id}}}'
-                />
-                <input type='hidden' value='{{{_id}}}' name='idOne' />
-              </form>
-              <!-- The Modal -->
-              <form
-                action='/admin/Updateproduct'
-                method='POST'
-                enctype='multipart/form-data'
-                {{! onsubmit='return updateConfirm(event)' }}
-              >
-                <div id='modal_{{{_id}}}' class='modal'>
-                  <!-- Modal content -->
-                  <div class='modal-content'>
-                    <span class='close'>&times;</span>
-                    <div class='updateinputs'>
-                      <div class='addimageContainerUpdate'>
-                        <h1 class='titlena'>Update Product</h1>
+								<input
+									class="editBtn"
+									id="myButton_{{{_id}}}"
+									type="button"
+									value="Edit"
+									onClick="return GetModal(event)"
+									data-arg1="{{{_id}}}"
+								/>
+								<input type="hidden" value="{{{_id}}}" name="idOne" />
+							</form>
+							<!-- The Modal -->
+							<form
+								action="/admin/Updateproduct"
+								method="POST"
+								enctype="multipart/form-data"
+								{{! onsubmit='return updateConfirm(event)' }}
+							>
+								<div id="modal_{{{_id}}}" class="modal">
+									<!-- Modal content -->
+									<div class="modal-content">
+										<span class="close">&times;</span>
+										<div class="updateinputs">
+											<div class="addimageContainerUpdate">
+												<h1 class="titlena">Update Product</h1>
 
-                        <label for=''>Select Image File</label>
-                        <input
-                          class='chooseFile'
-                          type='file'
-                          id='ImageFile'
-                          name='image_product'
-                        />
+												<label for="">Select Image File</label>
+												<input
+													class="chooseFile"
+													type="file"
+													id="ImageFile"
+													name="image_product"
+												/>
 
-                        <input
-                          class='servicetext'
-                          type='text'
-                          id='Productname'
-                          name='Productname'
-                          placeholder='{{{Productname}}}'
-                          required
-                        />
+												<input
+													class="servicetext"
+													type="text"
+													id="Productname"
+													name="Productname"
+													placeholder="{{{Productname}}}"
+													required
+												/>
 
-                        <input
-                          class='servicetext'
-                          type='text'
-                          id='Price'
-                          name='Price'
-                          placeholder='{{{Price}}}'
-                          required
-                        />
+												<input
+													class="servicetext"
+													type="text"
+													id="Price"
+													name="Price"
+													placeholder="{{{Price}}}"
+													required
+												/>
 
-                        <input
-                          type='submit'
-                          value='Confirm'
-                          id='submitProduct'
-                        />
+												<input
+													type="submit"
+													value="Confirm"
+													id="submitProduct"
+												/>
 
-                        <input
-                          type='hidden'
-                          value='{{{_id}}}'
-                          name='Product_id'
-                          id='ProductID'
-                        />
+												<input
+													type="hidden"
+													value="{{{_id}}}"
+													name="Product_id"
+													id="ProductID"
+												/>
 
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
 
-            <div class='functionBtns1'>
-              <form
-                action=''
-                class='Form5'
-                onsubmit='return DeleteProduct(event)'
-              >
-                <input class='deleteBtn' type='submit' value='Delete' />
-                <input type='hidden' value='{{{_id}}}' name='id' />
-              </form>
-            </div>
-          </div>
-        {{/each}}
+						<div class="functionBtns1">
+							<form
+								action=""
+								class="Form5"
+								onsubmit="return DeleteProduct(event)"
+							>
+								<input class="deleteBtn" type="submit" value="Delete" />
+								<input type="hidden" value="{{{_id}}}" name="id" />
+							</form>
+						</div>
+					</div>
+				{{/each}}
 
-      </div>
-    </div>
+			</div>
+		</div>
 
-    <div class='toggleNav'>
-      <ion-icon class='open' name='menu-outline'></ion-icon>
-      <ion-icon class='closeNav' name='close-circle-outline'></ion-icon>
-    </div>
-  </div>
+	</div>
 </div>

@@ -1,6 +1,6 @@
 const { response } = require("express");
 const fetch = require("node-fetch");
-const URI = "http://localhost:8080/api";
+const URI = "https://api.northeastcarcare.me/api";
 const { ms, s, m, h, d } = require("time-convert");
 
 exports.register = async (req, res) => {

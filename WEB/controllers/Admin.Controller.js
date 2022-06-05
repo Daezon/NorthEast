@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const URI = "http://localhost:8080/api";
+const URI = "https://api.northeastcarcare.me/api";
 
 function getCookie(name) {
 	const value = `; ${document.cookie}`;

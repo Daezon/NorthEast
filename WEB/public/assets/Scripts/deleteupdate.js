@@ -12,7 +12,7 @@ function Deletedetails(event) {
 	(async () => {
 		try {
 			const baseURL = await fetch(
-				`http://localhost:8080/api/service/delete/${Service_id}`,
+				`https://api.northeastcarcare.me/api/service/delete/${Service_id}`,
 				{ method: "DELETE", headers: { Authorization: getCookie("authToken") } }
 			);
 			const result = await baseURL.json();
@@ -31,7 +31,7 @@ function DeleteProduct(event) {
 	(async () => {
 		try {
 			const baseURL = await fetch(
-				`http://localhost:8080/api/product/delete/${Product_id}`,
+				`https://api.northeastcarcare.me/api/product/delete/${Product_id}`,
 				{ method: "DELETE", headers: { Authorization: getCookie("authToken") } }
 			);
 			const result = await baseURL.json();
@@ -56,7 +56,7 @@ const updateConfirm = async (event) => {
 	console.log(image);
 	try {
 		const baseURL = await fetch(
-			`http://localhost:8080/api/product/update/${productId}`,
+			`https://api.northeastcarcare.me/api/product/update/${productId}`,
 			{
 				method: "PUT",
 				headers: {
@@ -85,7 +85,7 @@ const Acceptrequest = async (event) => {
 	const requestID = event.target.id.value;
 	try {
 		const baseURL = await fetch(
-			`http://localhost:8080/api/approve/${requestID}`,
+			`https://api.northeastcarcare.me/api/approve/${requestID}`,
 			{
 				method: "PUT",
 				headers: {
@@ -112,7 +112,7 @@ const Declinerequest = async (event) => {
 	const requestID = event.target.id.value;
 	try {
 		const baseURL = await fetch(
-			`http://localhost:8080/api/decline/${requestID}`,
+			`https://api.northeastcarcare.me/api/decline/${requestID}`,
 			{
 				method: "PUT",
 				headers: {
@@ -138,17 +138,20 @@ const Donerequest = async (event) => {
 	console.log(getCookie("authToken"));
 	const requestID = event.target.id.value;
 	try {
-		const baseURL = await fetch(`http://localhost:8080/api/done/${requestID}`, {
-			method: "PUT",
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: getCookie("authToken"),
-			},
-			body: JSON.stringify({
-				requestID: requestID,
-				RequestType: "Done",
-			}),
-		});
+		const baseURL = await fetch(
+			`https://api.northeastcarcare.me/api/done/${requestID}`,
+			{
+				method: "PUT",
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: getCookie("authToken"),
+				},
+				body: JSON.stringify({
+					requestID: requestID,
+					RequestType: "Done",
+				}),
+			}
+		);
 		const result = await baseURL.json();
 		console.log(result.data);
 	} catch (error) {
@@ -163,7 +166,7 @@ const Cancelledrequest = async (event) => {
 	const requestID = event.target.id.value;
 	try {
 		const baseURL = await fetch(
-			`http://localhost:8080/api/cancelled/${requestID}`,
+			`https://api.northeastcarcare.me/api/cancelled/${requestID}`,
 			{
 				method: "PUT",
 				headers: {
@@ -192,7 +195,7 @@ function GetService(event) {
 	(async () => {
 		try {
 			const baseURL = await fetch(
-				`http://localhost:8080/api/services/${Service_id}`,
+				`https://api.northeastcarcare.me/api/services/${Service_id}`,
 				{ method: "GET", headers: { Authorization: getCookie("authToken") } }
 			);
 			const result = await baseURL.json();
@@ -218,7 +221,7 @@ const updateServiceConfirm = async (event) => {
 	console.log(image);
 	try {
 		const baseURL = await fetch(
-			`http://localhost:8080/api/service/update/${serviceId}`,
+			`https://api.northeastcarcare.me/api/service/update/${serviceId}`,
 			{
 				method: "PUT",
 				headers: {
@@ -246,15 +249,18 @@ const AddCartBtn = async (event) => {
 	event.preventDefault();
 	const Service_id = event.target.ServiceID.value;
 	console.log(Service_id);
-	const baseURL = await fetch(`http://localhost:8080/api/cart/${Service_id}`, {
-		method: "POST",
-		headers: {
-			authToken: getCookie("authToken"),
-			"Content-type": "application/json",
-			Accept: "application/json",
-			responseType: "json",
-		},
-	});
+	const baseURL = await fetch(
+		`https://api.northeastcarcare.me/api/cart/${Service_id}`,
+		{
+			method: "POST",
+			headers: {
+				authToken: getCookie("authToken"),
+				"Content-type": "application/json",
+				Accept: "application/json",
+				responseType: "json",
+			},
+		}
+	);
 	const result = await baseURL.json();
 	console.log(result.data);
 	alert(result.message);
@@ -266,9 +272,12 @@ const removeCart = async (event) => {
 	// event.preventDefault();
 	const id = await event.target.id.value;
 	console.log(id);
-	const baseURL = await fetch(`http://localhost:8080/api/itemdelete/${id}`, {
-		method: "DELETE",
-	});
+	const baseURL = await fetch(
+		`https://api.northeastcarcare.me/api/itemdelete/${id}`,
+		{
+			method: "DELETE",
+		}
+	);
 	const result = await baseURL.json();
 	alert(result.message);
 };

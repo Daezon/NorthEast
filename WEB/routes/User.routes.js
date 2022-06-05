@@ -4,7 +4,7 @@ var router = express.Router();
 const UserController = require("../controllers/User.Controller");
 // Get
 router.get("/Register", UserController.register);
-router.get("/LogIn", UserController.index);
+router.get("/", UserController.index);
 router.get("/Services", UserController.customerServices);
 // router.get("/Booking", UserController.customerBooking);
 // router.get("/Notification", UserController.customerNotification);

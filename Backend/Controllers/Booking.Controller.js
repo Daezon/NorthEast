@@ -24,7 +24,7 @@ exports.getbooking = async (req, res) => {
 			carttype: "Oncart",
 		});
 		const carturl = await axios.get(
-			`http://localhost:8080/api/cart/${Clientid}`
+			`https://api.northeastcarcare.me/api/cart/${Clientid}`
 		);
 
 		const cartArr = await carturl.data.data;
@@ -39,7 +39,7 @@ exports.getbooking = async (req, res) => {
 		const convertedDate = convertedTime.getDate();
 		const convertedYear = convertedTime.getFullYear();
 		const convertedMonth = convertedTime.getMonth() + 1;
-		date.format(now, "ddd, MMM DD YYYY");
+		// date.format(now, "ddd, MMM DD YYYY");
 
 		const complete = `${convertedMonth}-${convertedDate}-${convertedYear}`;
 
@@ -174,7 +174,9 @@ exports.updateAproBooking = async (req, res) => {
 			}
 		);
 		const id = req.params._id;
-		const url = await axios.get(`http://localhost:8080/api/booking/${id}`);
+		const url = await axios.get(
+			`https://api.northeastcarcare.me/api/booking/${id}`
+		);
 		const result = url.data.data;
 		const userID = result.Clientid;
 		// const titleResult = result.serviceName;
@@ -244,7 +246,9 @@ exports.updateDecBooking = async (req, res) => {
 			}
 		);
 		const id = req.params._id;
-		const url = await axios.get(`http://localhost:8080/api/booking/${id}`);
+		const url = await axios.get(
+			`https://api.northeastcarcare.me/api/booking/${id}`
+		);
 		const result = url.data.data;
 		const userID = result.Clientid;
 		// const titleResult = result.serviceName;
@@ -445,7 +449,7 @@ exports.bookingCartUpdate = async (req, res) => {
 		for (let i = 0; i < cartLength.length; i++) {
 			const cartID = await cartLength[i];
 			const updateCart = await axios.put(
-				`http://localhost:8080/api/updatecart/${cartID}`
+				`https://api.northeastcarcare.me/api/updatecart/${cartID}`
 			);
 		}
 		return res.status(200).json({ message: "Item Updated", status: 200 });

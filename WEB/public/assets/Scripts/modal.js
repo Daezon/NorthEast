@@ -32,7 +32,18 @@ const GetModal = async (event) => {
 	var btn = document.getElementById(`myButton_${arg1}`);
 
 	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
+	// let span = document.getElementsByClassName("close").length;
+	// console.log(span);
+
+	for (let i = 0; i < document.getElementsByClassName("close").length; i++) {
+		let span = document.getElementsByClassName("close")[i];
+
+		span.onclick = function () {
+			modal.style.display = "none";
+		};
+
+		console.log(span);
+	}
 
 	// When the user clicks the button, open the modal
 	btn.onclick = function () {
@@ -40,9 +51,6 @@ const GetModal = async (event) => {
 	};
 
 	// When the user clicks on <span> (x), close the modal
-	span.onclick = function () {
-		modal.style.display = "none";
-	};
 
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function (event) {

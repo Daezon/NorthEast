@@ -1434,7 +1434,7 @@ input::-webkit-inner-spin-button {
   color: #f4f7f7;
   font-size: 12pt;
   padding: 10px;
-  width: 40%;
+  width: 70%;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
@@ -2311,7 +2311,7 @@ input::-webkit-inner-spin-button {
   .addCartBtn {
     font-size: 12pt;
     padding: 10px;
-    width: 50%;
+    width: 70%;
   }
 
   #bookingBtn {
@@ -2520,7 +2520,7 @@ input::-webkit-inner-spin-button {
   .addCartBtn {
     font-size: 12pt;
     padding: 10px;
-    width: 50%;
+    width: 70%;
   }
 
   .commentFormdiv {
@@ -2960,7 +2960,7 @@ input::-webkit-inner-spin-button {
   .addCartBtn {
     font-size: 12pt;
     padding: 10px;
-    width: 50%;
+    width: 70%;
   }
 
   .commentForm {
@@ -3321,7 +3321,7 @@ input::-webkit-inner-spin-button {
   .addCartBtn {
     font-size: 12pt;
     padding: 10px;
-    width: 50%;
+    width: 70%;
   }
 
   #commentText {

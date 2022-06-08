@@ -44,7 +44,7 @@
 	</nav>
 	<div class="transactionMain">
 		<div class="titleService">
-			<h1>Your Transacions</h1>
+			<h1>My Transactions</h1>
 
 		</div>
 		<div class="Tablemanage2">
@@ -54,15 +54,13 @@
 				<table id="data" class="table2">
 					<thead id="head2">
 						<tr>
-							<th>Full Name</th>
+							<th>Date</th>
+							<th>Start Time</th>
+							<th>Car Model</th>
 							<th>Car Mileage</th>
-							<th>Contact Number</th>
 							<th>Service</th>
 							<th>Other Service</th>
-							<th>Car Model</th>
-							<th>Date</th>
-							<th>Time</th>
-							<th>Total Service Time</th>
+							<th>Estimated Time</th>
 							<th>Status</th>
 						</tr>
 					</thead>
@@ -70,23 +68,19 @@
 					<tbody>
 						{{#each resData}}
 							<tr>
-								<td data-lable2="Full Name" name="FullName">{{{FullName}}}</td>
-								<td
-									data-lable2="Car Mileage"
-									name="CarMileage"
-								>{{{CarMileage}}}</td>
-								<td
-									data-lable2="Contact Number"
-									name="ContactNumber"
-								>{{{ContactNumber}}}</td>
-								<td data-lable2="Service" name="Services">{{{services}}}</td>
-								<td data-lable2="otherService" name="otherService">{{{otherService}}}</td>
+								<td data-lable2="Day" name="Day">{{{ScheduleDate}}}</td>
+								<td data-lable2="Time" name="Time">{{{time}}}</td>
 								<td
 									data-lable="Car Model"
 									name="CarandModel"
 								>{{{CarandModel}}}</td>
-								<td data-lable2="Day" name="Day">{{{ScheduleDate}}}</td>
-								<td data-lable2="Time" name="Time">{{{time}}}</td>
+								<td
+									data-lable2="Car Mileage"
+									name="CarMileage"
+								>{{{CarMileage}}}</td>
+								<td data-lable2="Service" name="Services">{{{services}}}</td>
+								<td data-lable2="otherService" name="otherService">{{{otherService}}}</td>
+								
 								<td
 									data-lable=2"Total Time Duration"
 									name="Duration"
@@ -97,8 +91,6 @@
 					</tbody>
 				</table>
 			</div>
-
 		</div>
 	</div>
-
 </div>

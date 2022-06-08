@@ -1,110 +1,110 @@
 <div>
-  <nav>
-    <input id="nav-toggle" type="checkbox" />
-    <div class="logo"><strong>N</strong>orthEast</div>
-    <ul class="links">
-      <li>
-        <a href="/home">Home
-          <i class="bx bx-home"></i></a>
-      </li>
-      <li>
-        <a href="/Services">Service
-          <i class="bx bx-wrench"></i></a>
-      </li>
-      <li>
-        <a href="/Products">Product
-          <i class="bx bx-store-alt"></i></a>
-      </li>
-      <li>
-        <a href="/CART">Book
-          <i class="bx bx-cart"></i></a>
-      </li>
-      <li>
-        <a href="/transactions">Transactions
-          <i class="bx bx-book-bookmark"></i></a>
-      </li>
-      <li>
-        <a href="/Notification">Notification
-          <i class="bx bx-notification"></i></a>
-      </li>
-      <li>
-        <a href="/Feedback">Feedback
-          <i class="bx bx-like"></i></a>
-      </li>
-      <li>
-        <a href="/">Log Out
-          <i class="bx bx-log-in-circle"></i></a>
-      </li>
-    </ul>
-    <label for="nav-toggle" class="icon-burger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </label>
-  </nav>
+	<nav>
+		<input id="nav-toggle" type="checkbox" />
+		<div class="logo"><strong>N</strong>orthEast</div>
+		<ul class="links">
+			<li>
+				<a href="/home">Home
+					<i class="bx bx-home"></i></a>
+			</li>
+			<li>
+				<a href="/Services">Service
+					<i class="bx bx-wrench"></i></a>
+			</li>
+			<li>
+				<a href="/Products">Product
+					<i class="bx bx-store-alt"></i></a>
+			</li>
+			<li>
+				<a href="/CART">Booking
+					<i class="bx bx-cart"></i></a>
+			</li>
+			<li>
+				<a href="/transactions">Transactions
+					<i class="bx bx-book-bookmark"></i></a>
+			</li>
+			<li>
+				<a href="/Notification">Notification
+					<i class="bx bx-notification"></i></a>
+			</li>
+			<li>
+				<a href="/Feedback">Feedback
+					<i class="bx bx-like"></i></a>
+			</li>
+			<li>
+				<a href="/">Log Out
+					<i class="bx bx-log-in-circle"></i></a>
+			</li>
+		</ul>
+		<label for="nav-toggle" class="icon-burger">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</label>
+	</nav>
 
-  <div class="cartMain">
-    <div class="titleService2">
-      <h1>My Services</h1>
-    </div>
+	<div class="cartMain">
+		<div class="titleService2">
+			<h1>My Services</h1>
+		</div>
 
-    <div class="cartBox">
+		<div class="cartBox">
 
-      <div class="Tablemanage">
+			<div class="Tablemanage">
 
-        <div class="table-container">
-          <h1 class="tableHeading"></h1>
-          <table id="data" class="table">
-            <thead id="head">
-              <tr>
-                <th>Image</th>
-                <th>Service Name</th>
-                <th>Time</th>
-                <th>Remove Service</th>
-              </tr>
-            </thead>
+				<div class="table-container">
+					<h1 class="tableHeading"></h1>
+					<table id="data" class="table">
+						<thead id="head">
+							<tr>
+								<th>Image</th>
+								<th>Service Name</th>
+								<th>Time</th>
+								<th>Remove Service</th>
+							</tr>
+						</thead>
 
-            <tbody>
-              {{#each resData.data}}
-                <tr>
-                  <td data-lable="Image" name="Image"><img
-                      src="{{{serviceImage}}}"
-                      alt=""
-                      height="80px"
-                      width="80px"
-                    /></td>
-                  <td
-                    data-lable="ServiceName"
-                    name="ServiceName"
-                  >{{{serviceName}}}</td>
-                  <td data-lable="Time" name="Time">{{{serviceTime}}}</td>
-                  <td data-lable="remove" name="remove">
-                    <form onsubmit="return removeCart(event)">
-                      <input class="removeCart" type="submit" value="Remove" />
-                      <input type="hidden" value="{{{_id}}}" name="id" />
-                    </form>
-                  </td>
-                </tr>
-              {{/each}}
-            </tbody>
-          </table>
-        </div>
+						<tbody>
+							{{#each resData.data}}
+								<tr>
+									<td data-lable="Image" name="Image"><img
+											src="{{{serviceImage}}}"
+											alt=""
+											height="80px"
+											width="80px"
+										/></td>
+									<td
+										data-lable="ServiceName"
+										name="ServiceName"
+									>{{{serviceName}}}</td>
+									<td data-lable="Time" name="Time">{{{serviceTime}}}</td>
+									<td data-lable="remove" name="remove">
+										<form onsubmit="return removeCart(event)">
+											<input class="removeCart" type="submit" value="Remove" />
+											<input type="hidden" value="{{{_id}}}" name="id" />
+										</form>
+									</td>
+								</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>
 
-        <div class="subTotal">
+				<div class="subTotal">
 
-          <label for="">Expected Time of Completion :
-            <span id="duration">{{{data}}}</span>
-          </label>
-          <a href="/Booking">Proceed</a>
+					<label for="">Expected Time of Completion :
+						<span id="duration">{{{data}}}</span>
+					</label>
+					<a href="/Booking">Proceed</a>
 
-          <div class="tooltip">DISCLAIMER
-            <i class="bx bx-error-circle"></i>
-            <span class="tooltiptext">The "Expected Time of Completion" is only
-              a rough estimate.</span>
-          </div>
-        </div>
-      </div>
+					<div class="tooltip">DISCLAIMER
+						<i class="bx bx-error-circle"></i>
+						<span class="tooltiptext">The "Expected Time of Completion" is only
+							a rough estimate.</span>
+					</div>
+				</div>
+			</div>
 
-    </div>
-  </div>
+		</div>
+	</div>
 </div>

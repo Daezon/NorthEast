@@ -1,75 +1,75 @@
 <div>
-  <nav>
-    <input id="nav-toggle" type="checkbox" />
-    <div class="logo"><strong>N</strong>orthEast</div>
-    <ul class="links">
-      <li>
-        <a href="/home">Home
-          <i class="bx bx-home"></i></a>
-      </li>
-      <li>
-        <a href="/Services">Service
-          <i class="bx bx-wrench"></i></a>
-      </li>
-      <li>
-        <a href="/Products">Product
-          <i class="bx bx-store-alt"></i></a>
-      </li>
-      <li>
-        <a href="/CART">Book
-          <i class="bx bx-cart"></i></a>
-      </li>
-      <li>
-        <a href="/transactions">Transactions
-          <i class="bx bx-book-bookmark"></i></a>
-      </li>
-      <li>
-        <a href="/Notification">Notification
-          <i class="bx bx-notification"></i></a>
-      </li>
-      <li>
-        <a href="/Feedback">Feedback
-          <i class="bx bx-like"></i></a>
-      </li>
-      <li>
-        <a href="/">Log Out
-          <i class="bx bx-log-in-circle"></i></a>
-      </li>
-    </ul>
-    <label for="nav-toggle" class="icon-burger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </label>
-  </nav>
+	<nav>
+		<input id="nav-toggle" type="checkbox" />
+		<div class="logo"><strong>N</strong>orthEast</div>
+		<ul class="links">
+			<li>
+				<a href="/home">Home
+					<i class="bx bx-home"></i></a>
+			</li>
+			<li>
+				<a href="/Services">Service
+					<i class="bx bx-wrench"></i></a>
+			</li>
+			<li>
+				<a href="/Products">Product
+					<i class="bx bx-store-alt"></i></a>
+			</li>
+			<li>
+				<a href="/CART">Booking
+					<i class="bx bx-cart"></i></a>
+			</li>
+			<li>
+				<a href="/transactions">Transactions
+					<i class="bx bx-book-bookmark"></i></a>
+			</li>
+			<li>
+				<a href="/Notification">Notification
+					<i class="bx bx-notification"></i></a>
+			</li>
+			<li>
+				<a href="/Feedback">Feedback
+					<i class="bx bx-like"></i></a>
+			</li>
+			<li>
+				<a href="/">Log Out
+					<i class="bx bx-log-in-circle"></i></a>
+			</li>
+		</ul>
+		<label for="nav-toggle" class="icon-burger">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</label>
+	</nav>
 
-  <div class="commentContainer">
-    <div class="commentFormdiv">
-      <h1>Thank you for trusting and using our Website.</h1>
-      <h1>Please leave a comment for us to be posted at feedback.</h1>
-      <div
-        class="alert alert-danger"
-        id="arlertFeedback"
-      >{{resData.message}}</div>
-      <form action="/Feedback" class="commentForm" method="POST">
-        <input
-          type="text"
-          name="Message"
-          id="commentText"
-          placeholder="Add comment..."
-        />
-        <input type="submit" id="submitComment" value="Post" />
-      </form>
-    </div>
-    <div class="allcomments">
-      <h2>Feedback:</h2>
-      {{#each resData.data}}
-        <div class="comment">
-          <h1 class="Customer ID">{{{Commentatorid}}}</h1>
-          <p>{{{Message}}}</p>
-          <h3 class="date">{{{Date}}}</h3>
-        </div>
-      {{/each}}
-    </div>
-  </div>
+	<div class="commentContainer">
+		<div class="commentFormdiv">
+			<h1>Thank you for trusting and using our Website.</h1>
+			<h1>Please leave a comment for us to be posted at feedback.</h1>
+			<div
+				class="alert alert-danger"
+				id="arlertFeedback"
+			>{{resData.message}}</div>
+			<form action="/Feedback" class="commentForm" method="POST">
+				<input
+					type="text"
+					name="Message"
+					id="commentText"
+					placeholder="Add comment..."
+				/>
+				<input type="submit" id="submitComment" value="Post" />
+			</form>
+		</div>
+		<div class="allcomments">
+			<h2>Feedback:</h2>
+			{{#each resData.data}}
+				<div class="comment">
+					<h1 class="Customer ID">{{{Commentatorid}}}</h1>
+					<p>{{{Message}}}</p>
+					<h3 class="date">{{{Date}}}</h3>
+				</div>
+			{{/each}}
+		</div>
+	</div>
 </div>
